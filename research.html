@@ -4,579 +4,1779 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research | EduChroma Analyticals</title>
-<meta name="description" content="Research guidance, thesis support, analytical method development and laboratory research facilities at EduChroma Analyticals.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Research & Scientific Solutions | EduChroma Analyticals</title>
+<meta name="description" content="Research guidance, thesis support, analytical method development and laboratory research facilities at EduChroma Analyticals, Vadodara.">
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:'Plus Jakarta Sans',Arial,sans-serif;color:#061a38}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;color:#102b49;background:#f7fbff}
 a{text-decoration:none}
-img{max-width:100%}
+img{max-width:100%;display:block}
 
-/* NAVIGATION */
+:root{
+--navy:#092b50;
+--blue:#0876c9;
+--teal:#00a99d;
+--light:#edf7ff;
+}
+
+/* =================================
+   NAVIGATION - SAME AS TRAINING PAGE
+================================= */
+
 .ec-nav{
-background:#071b35;color:white;padding:12px 4%;
-display:flex;align-items:center;justify-content:space-between;
-gap:20px;position:relative;z-index:10;
-}
-.ec-nav-logo img{width:145px;height:auto;background:white;padding:5px;border-radius:7px}
-.ec-nav-links{display:flex;align-items:center;gap:23px;flex-wrap:wrap}
-.ec-nav-links a{font-size:12px;font-weight:700;color:#fff;transition:.3s}
-.ec-nav-links a:hover,.ec-nav-links a.active{color:#16c4b5}
-@media(max-width:850px){
-.ec-nav{flex-direction:column}
-.ec-nav-links{justify-content:center;gap:13px}
-.ec-nav-links a{font-size:11px}
+background:#fff;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 4px 20px rgba(9,43,80,.09);
 }
 
-/* HERO */
+.ec-nav-inner{
+max-width:1320px;
+margin:auto;
+padding:13px 22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.ec-logo{
+width:190px;
+max-height:65px;
+object-fit:contain;
+}
+
+.ec-nav-links{
+display:flex;
+align-items:center;
+gap:23px;
+}
+
+.ec-nav-links a{
+font-size:12px;
+font-weight:800;
+color:#173957;
+letter-spacing:.3px;
+white-space:nowrap;
+}
+
+.ec-nav-links a:hover,
+.ec-nav-links a.active{
+color:#0784d5;
+}
+
+.ec-menu-btn{
+display:none;
+border:0;
+background:#eaf5ff;
+color:var(--navy);
+font-size:25px;
+padding:7px 12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* =================================
+   RESEARCH HERO
+================================= */
+
 .research-hero{
-width:100%;min-height:400px;display:flex;overflow:hidden;
-background:#061a38;color:white;
+width:100%;
+min-height:430px;
+display:flex;
+overflow:hidden;
+background:#061a38;
+color:white;
 }
+
 .research-content{
-width:48%;padding:25px 25px 20px 4%;
-display:flex;flex-direction:column;justify-content:center;
+width:48%;
+padding:35px 25px 35px 5%;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
-.breadcrumb{font-size:12px;margin-bottom:13px;color:#dce8f4}
+
+.breadcrumb{
+font-size:12px;
+margin-bottom:17px;
+color:#dce8f4;
+}
+
 .breadcrumb a{color:#16c4b5}
+
 .research-content h1{
-font-size:clamp(27px,3.4vw,40px);line-height:1.08;
-margin:0 0 14px;font-weight:800;letter-spacing:-.7px
+font-size:clamp(29px,3.5vw,43px);
+line-height:1.12;
+margin:0 0 15px;
+font-weight:800;
+letter-spacing:-.7px;
 }
-.research-content h1 span{color:#16bcb2}
-.research-content h2{font-size:18px;font-weight:500;margin:0 0 12px}
-.intro{font-size:13px;line-height:1.7;max-width:410px;margin:0;color:#e0e9f2}
-.features{display:flex;align-items:center;flex-wrap:wrap;margin-top:22px;gap:13px}
-.feature{display:flex;align-items:center;gap:8px;padding-right:12px;border-right:1px solid #36516a;font-size:11px;line-height:1.35}
+
+.research-content h1 span{color:#16c4b5}
+
+.research-content h2{
+font-size:19px;
+font-weight:600;
+margin:0 0 13px;
+}
+
+.intro{
+font-size:13px;
+line-height:1.8;
+max-width:440px;
+margin:0;
+color:#e0e9f2;
+}
+
+.features{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+margin-top:24px;
+gap:13px;
+}
+
+.feature{
+display:flex;
+align-items:center;
+gap:8px;
+padding-right:12px;
+border-right:1px solid #36516a;
+font-size:11px;
+line-height:1.4;
+}
+
 .feature:last-child{border:0}
-.symbol{font-size:25px;color:#18c3b5}
+
+.symbol{
+font-size:25px;
+color:#18c3b5;
+}
+
 .research-image{
-width:52%;min-height:400px;position:relative;overflow:hidden;
-border-left:5px solid #13b9b0;border-radius:90px 0 0 90px;
-display:flex;justify-content:flex-end;align-items:center;padding:25px 32px
+width:52%;
+min-height:430px;
+position:relative;
+overflow:hidden;
+border-left:5px solid #13b9b0;
+border-radius:90px 0 0 90px;
+display:flex;
+justify-content:flex-end;
+align-items:center;
+padding:25px 35px;
 }
-.lab-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:80% center}
-.image-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,26,56,.1),rgba(6,26,56,.02))}
+
+.lab-photo{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:80% center;
+}
+
+.image-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,rgba(6,26,56,.18),rgba(6,26,56,.02));
+}
+
 .research-card{
-position:relative;z-index:2;width:170px;flex-shrink:0;padding:17px;
-border-radius:12px;background:rgba(255,255,255,.95);color:#071b3c;
-box-shadow:0 5px 20px #0003
+position:relative;
+z-index:2;
+width:185px;
+flex-shrink:0;
+padding:18px;
+border-radius:12px;
+background:rgba(255,255,255,.96);
+color:#071b3c;
+box-shadow:0 5px 20px #0003;
 }
-.cap{font-size:29px;margin-bottom:8px}
-.research-card h3{font-size:17px;line-height:1.3;margin:0 0 12px}
+
+.cap{font-size:30px;margin-bottom:9px}
+
+.research-card h3{
+font-size:17px;
+line-height:1.4;
+margin:0 0 14px;
+}
+
 .research-card a{
-display:flex;justify-content:space-between;padding:11px 13px;
-border-radius:5px;background:#079f96;color:white;font-size:12px;font-weight:bold
-}
-@media(max-width:700px){
-.research-hero{flex-direction:column}
-.research-content{width:100%;padding:25px 22px}
-.research-image{width:100%;min-height:280px;border-left:0;border-top:4px solid #13b9b0;border-radius:40px 40px 0 0;padding:20px}
-.lab-photo{object-position:75% center}
-.research-card{width:155px}
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:11px 13px;
+border-radius:5px;
+background:#079f96;
+color:white;
+font-size:12px;
+font-weight:800;
 }
 
-/* COMMON HEADINGS */
+/* =================================
+   COMMON SECTION HEADINGS
+================================= */
+
 .ec-section-heading{
-display:flex;align-items:center;justify-content:center;gap:20px;
-text-align:center;margin:0 auto 38px
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+text-align:center;
+margin:0 auto 38px;
 }
-.ec-heading-line{width:55px;height:3px;border-radius:10px;background:#16c4b5;flex-shrink:0}
-.ec-heading-label,.ec-heading-small{
-display:block;font-size:11px;font-weight:800;letter-spacing:2px;
-color:#008c85;margin-bottom:8px
-}
-.ec-section-heading h2,.ec-research-heading h2{
-color:#061a38;font-size:27px;line-height:1.3;font-weight:800;margin:0
-}
-.ec-section-heading p{color:#64748b;font-size:14px;margin:10px 0 0;line-height:1.6}
 
-/* RESEARCH SUPPORT */
-.ec-research-section{width:100%;padding:55px 24px;background:#f7fafc;color:#061a38}
+.ec-heading-line{
+width:55px;
+height:3px;
+border-radius:10px;
+background:#16c4b5;
+flex-shrink:0;
+}
+
+.ec-heading-label,
+.ec-heading-small{
+display:block;
+font-size:11px;
+font-weight:800;
+letter-spacing:2px;
+color:#008c85;
+margin-bottom:8px;
+}
+
+.ec-section-heading h2{
+color:#061a38;
+font-size:27px;
+line-height:1.3;
+font-weight:800;
+margin:0;
+}
+
+.ec-section-heading p{
+color:#64748b;
+font-size:14px;
+margin:10px 0 0;
+line-height:1.7;
+}
+
+/* =================================
+   RESEARCH SUPPORT SERVICES
+================================= */
+
+.ec-research-section{
+width:100%;
+padding:60px 24px;
+background:#f7fafc;
+color:#061a38;
+}
+
 .ec-research-grid{
-max-width:1400px;margin:auto;display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));gap:25px
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:25px;
 }
+
 .ec-research-card{
-background:#fff;border:1px solid #e5edf3;border-radius:15px;
-overflow:hidden;box-shadow:0 5px 20px #061a380f;transition:.35s
+background:#fff;
+border:1px solid #e5edf3;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px #061a380f;
+transition:.35s;
 }
-.ec-research-card:hover{transform:translateY(-7px);box-shadow:0 18px 35px #061a3820;border-color:#16c4b5}
-.ec-research-image{height:205px;position:relative;overflow:hidden;background:#dce8ef}
-.ec-research-image img{width:100%;height:100%;object-fit:cover;display:block;transition:.6s}
-.ec-research-card:hover .ec-research-image img{transform:scale(1.08)}
+
+.ec-research-card:hover{
+transform:translateY(-7px);
+box-shadow:0 18px 35px #061a3820;
+border-color:#16c4b5;
+}
+
+.ec-research-image{
+height:205px;
+position:relative;
+overflow:hidden;
+background:#dce8ef;
+}
+
+.ec-research-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.6s;
+}
+
+.ec-research-card:hover .ec-research-image img{
+transform:scale(1.08);
+}
+
 .ec-research-image:after{
-content:"";position:absolute;inset:0;
-background:linear-gradient(to top,#061a3855,transparent 70%)
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to top,#061a3855,transparent 70%);
 }
-.ec-image-number{position:absolute;z-index:2;bottom:15px;left:19px;color:white;font-size:25px;font-weight:800}
+
+.ec-image-number{
+position:absolute;
+z-index:2;
+bottom:15px;
+left:19px;
+color:white;
+font-size:25px;
+font-weight:800;
+}
+
 .ec-research-content{padding:23px 24px 25px}
+
 .ec-service-tag{
-display:inline-block;color:#008f86;background:#e6f9f6;
-border-radius:4px;padding:6px 9px;font-size:10px;font-weight:800;
-letter-spacing:1px;margin-bottom:12px
+display:inline-block;
+color:#008f86;
+background:#e6f9f6;
+border-radius:4px;
+padding:6px 9px;
+font-size:10px;
+font-weight:800;
+letter-spacing:1px;
+margin-bottom:12px;
 }
-.ec-research-content h3{font-size:19px;font-weight:800;line-height:1.4;margin:0 0 10px;min-height:53px}
-.ec-card-desc{font-size:13px;line-height:1.65;color:#64748b;margin:0 0 17px;min-height:43px}
-.ec-research-content ul{list-style:none;padding:0;margin:0;border-top:1px solid #edf1f5}
-.ec-research-content ul li{position:relative;padding:9px 0 9px 24px;color:#475569;font-size:13px;border-bottom:1px solid #f0f3f6}
+
+.ec-research-content h3{
+font-size:19px;
+font-weight:800;
+line-height:1.4;
+margin:0 0 10px;
+min-height:53px;
+}
+
+.ec-card-desc{
+font-size:13px;
+line-height:1.65;
+color:#64748b;
+margin:0 0 17px;
+min-height:43px;
+}
+
+.ec-research-content ul{
+list-style:none;
+padding:0;
+margin:0;
+border-top:1px solid #edf1f5;
+}
+
+.ec-research-content ul li{
+position:relative;
+padding:9px 0 9px 24px;
+color:#475569;
+font-size:13px;
+border-bottom:1px solid #f0f3f6;
+}
+
 .ec-research-content ul li:last-child{border:0}
-.ec-research-content ul li:before{content:"✓";position:absolute;left:0;color:#0eaa9c;font-weight:800}
 
-/* RESEARCH CTA */
+.ec-research-content ul li:before{
+content:"✓";
+position:absolute;
+left:0;
+color:#0eaa9c;
+font-weight:800;
+}
+
+/* RESEARCH CONTACT CTA */
+
 .ec-research-footer{
-max-width:1400px;margin:42px auto 0;padding:30px 35px;
-background:#061a38;border-radius:14px;display:flex;
-align-items:center;justify-content:space-between;gap:20px;color:white
+max-width:1400px;
+margin:42px auto 0;
+padding:30px 35px;
+background:#061a38;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+color:white;
 }
-.ec-footer-small{color:#16c4b5;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.ec-research-footer h3{font-size:22px;margin:8px 0}
-.ec-research-footer p{color:#cbd5e1;font-size:13px;margin:0;line-height:1.5}
+
+.ec-footer-small{
+color:#16c4b5;
+font-size:10px;
+font-weight:800;
+letter-spacing:1.7px;
+}
+
+.ec-research-footer h3{
+font-size:22px;
+margin:8px 0;
+}
+
+.ec-research-footer p{
+color:#cbd5e1;
+font-size:13px;
+margin:0;
+line-height:1.6;
+}
+
 .ec-research-footer a{
-display:inline-flex;align-items:center;gap:12px;padding:14px 23px;
-background:#16c4b5;color:#061a38;font-size:14px;font-weight:800;border-radius:7px
+display:inline-flex;
+align-items:center;
+gap:12px;
+padding:14px 23px;
+background:#16c4b5;
+color:#061a38;
+font-size:14px;
+font-weight:800;
+border-radius:7px;
 }
 
-/* AREAS AND FACILITIES */
-.ec-research-page{width:100%;font-family:Arial,sans-serif;color:#061a38}
-.ec-area-section,.ec-facility-section{width:100%;padding:55px 25px 65px}
+/* =================================
+   RESEARCH AREAS
+================================= */
+
+.ec-research-page{
+width:100%;
+font-family:'Plus Jakarta Sans',Arial,sans-serif;
+color:#061a38;
+}
+
+.ec-area-section,
+.ec-facility-section{
+width:100%;
+padding:60px 25px 65px;
+}
+
 .ec-area-section{background:#f7fafc}
-.ec-facility-section{background:white;border-top:1px solid #e5edf3}
-.ec-area-grid,.ec-facility-grid{
-width:100%;max-width:1450px;margin:auto;
-display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px
-}
-.ec-area-card,.ec-facility-card{
-background:white;border:1px solid #e1e9f0;border-radius:13px;
-overflow:hidden;box-shadow:0 5px 18px #061a3812;transition:.35s
-}
-.ec-area-card:hover,.ec-facility-card:hover{
-transform:translateY(-7px);border-color:#16c4b5;
-box-shadow:0 14px 30px #061a3820
-}
-.ec-area-image{height:235px;overflow:hidden;background:#e8eef3}
-.ec-area-image img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}
-.ec-area-card:hover img,.ec-facility-card:hover img{transform:scale(1.06)}
-.ec-area-content{padding:22px 23px 25px;min-height:145px}
-.ec-card-number{font-size:11px;font-weight:800;color:#008c85;letter-spacing:1.5px}
-.ec-area-content h3,.ec-facility-content h3{font-size:19px;font-weight:800;line-height:1.3;margin:9px 0}
-.ec-area-content p,.ec-facility-content p{font-size:14px;color:#617086;line-height:1.65;margin:0}
-.ec-facility-image{height:235px;position:relative;overflow:hidden;background:#f0f4f7}
-.ec-facility-image img{width:100%;height:100%;object-fit:contain;padding:12px;transition:.5s}
-.ec-facility-tag{
-position:absolute;left:14px;bottom:13px;background:#061a38;color:white;
-padding:7px 11px;border-radius:4px;font-size:9px;font-weight:700;letter-spacing:1px
-}
-.ec-facility-content{padding:21px 22px 25px;min-height:135px}
 
-/* ENROLLMENT BANNER */
+.ec-facility-section{
+background:white;
+border-top:1px solid #e5edf3;
+}
+
+.ec-area-grid,
+.ec-facility-grid{
+width:100%;
+max-width:1450px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:26px;
+}
+
+.ec-area-card,
+.ec-facility-card{
+background:white;
+border:1px solid #e1e9f0;
+border-radius:13px;
+overflow:hidden;
+box-shadow:0 5px 18px #061a3812;
+transition:.35s;
+}
+
+.ec-area-card:hover,
+.ec-facility-card:hover{
+transform:translateY(-7px);
+border-color:#16c4b5;
+box-shadow:0 14px 30px #061a3820;
+}
+
+.ec-area-image{
+height:235px;
+overflow:hidden;
+background:#e8eef3;
+}
+
+.ec-area-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.ec-area-card:hover img,
+.ec-facility-card:hover img{
+transform:scale(1.06);
+}
+
+.ec-area-content{
+padding:22px 23px 25px;
+min-height:150px;
+}
+
+.ec-card-number{
+font-size:11px;
+font-weight:800;
+color:#008c85;
+letter-spacing:1.5px;
+}
+
+.ec-area-content h3,
+.ec-facility-content h3{
+font-size:19px;
+font-weight:800;
+line-height:1.4;
+margin:9px 0;
+}
+
+.ec-area-content p,
+.ec-facility-content p{
+font-size:13px;
+color:#617086;
+line-height:1.75;
+margin:0;
+}
+
+.ec-facility-image{
+height:235px;
+position:relative;
+overflow:hidden;
+background:#f0f4f7;
+}
+
+.ec-facility-image img{
+width:100%;
+height:100%;
+object-fit:contain;
+padding:12px;
+transition:.5s;
+}
+
+.ec-facility-tag{
+position:absolute;
+left:14px;
+bottom:13px;
+background:#061a38;
+color:white;
+padding:7px 11px;
+border-radius:4px;
+font-size:9px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.ec-facility-content{
+padding:21px 22px 25px;
+min-height:145px;
+}
+
+/* =================================
+   RESEARCH JOURNEY BANNER
+================================= */
+
 .ec-research-banner{
-width:100%;min-height:280px;padding:25px 4%;
-display:grid;grid-template-columns:240px minmax(0,1fr) 285px;
-align-items:center;gap:25px;
+width:100%;
+min-height:280px;
+padding:25px 4%;
+display:grid;
+grid-template-columns:240px minmax(0,1fr) 285px;
+align-items:center;
+gap:25px;
 background:linear-gradient(110deg,#008c8d,#079f98,#007e83);
-border-top:5px solid #073b59;border-bottom:5px solid #073b59;
-font-family:Arial,sans-serif
+border-top:5px solid #073b59;
+border-bottom:5px solid #073b59;
+font-family:'Plus Jakarta Sans',Arial,sans-serif;
 }
-.ec-student{height:250px;display:flex;align-items:flex-end;justify-content:center}
-.ec-student img{width:100%;height:100%;object-fit:contain;object-position:bottom}
+
+.ec-student{
+height:250px;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+}
+
+.ec-student img{
+width:100%;
+height:100%;
+object-fit:contain;
+object-position:bottom;
+}
+
 .ec-main{color:white}
-.ec-main h2{font-size:23px;font-weight:800;margin:0 0 9px;line-height:1.3}
-.ec-description{font-size:14px;line-height:1.6;margin:0 0 17px;max-width:570px}
-.ec-action-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.ec-enroll-btn{
-display:inline-flex;align-items:center;gap:18px;padding:13px 19px;
-background:white;color:#092c53;font-size:15px;font-weight:800;border-radius:7px
+
+.ec-main h2{
+font-size:23px;
+font-weight:800;
+margin:0 0 9px;
+line-height:1.4;
 }
+
+.ec-description{
+font-size:13px;
+line-height:1.7;
+margin:0 0 17px;
+max-width:570px;
+}
+
+.ec-action-row{
+display:flex;
+align-items:center;
+gap:22px;
+flex-wrap:wrap;
+}
+
+.ec-enroll-btn{
+display:inline-flex;
+align-items:center;
+gap:18px;
+padding:13px 19px;
+background:white;
+color:#092c53;
+font-size:14px;
+font-weight:800;
+border-radius:7px;
+}
+
 .ec-enroll-btn span{font-size:25px}
-.ec-benefits{display:flex;justify-content:space-between;flex:1;gap:10px;flex-wrap:wrap}
-.ec-benefit{color:white;text-align:center;display:flex;flex-direction:column;align-items:center;gap:5px}
+
+.ec-benefits{
+display:flex;
+justify-content:space-between;
+flex:1;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.ec-benefit{
+color:white;
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:5px;
+}
+
 .ec-benefit span{font-size:23px}
 .ec-benefit small{font-size:10px}
-.ec-process{background:#f8fbfc;border-radius:12px;padding:17px 22px;box-shadow:0 5px 15px #0002}
-.ec-process h3{color:#087e86;font-size:15px;margin:0 0 12px}
-.ec-step{display:flex;align-items:center;gap:13px;margin:9px 0}
-.ec-step span{width:18px;height:18px;border-radius:50%;background:#087e86;color:white;font-size:12px;display:flex;justify-content:center;align-items:center;flex-shrink:0}
-.ec-step p{margin:0;color:#172c45;font-size:12px;font-weight:600}
 
-/* PREMIUM FOOTER */
-.ec-footer,.ec-footer *{box-sizing:border-box}
+.ec-process{
+background:#f8fbfc;
+border-radius:12px;
+padding:17px 22px;
+box-shadow:0 5px 15px #0002;
+}
+
+.ec-process h3{
+color:#087e86;
+font-size:15px;
+margin:0 0 12px;
+}
+
+.ec-step{
+display:flex;
+align-items:center;
+gap:13px;
+margin:9px 0;
+}
+
+.ec-step span{
+width:18px;
+height:18px;
+border-radius:50%;
+background:#087e86;
+color:white;
+font-size:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-shrink:0;
+}
+
+.ec-step p{
+margin:0;
+color:#172c45;
+font-size:12px;
+font-weight:600;
+}
+
+/* =================================
+   FOOTER - SAME PREMIUM FOOTER 3.0
+================================= */
+
+.ec-footer,
+.ec-footer *{box-sizing:border-box}
+
 .ec-footer{
---navy:#071b35;--teal:#12b8ad;--muted:#b9c9da;
-position:relative;overflow:hidden;width:100%;padding:60px 5% 22px;
-color:white;font-family:'Plus Jakarta Sans',sans-serif;
-background:radial-gradient(circle at 12% 15%,#12b8ad29,transparent 28%),
-radial-gradient(circle at 90% 80%,#236fae33,transparent 30%),
-linear-gradient(135deg,#06172c,#0b2949 55%,#06172c)
-}
-.ec-footer:before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,#12b8ad,#65e3d8,transparent)}
-.ec-footer-container{max-width:1400px;margin:auto;position:relative;z-index:1}
-.ec-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1.15fr 1fr 1.35fr;gap:30px}
-.ec-footer-brand img{width:165px;height:auto;background:white;padding:7px;border-radius:10px;margin-bottom:15px}
-.ec-footer-tagline{color:#62e0d5;font-weight:800;font-size:14px;margin:0 0 12px}
-.ec-footer-description{color:var(--muted);font-size:12px;line-height:1.9;margin:0 0 20px}
-.ec-footer-heading{color:white;font-size:14px;font-weight:800;margin:5px 0 22px;padding-bottom:12px;position:relative}
-.ec-footer-heading:after{content:"";position:absolute;bottom:0;left:0;width:35px;height:3px;border-radius:5px;background:var(--teal)}
-.ec-footer-links{list-style:none;padding:0;margin:0}
-.ec-footer-links li{margin:0 0 12px}
-.ec-footer-links a{color:var(--muted);font-size:12px;transition:.25s}
-.ec-footer-links a:hover{color:#62e0d5;padding-left:5px}
-.ec-footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;color:var(--muted);font-size:11px;line-height:1.8}
-.ec-contact-icon{color:#55ded2;font-size:16px;min-width:20px}
-.ec-footer-contact-item a{color:var(--muted);overflow-wrap:anywhere}
-.ec-footer-contact-item a:hover{color:#62e0d5}
-.ec-footer-socials{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
-.ec-footer-socials a{width:35px;height:35px;display:flex;align-items:center;justify-content:center;border:1px solid #ffffff33;border-radius:50%;color:white;background:#ffffff12;transition:.3s}
-.ec-footer-socials a:hover{background:var(--teal);color:#06243a;transform:translateY(-4px)}
-.ec-footer-socials svg{width:17px;height:17px;fill:currentColor}
-.ec-footer-cta{margin-top:40px;padding:23px 27px;border:1px solid #ffffff24;border-radius:15px;background:linear-gradient(110deg,#12b8ad26,#ffffff0b);display:flex;justify-content:space-between;align-items:center;gap:20px}
-.ec-footer-cta h3{margin:0 0 6px;font-size:18px}
-.ec-footer-cta p{color:var(--muted);font-size:12px;margin:0;line-height:1.7}
-.ec-footer-cta a{display:inline-block;background:var(--teal);color:#06243a;padding:12px 22px;border-radius:7px;font-weight:800;font-size:12px}
-.ec-footer-bottom{border-top:1px solid #ffffff22;margin-top:32px;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.ec-footer-bottom p,.ec-footer-bottom-links a{color:#9eb2c8;font-size:11px;margin:0}
-.ec-footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap}
+--navy:#071b35;
+--navy2:#0d2c4d;
+--teal:#12b8ad;
+--muted:#b9c9da;
 
-/* RESPONSIVE */
-@media(max-width:1100px){
-.ec-footer-grid{grid-template-columns:repeat(3,1fr)}
+position:relative;
+overflow:hidden;
+width:100%;
+padding:65px 6% 22px;
+color:#fff;
+font-family:'Plus Jakarta Sans',sans-serif;
+
+background:
+radial-gradient(circle at 12% 15%,rgba(18,184,173,.16),transparent 28%),
+radial-gradient(circle at 90% 80%,rgba(35,111,174,.20),transparent 30%),
+linear-gradient(135deg,#06172c,#0b2949 55%,#06172c);
 }
+
+.ec-footer:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:3px;
+background:linear-gradient(90deg,transparent,#12b8ad,#65e3d8,transparent);
+}
+
+.ec-footer-container{
+max-width:1400px;
+margin:auto;
+position:relative;
+z-index:1;
+}
+
+.ec-footer-grid{
+display:grid;
+grid-template-columns:1.5fr 1fr 1.15fr 1fr 1.35fr;
+gap:38px;
+}
+
+.ec-footer-brand img{
+width:175px;
+max-width:100%;
+height:auto;
+object-fit:contain;
+background:#fff;
+padding:7px;
+border-radius:10px;
+margin-bottom:17px;
+}
+
+.ec-footer-tagline{
+color:#62e0d5;
+font-weight:800;
+font-size:14px;
+margin:0 0 12px;
+letter-spacing:.3px;
+}
+
+.ec-footer-description{
+color:var(--muted);
+font-size:13px;
+line-height:1.9;
+margin:0 0 20px;
+}
+
+.ec-footer-heading{
+color:#fff;
+font-size:15px;
+font-weight:800;
+margin:5px 0 22px;
+position:relative;
+padding-bottom:12px;
+}
+
+.ec-footer-heading:after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:35px;
+height:3px;
+border-radius:5px;
+background:var(--teal);
+}
+
+.ec-footer-links{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.ec-footer-links li{margin:0 0 13px}
+
+.ec-footer-links a{
+color:var(--muted);
+text-decoration:none;
+font-size:12.5px;
+transition:.25s ease;
+}
+
+.ec-footer-links a:hover{
+color:#62e0d5;
+padding-left:5px;
+}
+
+.ec-footer-contact-item{
+display:flex;
+align-items:flex-start;
+gap:10px;
+margin-bottom:16px;
+color:var(--muted);
+font-size:12px;
+line-height:1.8;
+}
+
+.ec-footer-contact-item .ec-contact-icon{
+color:#55ded2;
+font-size:17px;
+min-width:20px;
+}
+
+.ec-footer-contact-item a{
+color:var(--muted);
+text-decoration:none;
+overflow-wrap:anywhere;
+}
+
+.ec-footer-contact-item a:hover{color:#62e0d5}
+
+.ec-footer-socials{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
+}
+
+.ec-footer-socials a{
+width:37px;
+height:37px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid rgba(255,255,255,.2);
+border-radius:50%;
+color:#fff;
+background:rgba(255,255,255,.07);
+text-decoration:none;
+transition:.3s ease;
+}
+
+.ec-footer-socials a:hover{
+background:var(--teal);
+border-color:var(--teal);
+color:#06243a;
+transform:translateY(-5px);
+}
+
+.ec-footer-socials svg{
+width:17px;
+height:17px;
+fill:currentColor;
+}
+
+.ec-footer-cta{
+margin-top:45px;
+padding:23px 27px;
+border:1px solid rgba(255,255,255,.14);
+border-radius:15px;
+background:linear-gradient(110deg,rgba(18,184,173,.15),rgba(255,255,255,.045));
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.ec-footer-cta h3{
+margin:0 0 6px;
+font-size:18px;
+font-weight:800;
+}
+
+.ec-footer-cta p{
+color:var(--muted);
+font-size:12px;
+margin:0;
+line-height:1.7;
+}
+
+.ec-footer-cta a{
+display:inline-block;
+background:var(--teal);
+color:#06243a;
+padding:12px 22px;
+border-radius:7px;
+text-decoration:none;
+font-weight:800;
+font-size:12px;
+white-space:nowrap;
+transition:.3s;
+}
+
+.ec-footer-cta a:hover{
+background:#65e3d8;
+transform:translateY(-2px);
+}
+
+.ec-footer-bottom{
+border-top:1px solid rgba(255,255,255,.13);
+margin-top:35px;
+padding-top:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.ec-footer-bottom p{
+color:#9eb2c8;
+font-size:11px;
+margin:0;
+}
+
+.ec-footer-bottom-links{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.ec-footer-bottom-links a{
+color:#9eb2c8;
+font-size:11px;
+text-decoration:none;
+}
+
+.ec-footer-bottom-links a:hover{color:#62e0d5}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media(max-width:1050px){
+.ec-nav-links{gap:13px}
+.ec-nav-links a{font-size:10px}
+.ec-footer-grid{
+grid-template-columns:repeat(3,1fr);
+gap:35px 25px;
+}
+}
+
 @media(max-width:950px){
-.ec-area-grid,.ec-facility-grid,.ec-research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.ec-research-banner{grid-template-columns:140px minmax(0,1fr)}
+.ec-area-grid,
+.ec-facility-grid,
+.ec-research-grid{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.ec-research-banner{
+grid-template-columns:140px minmax(0,1fr);
+}
+
 .ec-student{height:190px}
 .ec-process{grid-column:1/-1}
 }
+
+@media(max-width:800px){
+.ec-menu-btn{display:block}
+
+.ec-nav-inner{flex-wrap:wrap}
+
+.ec-nav-links{
+display:none;
+width:100%;
+flex-direction:column;
+align-items:flex-start;
+gap:0;
+padding:10px 0;
+}
+
+.ec-nav-links.show{display:flex}
+
+.ec-nav-links a{
+width:100%;
+padding:13px 8px;
+border-top:1px solid #edf2f7;
+font-size:12px;
+}
+
+.research-hero{flex-direction:column}
+
+.research-content{
+width:100%;
+padding:35px 25px;
+}
+
+.research-image{
+width:100%;
+min-height:300px;
+border-left:0;
+border-top:4px solid #13b9b0;
+border-radius:40px 40px 0 0;
+padding:20px;
+}
+
+.lab-photo{object-position:75% center}
+}
+
 @media(max-width:700px){
 .ec-section-heading{gap:9px;margin-bottom:27px}
 .ec-heading-line{width:25px}
-.ec-section-heading h2,.ec-research-heading h2{font-size:21px}
-.ec-research-section{padding:38px 14px}
-.ec-research-grid,.ec-area-grid,.ec-facility-grid{grid-template-columns:1fr;gap:19px}
-.ec-research-footer{padding:25px 20px;flex-direction:column;align-items:flex-start;margin-top:28px}
+.ec-section-heading h2{font-size:21px}
+
+.ec-research-section{padding:40px 14px}
+
+.ec-research-grid,
+.ec-area-grid,
+.ec-facility-grid{
+grid-template-columns:1fr;
+gap:19px;
+}
+
+.ec-research-footer{
+padding:25px 20px;
+flex-direction:column;
+align-items:flex-start;
+margin-top:28px;
+}
+
 .ec-research-footer h3{font-size:19px}
-.ec-research-footer a{width:100%;justify-content:center}
-.ec-area-section,.ec-facility-section{padding:38px 14px}
-.ec-research-banner{grid-template-columns:1fr;text-align:center;padding:22px 16px}
+
+.ec-research-footer a{
+width:100%;
+justify-content:center;
+}
+
+.ec-area-section,
+.ec-facility-section{
+padding:40px 14px;
+}
+
+.ec-research-banner{
+grid-template-columns:1fr;
+text-align:center;
+padding:25px 16px;
+}
+
 .ec-student{display:none}
-.ec-action-row{flex-direction:column;align-items:center}
-.ec-benefits{justify-content:center;gap:15px}
+
+.ec-action-row{
+flex-direction:column;
+align-items:center;
+}
+
+.ec-benefits{
+justify-content:center;
+gap:17px;
+}
+
 .ec-process{text-align:left}
+
 .ec-footer{padding:45px 22px 20px}
-.ec-footer-grid{grid-template-columns:repeat(2,1fr);gap:28px 18px}
-.ec-footer-brand,.ec-footer-contact{grid-column:1/-1}
-.ec-footer-cta{flex-direction:column;align-items:flex-start;padding:20px}
-.ec-footer-cta a{width:100%;text-align:center}
-.ec-footer-bottom{flex-direction:column;text-align:center}
+
+.ec-footer-grid{
+grid-template-columns:repeat(2,1fr);
+gap:30px 20px;
+}
+
+.ec-footer-brand{grid-column:1/-1}
+.ec-footer-contact{grid-column:1/-1}
+
+.ec-footer-cta{
+flex-direction:column;
+align-items:flex-start;
+padding:20px;
+}
+
+.ec-footer-cta a{
+width:100%;
+text-align:center;
+}
+
+.ec-footer-bottom{
+flex-direction:column;
+text-align:center;
+}
+
 .ec-footer-bottom-links{justify-content:center}
 }
+
+@media(max-width:560px){
+.ec-logo{width:155px}
+.research-content{padding:30px 18px}
+.research-content h1{font-size:30px}
+.features{gap:10px}
+.feature{font-size:10px}
+}
+
 @media(max-width:380px){
 .ec-footer-grid{grid-template-columns:1fr}
-.ec-footer-brand,.ec-footer-contact{grid-column:auto}
+.ec-footer-brand,
+.ec-footer-contact{grid-column:auto}
 }
+
 @media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation:none!important;transition:none!important}
+*,*:before,*:after{
+animation:none!important;
+transition:none!important;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav class="ec-nav">
-  <a class="ec-nav-logo" href="index.html">
-    <img src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals">
-  </a>
-  <div class="ec-nav-links">
-    <a href="index.html#home">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="training.html">TRAINING</a>
-    <a href="testing.html">TESTING SERVICES</a>
-    <a href="research.html" class="active">RESEARCH</a>
-    <a href="index.html#gallery">GALLERY</a>
-    <a href="index.html#contact">CONTACT US</a>
-  </div>
+<!-- =================================
+     NAVIGATION
+================================= -->
+
+<header class="ec-nav">
+<div class="ec-nav-inner">
+
+<a href="index.html#home">
+<img class="ec-logo"
+src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-"
+alt="EduChroma Analyticals">
+</a>
+
+<button class="ec-menu-btn"
+onclick="toggleEcMenu()"
+aria-label="Toggle navigation"
+aria-expanded="false"
+id="ecMenuButton">☰</button>
+
+<nav class="ec-nav-links" id="ecNavLinks">
+<a href="index.html#home">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="training.html">TRAINING</a>
+<a href="testing.html">TESTING SERVICES</a>
+<a class="active" href="research.html">RESEARCH</a>
+<a href="index.html#gallery">GALLERY</a>
+<a href="index.html#contact">CONTACT US</a>
 </nav>
 
-<!-- RESEARCH HERO -->
+</div>
+</header>
+
+<!-- =================================
+     RESEARCH HERO
+================================= -->
+
 <section class="research-hero">
-  <div class="research-content">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a> › Research Work
-    </div>
-    <h1>RESEARCH &amp;<br><span>SCIENTIFIC SOLUTIONS</span></h1>
-    <h2>Innovating Today for a Better Tomorrow</h2>
-    <p class="intro">
-      At EduChroma Analyticals, we support students,
-      researchers and professionals in every step of their
-      research journey with advanced analytical tools
-      and expert guidance.
-    </p>
-    <div class="features">
-      <div class="feature"><span class="symbol">♧</span><span>Scientific<br>Excellence</span></div>
-      <div class="feature"><span class="symbol">☼</span><span>Innovative<br>Approach</span></div>
-      <div class="feature"><span class="symbol">◎</span><span>Accurate<br>Results</span></div>
-      <div class="feature"><span class="symbol">⬡</span><span>Ethical<br>Research</span></div>
-    </div>
-  </div>
-  <div class="research-image">
-    <img class="lab-photo" src="https://drive.google.com/thumbnail?id=1Ff0lI3Q3ZyUQFJ3YN10MS4tWJw57VQ2R&sz=w1600" alt="EduChroma Research Laboratory">
-    <div class="image-overlay"></div>
-    <div class="research-card">
-      <div class="cap">🎓</div>
-      <h3>Start Your<br>Research Journey<br>With Us</h3>
-      <a href="https://wa.me/918141108657?text=Hello%20EduChroma%2C%20I%20want%20to%20enquire%20about%20research%20support." target="_blank" rel="noopener">Enrol Now <span>→</span></a>
-    </div>
-  </div>
+
+<div class="research-content">
+
+<div class="breadcrumb">
+<a href="index.html#home">Home</a> › Research Work
+</div>
+
+<h1>RESEARCH &amp;<br><span>SCIENTIFIC SOLUTIONS</span></h1>
+
+<h2>Innovating Today for a Better Tomorrow</h2>
+
+<p class="intro">
+At EduChroma Analyticals, we support students,
+researchers and professionals in every step of their
+research journey with advanced analytical tools
+and expert guidance.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<span class="symbol">♧</span>
+<span>Scientific<br>Excellence</span>
+</div>
+
+<div class="feature">
+<span class="symbol">☼</span>
+<span>Innovative<br>Approach</span>
+</div>
+
+<div class="feature">
+<span class="symbol">◎</span>
+<span>Accurate<br>Results</span>
+</div>
+
+<div class="feature">
+<span class="symbol">⬡</span>
+<span>Ethical<br>Research</span>
+</div>
+
+</div>
+</div>
+
+<div class="research-image">
+
+<img class="lab-photo"
+src="https://drive.google.com/thumbnail?id=1Ff0lI3Q3ZyUQFJ3YN10MS4tWJw57VQ2R&sz=w1600"
+alt="EduChroma Research Laboratory">
+
+<div class="image-overlay"></div>
+
+<div class="research-card">
+<div class="cap">🎓</div>
+<h3>Start Your<br>Research Journey<br>With Us</h3>
+<a href="https://wa.me/918141108657?text=Hello%20EduChroma%2C%20I%20want%20to%20enquire%20about%20research%20support."
+target="_blank" rel="noopener">
+Enrol Now <span>→</span>
+</a>
+</div>
+
+</div>
 </section>
 
-<!-- RESEARCH SUPPORT SERVICES -->
+<!-- =================================
+     RESEARCH SUPPORT SERVICES
+================================= -->
+
 <section class="ec-research-section">
-  <div class="ec-section-heading">
-    <span class="ec-heading-line"></span>
-    <div>
-      <span class="ec-heading-label">RESEARCH &amp; ACADEMIC EXCELLENCE</span>
-      <h2>OUR RESEARCH SUPPORT SERVICES</h2>
-      <p>Professional research guidance and scientific support for students and researchers.</p>
-    </div>
-    <span class="ec-heading-line"></span>
-  </div>
 
-  <div class="ec-research-grid">
+<div class="ec-section-heading">
+<span class="ec-heading-line"></span>
+<div>
+<span class="ec-heading-label">RESEARCH &amp; ACADEMIC EXCELLENCE</span>
+<h2>OUR RESEARCH SUPPORT SERVICES</h2>
+<p>Professional research guidance and scientific support for students and researchers.</p>
+</div>
+<span class="ec-heading-line"></span>
+</div>
 
-    <div class="ec-research-card">
-      <div class="ec-research-image"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Research project laboratory"><span class="ec-image-number">01</span></div>
-      <div class="ec-research-content">
-        <span class="ec-service-tag">RESEARCH GUIDANCE</span>
-        <h3>Research Project Work</h3>
-        <p class="ec-card-desc">Structured guidance for planning and developing scientific research projects.</p>
-        <ul><li>Topic selection</li><li>Problem identification</li><li>Literature survey</li><li>Experimental design</li><li>Data analysis</li><li>Report preparation</li></ul>
-      </div>
-    </div>
+<div class="ec-research-grid">
 
-    <div class="ec-research-card">
-      <div class="ec-research-image"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85" alt="Thesis writing"><span class="ec-image-number">02</span></div>
-      <div class="ec-research-content">
-        <span class="ec-service-tag">ACADEMIC SUPPORT</span>
-        <h3>Thesis / Dissertation Writing</h3>
-        <p class="ec-card-desc">Academic writing assistance with structured chapters and scientific presentation.</p>
-        <ul><li>Thesis topic finalization</li><li>Chapter-wise writing</li><li>Data presentation</li><li>Referencing &amp; formatting</li><li>Plagiarism check</li><li>Final thesis preparation</li></ul>
-      </div>
-    </div>
+<article class="ec-research-card">
+<div class="ec-research-image">
+<img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Research project laboratory">
+<span class="ec-image-number">01</span>
+</div>
+<div class="ec-research-content">
+<span class="ec-service-tag">RESEARCH GUIDANCE</span>
+<h3>Research Project Work</h3>
+<p class="ec-card-desc">Structured guidance for planning and developing scientific research projects.</p>
+<ul>
+<li>Topic selection</li>
+<li>Problem identification</li>
+<li>Literature survey</li>
+<li>Experimental design</li>
+<li>Data analysis</li>
+<li>Report preparation</li>
+</ul>
+</div>
+</article>
 
-    <div class="ec-research-card">
-      <div class="ec-research-image"><img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85" alt="Scientific literature review"><span class="ec-image-number">03</span></div>
-      <div class="ec-research-content">
-        <span class="ec-service-tag">LITERATURE &amp; REVIEW</span>
-        <h3>Review Paper Writing</h3>
-        <p class="ec-card-desc">Scientific literature evaluation and critical review development.</p>
-        <ul><li>In-depth literature review</li><li>Critical analysis</li><li>Scientific writing</li><li>Proper citations</li><li>Journal formatting</li><li>Reference management</li></ul>
-      </div>
-    </div>
+<article class="ec-research-card">
+<div class="ec-research-image">
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85" alt="Thesis writing">
+<span class="ec-image-number">02</span>
+</div>
+<div class="ec-research-content">
+<span class="ec-service-tag">ACADEMIC SUPPORT</span>
+<h3>Thesis / Dissertation Writing</h3>
+<p class="ec-card-desc">Academic writing assistance with structured chapters and scientific presentation.</p>
+<ul>
+<li>Thesis topic finalization</li>
+<li>Chapter-wise writing</li>
+<li>Data presentation</li>
+<li>Referencing &amp; formatting</li>
+<li>Plagiarism check</li>
+<li>Final thesis preparation</li>
+</ul>
+</div>
+</article>
 
-    <div class="ec-research-card">
-      <div class="ec-research-image"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Scientific article preparation"><span class="ec-image-number">04</span></div>
-      <div class="ec-research-content">
-        <span class="ec-service-tag">SCIENTIFIC PUBLICATION</span>
-        <h3>Scientific Article Writing</h3>
-        <p class="ec-card-desc">Manuscript preparation and publication-oriented scientific writing support.</p>
-        <ul><li>Original research writing</li><li>Results &amp; discussion</li><li>Journal selection</li><li>Manuscript formatting</li><li>Response to reviewers</li><li>Publication support</li></ul>
-      </div>
-    </div>
+<article class="ec-research-card">
+<div class="ec-research-image">
+<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85" alt="Scientific literature review">
+<span class="ec-image-number">03</span>
+</div>
+<div class="ec-research-content">
+<span class="ec-service-tag">LITERATURE &amp; REVIEW</span>
+<h3>Review Paper Writing</h3>
+<p class="ec-card-desc">Scientific literature evaluation and critical review development.</p>
+<ul>
+<li>In-depth literature review</li>
+<li>Critical analysis</li>
+<li>Scientific writing</li>
+<li>Proper citations</li>
+<li>Journal formatting</li>
+<li>Reference management</li>
+</ul>
+</div>
+</article>
 
-    <div class="ec-research-card">
-      <div class="ec-research-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="Data analysis"><span class="ec-image-number">05</span></div>
-      <div class="ec-research-content">
-        <span class="ec-service-tag">ANALYTICAL SUPPORT</span>
-        <h3>Data Analysis &amp; Interpretation</h3>
-        <p class="ec-card-desc">Scientific data evaluation, graphical representation and result interpretation.</p>
-        <ul><li>Statistical analysis</li><li>Graphical presentation</li><li>Result interpretation</li><li>Method validation</li><li>Report generation</li><li>Conclusion support</li></ul>
-      </div>
-    </div>
+<article class="ec-research-card">
+<div class="ec-research-image">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Scientific article preparation">
+<span class="ec-image-number">04</span>
+</div>
+<div class="ec-research-content">
+<span class="ec-service-tag">SCIENTIFIC PUBLICATION</span>
+<h3>Scientific Article Writing</h3>
+<p class="ec-card-desc">Manuscript preparation and publication-oriented scientific writing support.</p>
+<ul>
+<li>Original research writing</li>
+<li>Results &amp; discussion</li>
+<li>Journal selection</li>
+<li>Manuscript formatting</li>
+<li>Response to reviewers</li>
+<li>Publication support</li>
+</ul>
+</div>
+</article>
 
-    <div class="ec-research-card">
-      <div class="ec-research-image"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85" alt="Scientific document editing"><span class="ec-image-number">06</span></div>
-      <div class="ec-research-content">
-        <span class="ec-service-tag">DOCUMENT QUALITY</span>
-        <h3>Plagiarism Check &amp; Editing Support</h3>
-        <p class="ec-card-desc">Document review and language refinement for academic and scientific work.</p>
-        <ul><li>Plagiarism screening</li><li>Grammar &amp; spell check</li><li>Scientific editing</li><li>Referencing check</li><li>Language improvement</li><li>Journal compliance</li></ul>
-      </div>
-    </div>
+<article class="ec-research-card">
+<div class="ec-research-image">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="Data analysis">
+<span class="ec-image-number">05</span>
+</div>
+<div class="ec-research-content">
+<span class="ec-service-tag">ANALYTICAL SUPPORT</span>
+<h3>Data Analysis &amp; Interpretation</h3>
+<p class="ec-card-desc">Scientific data evaluation, graphical representation and result interpretation.</p>
+<ul>
+<li>Statistical analysis</li>
+<li>Graphical presentation</li>
+<li>Result interpretation</li>
+<li>Method validation</li>
+<li>Report generation</li>
+<li>Conclusion support</li>
+</ul>
+</div>
+</article>
 
-  </div>
+<article class="ec-research-card">
+<div class="ec-research-image">
+<img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85" alt="Scientific document editing">
+<span class="ec-image-number">06</span>
+</div>
+<div class="ec-research-content">
+<span class="ec-service-tag">DOCUMENT QUALITY</span>
+<h3>Plagiarism Check &amp; Editing Support</h3>
+<p class="ec-card-desc">Document review and language refinement for academic and scientific work.</p>
+<ul>
+<li>Plagiarism screening</li>
+<li>Grammar &amp; spell check</li>
+<li>Scientific editing</li>
+<li>Referencing check</li>
+<li>Language improvement</li>
+<li>Journal compliance</li>
+</ul>
+</div>
+</article>
 
-  <div class="ec-research-footer">
-    <div>
-      <span class="ec-footer-small">NEED RESEARCH ASSISTANCE?</span>
-      <h3>Let's Build Better Research Together.</h3>
-      <p>Connect with EduChroma Analyticals for academic and scientific research support.</p>
-    </div>
-    <a href="https://wa.me/918141108657" target="_blank" rel="noopener">Contact Us <span>↗</span></a>
-  </div>
+</div>
+
+<div class="ec-research-footer">
+<div>
+<span class="ec-footer-small">NEED RESEARCH ASSISTANCE?</span>
+<h3>Let's Build Better Research Together.</h3>
+<p>Connect with EduChroma Analyticals for academic and scientific research support.</p>
+</div>
+<a href="https://wa.me/918141108657" target="_blank" rel="noopener">
+Contact Us <span>↗</span>
+</a>
+</div>
+
 </section>
 
-<!-- RESEARCH AREAS -->
+<!-- =================================
+     RESEARCH AREAS
+================================= -->
+
 <div class="ec-research-page">
+
 <section class="ec-area-section">
-  <div class="ec-section-heading">
-    <span class="ec-heading-line"></span>
-    <div><span class="ec-heading-small">EXPLORE OUR EXPERTISE</span><h2>RESEARCH AREAS</h2></div>
-    <span class="ec-heading-line"></span>
-  </div>
 
-  <div class="ec-area-grid">
-    <div class="ec-area-card"><div class="ec-area-image"><img loading="lazy" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85" alt="Pharmaceutical Research"></div><div class="ec-area-content"><span class="ec-card-number">01</span><h3>Pharmaceutical Research</h3><p>Drug analysis, formulation development, quality control and pharmaceutical analytical studies.</p></div></div>
+<div class="ec-section-heading">
+<span class="ec-heading-line"></span>
+<div>
+<span class="ec-heading-small">EXPLORE OUR EXPERTISE</span>
+<h2>RESEARCH AREAS</h2>
+</div>
+<span class="ec-heading-line"></span>
+</div>
 
-    <div class="ec-area-card"><div class="ec-area-image"><img loading="lazy" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85" alt="Food and Nutrition Research"></div><div class="ec-area-content"><span class="ec-card-number">02</span><h3>Food &amp; Nutrition Research</h3><p>Food quality assessment, nutritional analysis, food safety and beverage research.</p></div></div>
+<div class="ec-area-grid">
 
-    <div class="ec-area-card"><div class="ec-area-image"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Extraction_of_medicinal_plant_with_filter_paper_in_laboratory.jpg/1280px-Extraction_of_medicinal_plant_with_filter_paper_in_laboratory.jpg" alt="Phytochemical and Herbal Research"></div><div class="ec-area-content"><span class="ec-card-number">03</span><h3>Phytochemical &amp; Herbal Research</h3><p>Herbal product evaluation, phytochemical screening and marker compound analysis.</p></div></div>
+<article class="ec-area-card">
+<div class="ec-area-image">
+<img loading="lazy" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85" alt="Pharmaceutical Research">
+</div>
+<div class="ec-area-content">
+<span class="ec-card-number">01</span>
+<h3>Pharmaceutical Research</h3>
+<p>Drug analysis, formulation development, quality control and pharmaceutical analytical studies.</p>
+</div>
+</article>
 
-    <div class="ec-area-card"><div class="ec-area-image"><img loading="lazy" src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=900&q=85" alt="Environmental and Water Research"></div><div class="ec-area-content"><span class="ec-card-number">04</span><h3>Environmental &amp; Water Research</h3><p>Water quality testing, environmental sample analysis and contaminant monitoring.</p></div></div>
+<article class="ec-area-card">
+<div class="ec-area-image">
+<img loading="lazy" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85" alt="Food and Nutrition Research">
+</div>
+<div class="ec-area-content">
+<span class="ec-card-number">02</span>
+<h3>Food &amp; Nutrition Research</h3>
+<p>Food quality assessment, nutritional analysis, food safety and beverage research.</p>
+</div>
+</article>
 
-    <div class="ec-area-card"><div class="ec-area-image"><img loading="lazy" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Chemical and Material Research"></div><div class="ec-area-content"><span class="ec-card-number">05</span><h3>Chemical &amp; Material Research</h3><p>Chemical characterization, material evaluation and laboratory-based investigations.</p></div></div>
+<article class="ec-area-card">
+<div class="ec-area-image">
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Extraction_of_medicinal_plant_with_filter_paper_in_laboratory.jpg/1280px-Extraction_of_medicinal_plant_with_filter_paper_in_laboratory.jpg" alt="Phytochemical and Herbal Research">
+</div>
+<div class="ec-area-content">
+<span class="ec-card-number">03</span>
+<h3>Phytochemical &amp; Herbal Research</h3>
+<p>Herbal product evaluation, phytochemical screening and marker compound analysis.</p>
+</div>
+</article>
 
-    <div class="ec-area-card"><div class="ec-area-image"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/HPLC_instrument.jpg" alt="HPLC Method Development"></div><div class="ec-area-content"><span class="ec-card-number">06</span><h3>Analytical Method Development</h3><p>RP-HPLC method development, optimization, validation and analytical data interpretation.</p></div></div>
-  </div>
+<article class="ec-area-card">
+<div class="ec-area-image">
+<img loading="lazy" src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=900&q=85" alt="Environmental and Water Research">
+</div>
+<div class="ec-area-content">
+<span class="ec-card-number">04</span>
+<h3>Environmental &amp; Water Research</h3>
+<p>Water quality testing, environmental sample analysis and contaminant monitoring.</p>
+</div>
+</article>
+
+<article class="ec-area-card">
+<div class="ec-area-image">
+<img loading="lazy" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Chemical and Material Research">
+</div>
+<div class="ec-area-content">
+<span class="ec-card-number">05</span>
+<h3>Chemical &amp; Material Research</h3>
+<p>Chemical characterization, material evaluation and laboratory-based investigations.</p>
+</div>
+</article>
+
+<article class="ec-area-card">
+<div class="ec-area-image">
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/HPLC_instrument.jpg" alt="HPLC Method Development">
+</div>
+<div class="ec-area-content">
+<span class="ec-card-number">06</span>
+<h3>Analytical Method Development</h3>
+<p>RP-HPLC method development, optimization, validation and analytical data interpretation.</p>
+</div>
+</article>
+
+</div>
 </section>
 
-<!-- RESEARCH FACILITIES -->
+<!-- =================================
+     RESEARCH FACILITIES
+================================= -->
+
 <section class="ec-facility-section">
-  <div class="ec-section-heading">
-    <span class="ec-heading-line"></span>
-    <div><span class="ec-heading-small">OUR LABORATORY INFRASTRUCTURE</span><h2>RESEARCH FACILITIES</h2></div>
-    <span class="ec-heading-line"></span>
-  </div>
 
-  <div class="ec-facility-grid">
-    <div class="ec-facility-card"><div class="ec-facility-image"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/HPLC_instrument.jpg" alt="HPLC System"><span class="ec-facility-tag">CHROMATOGRAPHY</span></div><div class="ec-facility-content"><h3>HPLC System</h3><p>High Performance Liquid Chromatography for quantitative analysis, separation and analytical method development.</p></div></div>
+<div class="ec-section-heading">
+<span class="ec-heading-line"></span>
+<div>
+<span class="ec-heading-small">OUR LABORATORY INFRASTRUCTURE</span>
+<h2>RESEARCH FACILITIES</h2>
+</div>
+<span class="ec-heading-line"></span>
+</div>
 
-    <div class="ec-facility-card"><div class="ec-facility-image"><img loading="lazy" src="https://cpimg.tistatic.com/6564468/b/4/uv-vis-spectrophotometer.jpg" alt="UV Visible Spectrophotometer"><span class="ec-facility-tag">SPECTROSCOPY</span></div><div class="ec-facility-content"><h3>UV-Visible Spectrophotometer</h3><p>Quantitative estimation and absorbance measurement for pharmaceutical and research samples.</p></div></div>
+<div class="ec-facility-grid">
 
-    <div class="ec-facility-card"><div class="ec-facility-image"><img loading="lazy" src="https://img.directindustry.com/pt/images_di/photo-g/236295-19399130.jpg" alt="FTIR Spectrometer"><span class="ec-facility-tag">MOLECULAR ANALYSIS</span></div><div class="ec-facility-content"><h3>FTIR Spectrometer</h3><p>Functional group identification and molecular characterization of chemical and material samples.</p></div></div>
+<article class="ec-facility-card">
+<div class="ec-facility-image">
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/HPLC_instrument.jpg" alt="HPLC System">
+<span class="ec-facility-tag">CHROMATOGRAPHY</span>
+</div>
+<div class="ec-facility-content">
+<h3>HPLC System</h3>
+<p>High Performance Liquid Chromatography for quantitative analysis, separation and analytical method development.</p>
+</div>
+</article>
 
-    <div class="ec-facility-card"><div class="ec-facility-image"><img loading="lazy" src="https://cdn1.bigcommerce.com/server3200/v2uhijw/products/5314/images/8195/GBA-225C_1__31056.1689810169.1280.1280.jpg?c=2" alt="Analytical Balance"><span class="ec-facility-tag">PRECISION WEIGHING</span></div><div class="ec-facility-content"><h3>Analytical Balance</h3><p>High-precision weighing for sample preparation, standard preparation and analytical procedures.</p></div></div>
+<article class="ec-facility-card">
+<div class="ec-facility-image">
+<img loading="lazy" src="https://cpimg.tistatic.com/6564468/b/4/uv-vis-spectrophotometer.jpg" alt="UV Visible Spectrophotometer">
+<span class="ec-facility-tag">SPECTROSCOPY</span>
+</div>
+<div class="ec-facility-content">
+<h3>UV-Visible Spectrophotometer</h3>
+<p>Quantitative estimation and absorbance measurement for pharmaceutical and research samples.</p>
+</div>
+</article>
 
-    <div class="ec-facility-card"><div class="ec-facility-image"><img loading="lazy" src="https://img.directindustry.com/pt/images_di/photo-g/9073-12241050.webp" alt="Laboratory pH Meter"><span class="ec-facility-tag">SAMPLE ANALYSIS</span></div><div class="ec-facility-content"><h3>pH Meter</h3><p>Accurate pH measurement for sample analysis, buffer preparation and quality control.</p></div></div>
+<article class="ec-facility-card">
+<div class="ec-facility-image">
+<img loading="lazy" src="https://img.directindustry.com/pt/images_di/photo-g/236295-19399130.jpg" alt="FTIR Spectrometer">
+<span class="ec-facility-tag">MOLECULAR ANALYSIS</span>
+</div>
+<div class="ec-facility-content">
+<h3>FTIR Spectrometer</h3>
+<p>Functional group identification and molecular characterization of chemical and material samples.</p>
+</div>
+</article>
 
-    <div class="ec-facility-card"><div class="ec-facility-image"><img loading="lazy" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Other Laboratory Instruments"><span class="ec-facility-tag">ADDITIONAL FACILITIES</span></div><div class="ec-facility-content"><h3>Other Instruments</h3><p>Additional analytical facilities including GC, Karl Fischer, dissolution, TLC and other laboratory equipment.</p></div></div>
-  </div>
+<article class="ec-facility-card">
+<div class="ec-facility-image">
+<img loading="lazy" src="https://cdn1.bigcommerce.com/server3200/v2uhijw/products/5314/images/8195/GBA-225C_1__31056.1689810169.1280.1280.jpg?c=2" alt="Analytical Balance">
+<span class="ec-facility-tag">PRECISION WEIGHING</span>
+</div>
+<div class="ec-facility-content">
+<h3>Analytical Balance</h3>
+<p>High-precision weighing for sample preparation, standard preparation and analytical procedures.</p>
+</div>
+</article>
+
+<article class="ec-facility-card">
+<div class="ec-facility-image">
+<img loading="lazy" src="https://img.directindustry.com/pt/images_di/photo-g/9073-12241050.webp" alt="Laboratory pH Meter">
+<span class="ec-facility-tag">SAMPLE ANALYSIS</span>
+</div>
+<div class="ec-facility-content">
+<h3>pH Meter</h3>
+<p>Accurate pH measurement for sample analysis, buffer preparation and quality control.</p>
+</div>
+</article>
+
+<article class="ec-facility-card">
+<div class="ec-facility-image">
+<img loading="lazy" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Other Laboratory Instruments">
+<span class="ec-facility-tag">ADDITIONAL FACILITIES</span>
+</div>
+<div class="ec-facility-content">
+<h3>Other Instruments</h3>
+<p>Additional analytical facilities including GC, Karl Fischer, dissolution, TLC and other laboratory equipment.</p>
+</div>
+</article>
+
+</div>
 </section>
 </div>
 
-<!-- RESEARCH ENROLLMENT BANNER -->
+<!-- =================================
+     RESEARCH JOURNEY BANNER
+================================= -->
+
 <section class="ec-research-banner">
-  <div class="ec-student">
-    <img src="https://drive.google.com/thumbnail?id=1vgK22ggF7if6FZVZQxT_VMJlns7ykxJg&sz=w1000" alt="Student joining EduChroma Analyticals">
-  </div>
 
-  <div class="ec-main">
-    <h2>READY TO START YOUR RESEARCH JOURNEY?</h2>
-    <p class="ec-description">Join EduChroma Analyticals and get expert support for your research, thesis, dissertation and scientific writing.</p>
-    <div class="ec-action-row">
-      <a href="https://wa.me/918141108657?text=Hello%20EduChroma%2C%20I%20want%20to%20enquire%20about%20research%20support." class="ec-enroll-btn" target="_blank" rel="noopener">ENROLL NOW <span>›</span></a>
-      <div class="ec-benefits">
-        <div class="ec-benefit"><span>♙</span><small>Expert Guidance</small></div>
-        <div class="ec-benefit"><span>♧</span><small>Personalised Support</small></div>
-        <div class="ec-benefit"><span>◷</span><small>Timely Delivery</small></div>
-        <div class="ec-benefit"><span>♧</span><small>Quality Assurance</small></div>
-      </div>
-    </div>
-  </div>
+<div class="ec-student">
+<img src="https://drive.google.com/thumbnail?id=1vgK22ggF7if6FZVZQxT_VMJlns7ykxJg&sz=w1000" alt="Student joining EduChroma Analyticals">
+</div>
 
-  <div class="ec-process">
-    <h3>ENROLLMENT PROCESS</h3>
-    <div class="ec-step"><span>✓</span><p>Enquire Now</p></div>
-    <div class="ec-step"><span>✓</span><p>Discuss Your Topic</p></div>
-    <div class="ec-step"><span>✓</span><p>Get Plan &amp; Proposal</p></div>
-    <div class="ec-step"><span>✓</span><p>Start Your Research</p></div>
-    <div class="ec-step"><span>✓</span><p>Successful Completion</p></div>
-  </div>
+<div class="ec-main">
+<h2>READY TO START YOUR RESEARCH JOURNEY?</h2>
+<p class="ec-description">
+Join EduChroma Analyticals and get expert support for your research, thesis, dissertation and scientific writing.
+</p>
+
+<div class="ec-action-row">
+
+<a href="https://wa.me/918141108657?text=Hello%20EduChroma%2C%20I%20want%20to%20enquire%20about%20research%20support."
+class="ec-enroll-btn" target="_blank" rel="noopener">
+ENROLL NOW <span>›</span>
+</a>
+
+<div class="ec-benefits">
+<div class="ec-benefit"><span>♙</span><small>Expert Guidance</small></div>
+<div class="ec-benefit"><span>♧</span><small>Personalised Support</small></div>
+<div class="ec-benefit"><span>◷</span><small>Timely Delivery</small></div>
+<div class="ec-benefit"><span>♧</span><small>Quality Assurance</small></div>
+</div>
+
+</div>
+</div>
+
+<div class="ec-process">
+<h3>ENROLLMENT PROCESS</h3>
+<div class="ec-step"><span>✓</span><p>Enquire Now</p></div>
+<div class="ec-step"><span>✓</span><p>Discuss Your Topic</p></div>
+<div class="ec-step"><span>✓</span><p>Get Plan &amp; Proposal</p></div>
+<div class="ec-step"><span>✓</span><p>Start Your Research</p></div>
+<div class="ec-step"><span>✓</span><p>Successful Completion</p></div>
+</div>
+
 </section>
 
-<!-- PREMIUM FOOTER -->
+<!-- =================================
+     PREMIUM FOOTER 3.0
+================================= -->
+
 <footer class="ec-footer" id="contact">
+
 <div class="ec-footer-container">
-  <div class="ec-footer-grid">
 
-    <div class="ec-footer-brand">
-      <a href="index.html"><img src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals Logo"></a>
-      <p class="ec-footer-tagline">Unlock Skills, Analyse Success.</p>
-      <p class="ec-footer-description">EduChroma Analyticals is dedicated to analytical training, laboratory services, research support and industry-oriented skill development for science and life science students.</p>
-      <div class="ec-footer-socials">
-        <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52C22 2.68 21.31 2 20.45 2ZM8 18H5V9h3v9ZM6.5 7.73a1.73 1.73 0 1 1 0-3.46 1.73 1.73 0 0 1 0 3.46ZM19 18h-3v-4.37c0-1.04-.02-2.38-1.45-2.38-1.45 0-1.67 1.13-1.67 2.3V18h-3V9h2.88v1.23h.04c.4-.7 1.38-1.45 2.84-1.45 3.03 0 3.36 1.99 3.36 4.58V18Z"/></svg></a>
-        <a href="https://www.instagram.com/educhroma_analyticals/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3Zm11 1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg></a>
-        <a href="https://www.youtube.com/@educhroma_analyticals" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
-        <a href="https://www.facebook.com/share/1EArM2Vrqc/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.45-3.5H13.5V7.27c0-1.01.28-1.7 1.73-1.7H17V2.44C16.69 2.4 15.63 2.3 14.4 2.3c-2.58 0-4.35 1.58-4.35 4.48V9.5H7V13h3.05v9h3.45Z"/></svg></a>
-        <a href="https://wa.me/918141108657" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.5ZM12 21.9c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 1 1 8.4 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.2 3.2c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"/></svg></a>
-      </div>
-    </div>
+<div class="ec-footer-grid">
 
-    <div>
-      <h3 class="ec-footer-heading">Quick Links</h3>
-      <ul class="ec-footer-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="training.html">Training Programmes</a></li>
-        <li><a href="testing.html">Testing Services</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="index.html#gallery">Gallery</a></li>
-        <li><a href="index.html#contact">Contact Us</a></li>
-      </ul>
-    </div>
+<!-- BRAND -->
+<div class="ec-footer-brand">
 
-    <div>
-      <h3 class="ec-footer-heading">Our Services</h3>
-      <ul class="ec-footer-links">
-        <li><a href="training.html">HPLC Training</a></li>
-        <li><a href="training.html">Industrial Training</a></li>
-        <li><a href="testing.html">HPLC Sample Testing</a></li>
-        <li><a href="testing.html">Analytical Services</a></li>
-        <li><a href="research.html">Method Development</a></li>
-        <li><a href="research.html">Method Validation</a></li>
-      </ul>
-    </div>
+<a href="index.html#home">
+<img src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals Logo">
+</a>
 
-    <div>
-      <h3 class="ec-footer-heading">Research Support</h3>
-      <ul class="ec-footer-links">
-        <li><a href="research.html">Project Guidance</a></li>
-        <li><a href="research.html">Thesis Support</a></li>
-        <li><a href="research.html">HPLC Analysis</a></li>
-        <li><a href="research.html">Research Training</a></li>
-        <li><a href="research.html">Analytical Consultation</a></li>
-      </ul>
-    </div>
+<p class="ec-footer-tagline">Unlock Skills, Analyse Success.</p>
 
-    <div class="ec-footer-contact">
-      <h3 class="ec-footer-heading">Contact Us</h3>
-      <div class="ec-footer-contact-item"><span class="ec-contact-icon">📍</span><span>TF-12,13, Sun Meelan,<br>Behind Waghodia Check Post,<br>NH-48, Waghodia Road,<br>Vadodara, Gujarat - 390019</span></div>
-      <div class="ec-footer-contact-item"><span class="ec-contact-icon">☎</span><a href="tel:+918141108657">+91 81411 08657</a></div>
-      <div class="ec-footer-contact-item"><span class="ec-contact-icon">✉</span><a href="mailto:educhroma01@gmail.com">educhroma01@gmail.com</a></div>
-      <div class="ec-footer-contact-item"><span class="ec-contact-icon">🌐</span><a href="https://www.educhroma.com" target="_blank" rel="noopener">www.educhroma.com</a></div>
-      <div class="ec-footer-contact-item"><span class="ec-contact-icon">◷</span><span>Monday – Saturday<br>9:30 AM – 6:30 PM<br>Sunday: Closed</span></div>
-    </div>
-  </div>
+<p class="ec-footer-description">
+EduChroma Analyticals is dedicated to analytical training,
+laboratory services, research support and industry-oriented
+skill development for science and life science students.
+</p>
 
-  <div class="ec-footer-cta">
-    <div><h3>Let's Build Your Analytical Skills!</h3><p>Connect with EduChroma Analyticals for training, testing services and research support.</p></div>
-    <a href="https://wa.me/918141108657" target="_blank" rel="noopener">CONNECT ON WHATSAPP →</a>
-  </div>
+<div class="ec-footer-socials">
 
-  <div class="ec-footer-bottom">
-    <p>© 2026 EduChroma Analyticals. All Rights Reserved.</p>
-    <div class="ec-footer-bottom-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-  </div>
+<a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/"
+target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24">
+<path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52C22 2.68 21.31 2 20.45 2ZM8 18H5V9h3v9ZM6.5 7.73a1.73 1.73 0 1 1 0-3.46 1.73 1.73 0 0 1 0 3.46ZM19 18h-3v-4.37c0-1.04-.02-2.38-1.45-2.38-1.45 0-1.67 1.13-1.67 2.3V18h-3V9h2.88v1.23h.04c.4-.7 1.38-1.45 2.84-1.45 3.03 0 3.36 1.99 3.36 4.58V18Z"/>
+</svg>
+</a>
+
+<a href="https://www.instagram.com/educhroma_analyticals/"
+target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+<svg viewBox="0 0 24 24">
+<path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3Zm11 1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
+</svg>
+</a>
+
+<a href="https://www.youtube.com/@educhroma_analyticals"
+target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+<svg viewBox="0 0 24 24">
+<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+</svg>
+</a>
+
+<a href="https://www.facebook.com/share/1EArM2Vrqc/"
+target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+<svg viewBox="0 0 24 24">
+<path d="M13.5 22v-9h3l.45-3.5H13.5V7.27c0-1.01.28-1.7 1.73-1.7H17V2.44C16.69 2.4 15.63 2.3 14.4 2.3c-2.58 0-4.35 1.58-4.35 4.48V9.5H7V13h3.05v9h3.45Z"/>
+</svg>
+</a>
+
+<a href="https://wa.me/918141108657"
+target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24">
+<path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.5ZM12 21.9c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 1 1 8.4 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.2 3.2c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"/>
+</svg>
+</a>
+
+</div>
+</div>
+
+<!-- QUICK LINKS -->
+<div>
+<h3 class="ec-footer-heading">Quick Links</h3>
+<ul class="ec-footer-links">
+<li><a href="index.html#home">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="training.html">Training Programmes</a></li>
+<li><a href="testing.html">Testing Services</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li><a href="index.html#contact">Contact Us</a></li>
+</ul>
+</div>
+
+<!-- SERVICES -->
+<div>
+<h3 class="ec-footer-heading">Our Services</h3>
+<ul class="ec-footer-links">
+<li><a href="training.html">HPLC Training</a></li>
+<li><a href="training.html">Industrial Training</a></li>
+<li><a href="testing.html">HPLC Sample Testing</a></li>
+<li><a href="testing.html">Analytical Services</a></li>
+<li><a href="research.html">Method Development</a></li>
+<li><a href="research.html">Method Validation</a></li>
+</ul>
+</div>
+
+<!-- RESEARCH SUPPORT -->
+<div>
+<h3 class="ec-footer-heading">Research Support</h3>
+<ul class="ec-footer-links">
+<li><a href="research.html">Project Guidance</a></li>
+<li><a href="research.html">Thesis Support</a></li>
+<li><a href="research.html">HPLC Analysis</a></li>
+<li><a href="research.html">Research Training</a></li>
+<li><a href="research.html">Analytical Consultation</a></li>
+</ul>
+</div>
+
+<!-- CONTACT -->
+<div class="ec-footer-contact">
+<h3 class="ec-footer-heading">Contact Us</h3>
+
+<div class="ec-footer-contact-item">
+<span class="ec-contact-icon">📍</span>
+<span>
+TF-12,13, Sun Meelan,<br>
+Behind Waghodia Check Post,<br>
+NH-48, Waghodia Road,<br>
+Vadodara, Gujarat - 390019
+</span>
+</div>
+
+<div class="ec-footer-contact-item">
+<span class="ec-contact-icon">☎</span>
+<a href="tel:+918141108657">+91 81411 08657</a>
+</div>
+
+<div class="ec-footer-contact-item">
+<span class="ec-contact-icon">✉</span>
+<a href="mailto:educhroma01@gmail.com">educhroma01@gmail.com</a>
+</div>
+
+<div class="ec-footer-contact-item">
+<span class="ec-contact-icon">🌐</span>
+<a href="https://www.educhroma.com" target="_blank" rel="noopener noreferrer">www.educhroma.com</a>
+</div>
+
+<div class="ec-footer-contact-item">
+<span class="ec-contact-icon">◷</span>
+<span>
+Monday – Saturday<br>
+9:30 AM – 6:30 PM<br>
+Sunday: Closed
+</span>
+</div>
+
+</div>
+</div>
+
+<!-- CONTACT CTA -->
+<div class="ec-footer-cta">
+<div>
+<h3>Let's Build Your Analytical Skills!</h3>
+<p>
+Connect with EduChroma Analyticals for training,
+testing services and research support.
+</p>
+</div>
+
+<a href="https://wa.me/918141108657"
+target="_blank" rel="noopener noreferrer">
+CONNECT ON WHATSAPP →
+</a>
+</div>
+
+<!-- COPYRIGHT -->
+<div class="ec-footer-bottom">
+<p>© 2026 EduChroma Analyticals. All Rights Reserved.</p>
+
+<div class="ec-footer-bottom-links">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</div>
+
 </div>
 </footer>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+function toggleEcMenu(){
+  const menu = document.getElementById("ecNavLinks");
+  const button = document.getElementById("ecMenuButton");
+
+  menu.classList.toggle("show");
+
+  const isOpen = menu.classList.contains("show");
+  button.setAttribute("aria-expanded", isOpen);
+  button.innerHTML = isOpen ? "✕" : "☰";
+}
+</script>
 
 </body>
 </html>
