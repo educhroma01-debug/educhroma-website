@@ -19,6 +19,178 @@
             width: 100%;
         }
 
+        /* NAVIGATION HEADER */
+        .ec-navbar {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e8eef4;
+            box-shadow: 0 4px 15px rgba(11,37,69,.06);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .ec-nav-container {
+            width: 100%;
+            max-width: 1320px;
+            min-height: 86px;
+            margin: 0 auto;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            position: relative;
+        }
+
+        .ec-nav-logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .ec-nav-logo img {
+            display: block;
+            width: auto;
+            max-width: 205px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .ec-nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 25px;
+        }
+
+        .ec-nav-links a {
+            position: relative;
+            text-decoration: none;
+            color: #263b55;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: color .25s ease;
+        }
+
+        .ec-nav-links a:not(.ec-nav-contact)::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: #079f98;
+            border-radius: 5px;
+            transition: width .25s ease;
+        }
+
+        .ec-nav-links a:hover {
+            color: #079f98;
+        }
+
+        .ec-nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .ec-nav-links .ec-nav-contact {
+            padding: 12px 18px;
+            color: #fff;
+            background: linear-gradient(135deg,#0b2545,#079f98);
+            border-radius: 8px;
+            box-shadow: 0 5px 13px rgba(7,159,152,.18);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .ec-nav-links .ec-nav-contact:hover {
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(7,159,152,.25);
+        }
+
+        .ec-nav-toggle {
+            display: none;
+            width: 43px;
+            height: 43px;
+            border: 1px solid #e2eaf0;
+            border-radius: 9px;
+            background: #f5f9fb;
+            color: #0b2545;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ec-nav-toggle svg {
+            width: 23px;
+            height: 23px;
+        }
+
+        @media(max-width:1050px) {
+            .ec-nav-container {
+                min-height: 74px;
+                padding: 9px 20px;
+            }
+
+            .ec-nav-logo img {
+                max-width: 175px;
+                height: 52px;
+            }
+
+            .ec-nav-toggle {
+                display: flex;
+                flex-shrink: 0;
+            }
+
+            .ec-nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 15px 22px 22px;
+                background: #fff;
+                border-top: 1px solid #edf2f7;
+                box-shadow: 0 14px 22px rgba(11,37,69,.09);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .ec-nav-links.ec-nav-open {
+                display: flex;
+            }
+
+            .ec-nav-links a {
+                padding: 14px 8px;
+                border-bottom: 1px solid #edf2f7;
+                font-size: 13px;
+            }
+
+            .ec-nav-links a:not(.ec-nav-contact)::after {
+                display: none;
+            }
+
+            .ec-nav-links .ec-nav-contact {
+                margin-top: 13px;
+                text-align: center;
+                border-bottom: none;
+            }
+        }
+
+        @media(max-width:480px) {
+            .ec-nav-container {
+                padding: 8px 15px;
+                min-height: 68px;
+            }
+
+            .ec-nav-logo img {
+                max-width: 155px;
+                height: 46px;
+            }
+        }
+
         .curved-lab-frame {
             border-top-left-radius: 140px;
         }
@@ -32,6 +204,43 @@
 </head>
 
 <body class="bg-gradient-to-br from-blue-50 to-white font-sans antialiased min-h-screen">
+
+    <!-- EDUCHROMA HEADER & NAVIGATION -->
+    <header class="ec-navbar">
+        <div class="ec-nav-container">
+
+            <a href="index.html#home" class="ec-nav-logo">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-"
+                    alt="EduChroma Analyticals">
+            </a>
+
+            <button class="ec-nav-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+
+            </button>
+
+            <nav class="ec-nav-links">
+                <a href="index.html#home">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="index.html#training">TRAINING</a>
+                <a href="index.html#testing">TESTING SERVICES</a>
+                <a href="index.html#research">RESEARCH</a>
+                <a href="index.html#gallery">GALLERY</a>
+                <a href="index.html#contact" class="ec-nav-contact">CONTACT US</a>
+            </nav>
+
+        </div>
+    </header>
+
 
     <!-- MAIN ABOUT PAGE CONTAINER -->
     <main class="w-full max-w-[1320px] mx-auto px-3 sm:px-5 lg:px-6 py-5 sm:py-8">
@@ -516,6 +725,34 @@
 
             }
         }
+    </script>
+
+
+    <!-- MOBILE NAVIGATION SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const toggle = document.querySelector('.ec-nav-toggle');
+            const nav = document.querySelector('.ec-nav-links');
+
+            if (toggle && nav) {
+
+                toggle.addEventListener('click', function () {
+
+                    const isOpen = nav.classList.toggle('ec-nav-open');
+
+                    toggle.setAttribute('aria-expanded', isOpen);
+
+                    toggle.setAttribute(
+                        'aria-label',
+                        isOpen ? 'Close navigation menu' : 'Open navigation menu'
+                    );
+
+                });
+
+            }
+
+        });
     </script>
 
 </body>
