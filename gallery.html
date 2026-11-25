@@ -1,353 +1,1264 @@
 
-<!-- =========================================
-     EDUCHROMA GALLERY - PART 1
-     HERO + FILTERS + PHOTO GRID + LIGHTBOX
-========================================= -->
-
-<section class="ec-gallery-hero">
-  <div class="ec-hero-content">
-    <h1>Our Gallery</h1>
-    <h3 class="ec-subtitle">Moments of Learning, Innovation & Excellence</h3>
-    <p>Explore glimpses of our laboratory, training programs, events, workshops, and student achievements.</p>
-  </div>
-
-  <div class="ec-hero-stats">
-    <div class="ec-stat-card"><span>🖼️</span><h2>50+</h2><p>Events & Workshops</p></div>
-    <div class="ec-stat-card"><span>👥</span><h2>500+</h2><p>Students Trained</p></div>
-    <div class="ec-stat-card"><span>🧪</span><h2>20+</h2><p>Collaborations</p></div>
-    <div class="ec-stat-card"><span>🏆</span><h2>100+</h2><p>Achievements</p></div>
-  </div>
-</section>
-
-<div class="edu-gallery-wrapper">
-  <section class="gallery-hero">
-    <div class="hero-topline">
-      <span>EDUCHROMA ANALYTICALS</span>
-      <span>GALLERY</span>
-    </div>
-    <h2>Our <span>Gallery</span></h2>
-  </section>
-
-  <div class="gallery-filters">
-    <button class="filter-btn active" data-filter="lab">Laboratory</button>
-    <button class="filter-btn" data-filter="training">Training</button>
-    <button class="filter-btn" data-filter="workshop">Workshops</button>
-    <button class="filter-btn" data-filter="student">Students</button>
-  </div>
-
-  <div class="gallery-grid" id="eduGalleryGrid">
-    <p class="gallery-loading">Loading EduChroma Gallery...</p>
-  </div>
-</div>
-
-<div class="gallery-scroll-progress">
-  <div class="progress-track">
-    <div class="progress-fill" id="galleryProgressFill"></div>
-  </div>
-</div>
-
-<div class="edu-lightbox" id="eduLightbox">
-  <button class="lightbox-close" id="lightboxClose">&times;</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
-  <img id="lightboxImage" src="" alt="EduChroma Gallery Photo">
-  <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | EduChroma Analyticals</title>
+<meta name="description" content="Explore EduChroma Analyticals laboratory, HPLC training, workshops and student activities.">
 
 <style>
-.ec-gallery-hero,
-.ec-gallery-hero * {
-  box-sizing:border-box;
+/* =====================================
+   EDUCHROMA GALLERY - ISOLATED CSS
+===================================== */
+
+.g-page,
+.g-page * {
+  box-sizing: border-box;
 }
 
-.ec-gallery-hero {
-  width:100%;
-  min-height:240px;
-  padding:30px 4%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
+.g-page {
+  width: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #17364c;
+  overflow: hidden;
+}
+
+.g-page a {
+  text-decoration: none;
+}
+
+/* HEADER */
+
+.g-nav {
+  width: 100%;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(9,43,80,.09);
+}
+
+.g-nav-inner {
+  max-width: 1320px;
+  margin: auto;
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.g-logo {
+  width: 190px;
+  max-height: 65px;
+  object-fit: contain;
+}
+
+.g-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.g-nav-links a {
+  font-size: 12px;
+  font-weight: 800;
+  color: #173957;
+  white-space: nowrap;
+}
+
+.g-nav-links a:hover,
+.g-nav-links a.g-active {
+  color: #0784d5;
+}
+
+.g-menu-btn {
+  display: none;
+  border: 0;
+  background: #eaf5ff;
+  color: #092b50;
+  font-size: 25px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* GALLERY HERO */
+
+.g-hero {
+  width: 100%;
+  min-height: 260px;
+  padding: 35px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
   background:
-    linear-gradient(90deg,rgba(6,26,56,.93),rgba(6,26,56,.75)),
-    url('https://drive.google.com/thumbnail?id=1Ff0lI3Q3ZyUQFJ3YN10MS4tWJw57VQ2R&sz=w1600') center/cover no-repeat;
-  border-top:5px solid #16c4b5;
-  border-bottom:5px solid #16c4b5;
-  font-family:Arial,sans-serif;
-  color:white;
+    linear-gradient(90deg,rgba(6,26,56,.94),rgba(6,26,56,.72)),
+    url('https://drive.google.com/thumbnail?id=1Ff0lI3Q3ZyUQFJ3YN10MS4tWJw57VQ2R&sz=w1600')
+    center/cover no-repeat;
+  border-top: 5px solid #16c4b5;
+  border-bottom: 5px solid #16c4b5;
+  color: #fff;
 }
 
-.ec-hero-content {
-  max-width:550px;
-  animation:ecSlideIn .8s ease;
+.g-hero-content {
+  max-width: 550px;
 }
 
-.ec-hero-content h1 {
-  font-size:clamp(32px,4vw,48px);
-  font-weight:800;
-  margin:0 0 8px;
+.g-hero-content h1 {
+  font-size: clamp(34px,4vw,50px);
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #fff;
 }
 
-.ec-subtitle {
-  font-size:clamp(15px,1.8vw,20px);
-  color:#16c4b5;
-  margin:0 0 12px;
+.g-hero-content h3 {
+  font-size: clamp(15px,1.8vw,21px);
+  color: #16c4b5;
+  margin: 0 0 13px;
 }
 
-.ec-hero-content p {
-  font-size:13.5px;
-  line-height:1.6;
-  color:#dce8f4;
-  margin:0;
+.g-hero-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #dce8f4;
+  margin: 0;
 }
 
-.ec-hero-stats {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
+.g-stats {
+  display: grid;
+  grid-template-columns: repeat(4,110px);
+  gap: 12px;
 }
 
-.ec-stat-card {
-  background:white;
-  color:#061a38;
-  width:110px;
-  height:130px;
-  border-radius:10px;
-  padding:12px 8px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  box-shadow:0 6px 20px #0004;
-  animation:ecPopUp .6s ease both;
+.g-stat {
+  min-height: 125px;
+  background: #fff;
+  color: #061a38;
+  border-radius: 11px;
+  padding: 13px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
 }
 
-.ec-stat-card span {font-size:22px}
-.ec-stat-card h2 {font-size:18px;margin:5px 0 2px}
-.ec-stat-card p {font-size:10px;margin:0;color:#4a5568}
-
-.edu-gallery-wrapper {
-  max-width:1450px;
-  margin:auto;
-  padding:12px 25px 55px;
-  font-family:Arial,sans-serif;
-  color:#17364c;
+.g-stat-icon {
+  font-size: 23px;
+  margin-bottom: 5px;
 }
 
-.gallery-hero {
-  padding:18px 15px 12px;
-  text-align:center;
+.g-stat h2 {
+  font-size: 20px;
+  margin: 0 0 5px;
+  color: #061a38;
 }
 
-.hero-topline {
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding-bottom:12px;
-  border-bottom:1px solid #e5ecef;
-  color:#078b91;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2px;
+.g-stat p {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  color: #4a5568;
 }
 
-.hero-topline span:last-child {color:#9aa9b3}
+/* GALLERY MAIN */
 
-.gallery-hero h2 {
-  font-size:clamp(42px,6vw,68px);
-  line-height:1;
-  letter-spacing:-3px;
-  margin:22px 0 15px;
-  font-weight:900;
-  color:#142f46;
+.g-gallery-section {
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+  padding: 45px 25px 65px;
 }
 
-.gallery-hero h2 span {color:#078b91}
-
-.gallery-filters {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:20px 0 28px;
+.g-heading {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.filter-btn {
-  border:1px solid #e0e8ed;
-  background:white;
-  color:#28475d;
-  padding:11px 21px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.3s;
+.g-topline {
+  color: #078b91;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-  background:#087f8c;
-  border-color:#087f8c;
-  color:white;
-  transform:translateY(-2px);
-  box-shadow:0 7px 18px #087f8c33;
+.g-heading h2 {
+  font-size: clamp(38px,5vw,58px);
+  line-height: 1.1;
+  margin: 14px 0;
+  color: #142f46;
+  font-weight: 900;
 }
 
-.gallery-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
+.g-heading h2 span {
+  color: #078b91;
 }
 
-.gallery-item {
-  height:340px;
-  overflow:hidden;
-  border-radius:15px;
-  background:#eaf0f4;
-  cursor:pointer;
-  box-shadow:0 7px 22px #142d4117;
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity .5s,transform .5s;
+.g-heading p {
+  color: #718096;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.gallery-item.visible {
-  opacity:1;
-  transform:translateY(0);
+/* FILTER BUTTONS */
+
+.g-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 32px;
 }
 
-.gallery-item img {
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  transition:transform .6s;
+.g-filter-btn {
+  border: 1px solid #e0e8ed;
+  background: #fff;
+  color: #28475d;
+  padding: 11px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s;
 }
 
-.gallery-item:hover img {transform:scale(1.06)}
-
-.gallery-loading {
-  grid-column:1/-1;
-  text-align:center;
-  padding:35px;
-  color:#087f8c;
+.g-filter-btn:hover,
+.g-filter-btn.g-selected {
+  background: #087f8c;
+  border-color: #087f8c;
+  color: #fff;
+  box-shadow: 0 7px 18px rgba(8,127,140,.2);
 }
 
-.gallery-error {
-  grid-column:1/-1;
-  text-align:center;
-  padding:35px;
-  color:#b42318;
+/* PHOTO GRID */
+
+.g-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 22px;
 }
 
-.gallery-scroll-progress {
-  position:fixed;
-  right:16px;
-  top:40%;
-  z-index:1000;
-  pointer-events:none;
+.g-card {
+  height: 330px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #eaf0f4;
+  cursor: pointer;
+  box-shadow: 0 7px 22px rgba(20,45,65,.09);
 }
 
-.progress-track {
-  width:3px;
-  height:100px;
-  background:#dce6e9;
-  border-radius:5px;
-  overflow:hidden;
+.g-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .5s ease;
 }
 
-.progress-fill {
-  width:100%;
-  height:0;
-  background:#078b91;
+.g-card:hover img {
+  transform: scale(1.06);
 }
 
-.edu-lightbox {
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:999999;
-  background:rgba(3,12,22,.97);
-  align-items:center;
-  justify-content:center;
-  padding:55px 65px;
+.g-card-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 25px 15px 13px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(transparent,rgba(0,0,0,.65));
 }
 
-.edu-lightbox.open {display:flex}
-
-.edu-lightbox img {
-  max-width:100%;
-  max-height:85vh;
-  object-fit:contain;
-  border-radius:8px;
+.g-empty {
+  grid-column: 1/-1;
+  padding: 35px;
+  text-align: center;
+  color: #687b8a;
 }
 
-.lightbox-close,
-.lightbox-nav {
-  position:absolute;
-  border:0;
-  color:white;
-  background:#ffffff26;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* LIGHTBOX */
+
+.g-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(3,12,22,.96);
+  align-items: center;
+  justify-content: center;
+  padding: 55px 65px;
 }
 
-.lightbox-close {
-  top:18px;
-  right:25px;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  font-size:32px;
+.g-lightbox.g-open {
+  display: flex;
 }
 
-.lightbox-nav {
-  top:50%;
-  transform:translateY(-50%);
-  width:48px;
-  height:58px;
-  border-radius:8px;
-  font-size:25px;
+.g-lightbox img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
-.lightbox-prev {left:15px}
-.lightbox-next {right:15px}
-
-@keyframes ecSlideIn {
-  from {opacity:0;transform:translateX(-35px)}
-  to {opacity:1;transform:translateX(0)}
+.g-lb-button {
+  position: absolute;
+  border: 0;
+  color: #fff;
+  background: rgba(255,255,255,.16);
+  cursor: pointer;
+  border-radius: 8px;
 }
 
-@keyframes ecPopUp {
-  from {opacity:0;transform:translateY(20px)}
-  to {opacity:1;transform:translateY(0)}
+.g-lb-close {
+  top: 18px;
+  right: 25px;
+  width: 44px;
+  height: 44px;
+  font-size: 30px;
+  border-radius: 50%;
 }
 
-@media(max-width:1000px) {
-  .ec-gallery-hero {
-    flex-direction:column;
-    text-align:center;
+.g-lb-prev,
+.g-lb-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 58px;
+  font-size: 25px;
+}
+
+.g-lb-prev { left: 15px; }
+.g-lb-next { right: 15px; }
+
+/* SOCIAL MEDIA */
+
+.g-social {
+  width: 100%;
+  padding: 65px 7%;
+  display: grid;
+  grid-template-columns: 1fr .85fr;
+  gap: 50px;
+  align-items: center;
+  background: #f7f9fc;
+}
+
+.g-social-info {
+  max-width: 560px;
+}
+
+.g-small-heading {
+  color: #087e9c;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.g-social-info h2 {
+  font-size: clamp(30px,4vw,45px);
+  line-height: 1.15;
+  margin: 15px 0;
+  color: #17253b;
+}
+
+.g-social-description {
+  color: #657287;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.g-social-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  margin: 13px 0;
+  border: 1px solid #e5eaf0;
+  border-radius: 13px;
+  color: #17253b;
+  background: #fff;
+  transition: .25s;
+}
+
+.g-social-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #17253b12;
+}
+
+.g-social-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  font-weight: bold;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.g-insta { background: linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7); }
+.g-linkedin { background: #0a66c2; }
+.g-youtube { background: #e62117; }
+
+.g-social-label strong,
+.g-social-label small {
+  display: block;
+}
+
+.g-social-label strong {
+  font-size: 15px;
+}
+
+.g-social-label small {
+  margin-top: 4px;
+  color: #7b8797;
+  font-size: 12px;
+}
+
+.g-social-arrow {
+  margin-left: auto;
+  font-size: 20px;
+}
+
+/* SOCIAL PHONE MOCKUP */
+
+.g-phone-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.g-phone {
+  width: 275px;
+  height: 510px;
+  padding: 10px;
+  border: 7px solid #17202d;
+  border-radius: 36px;
+  background: #111b28;
+  box-shadow: 0 25px 55px #14253a30;
+  overflow: hidden;
+}
+
+.g-phone-screen {
+  height: 100%;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+.g-phone-slide {
+  position: absolute;
+  inset: 0;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  animation: gPhoneShow 12s infinite;
+}
+
+.g-phone-slide:nth-child(1) {
+  background: linear-gradient(145deg,#101a31,#087e9c);
+  animation-delay: 0s;
+}
+
+.g-phone-slide:nth-child(2) {
+  background: linear-gradient(145deg,#123b65,#0a66c2);
+  animation-delay: 4s;
+}
+
+.g-phone-slide:nth-child(3) {
+  background: linear-gradient(145deg,#681c24,#e62117);
+  animation-delay: 8s;
+}
+
+.g-phone-slide strong {
+  font-size: 25px;
+  margin: 15px 0;
+}
+
+.g-phone-slide p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.g-phone-circle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #fff;
+  color: #087e9c;
+  display: grid;
+  place-items: center;
+  font-size: 29px;
+  font-weight: 900;
+}
+
+.g-phone-slide a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 22px;
+  background: #fff;
+  color: #12324b;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+@keyframes gPhoneShow {
+  0%,28% { opacity: 1; }
+  33%,100% { opacity: 0; }
+}
+
+.g-phone-caption {
+  margin-top: 17px;
+  color: #64758b;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* CAREER BANNER */
+
+.g-career {
+  width: 100%;
+  padding: 60px 5%;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(120deg,#102b43,#087e9c);
+  color: #fff;
+}
+
+.g-career-image {
+  width: 100%;
+  background: #fff;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px #001c2b50;
+}
+
+.g-career-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.g-career-content {
+  max-width: 650px;
+}
+
+.g-career-tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: #9de8ed;
+}
+
+.g-career-content h2 {
+  font-size: clamp(32px,4vw,48px);
+  line-height: 1.2;
+  margin: 15px 0 20px;
+  color: #fff;
+}
+
+.g-career-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #e1edf2;
+  margin-bottom: 25px;
+}
+
+.g-career-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.g-career-btn {
+  display: inline-block;
+  padding: 14px 19px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.g-career-btn:hover {
+  transform: translateY(-3px);
+}
+
+.g-whatsapp { background: #25d366; color: #073c20; }
+.g-contact { background: #fff; color: #12324b; }
+.g-brochure { background: #f3b94c; color: #17253b; }
+
+/* FOOTER */
+
+.g-footer {
+  width: 100%;
+  background: #081d32;
+  color: #dce7f0;
+  padding: 48px 6% 20px;
+}
+
+.g-footer-inner {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+}
+
+.g-footer h3 {
+  color: #fff;
+  font-size: 17px;
+  margin: 0 0 18px;
+}
+
+.g-footer p {
+  color: #b8c8d8;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 8px 0;
+}
+
+.g-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.g-footer-links a {
+  color: #b8c8d8;
+  font-size: 13px;
+}
+
+.g-footer-links a:hover {
+  color: #16c4b5;
+}
+
+.g-footer-bottom {
+  max-width: 1300px;
+  margin: 30px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid #294258;
+  text-align: center;
+  color: #a9bac9;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1050px) {
+  .g-nav-links { gap: 13px; }
+  .g-nav-links a { font-size: 10px; }
+  .g-stats { grid-template-columns: repeat(2,110px); }
+  .g-hero { flex-wrap: wrap; }
+}
+
+@media(max-width:800px) {
+  .g-menu-btn { display: block; }
+
+  .g-nav-inner { flex-wrap: wrap; }
+
+  .g-nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 10px 0;
   }
-  .gallery-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+
+  .g-nav-links.g-show { display: flex; }
+
+  .g-nav-links a {
+    width: 100%;
+    padding: 13px 8px;
+    border-top: 1px solid #edf2f7;
+    font-size: 12px;
+  }
+
+  .g-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 18px;
+  }
+
+  .g-hero-content { max-width: 100%; }
+
+  .g-stats {
+    grid-template-columns: repeat(4,minmax(65px,110px));
+    justify-content: center;
+    width: 100%;
+  }
+
+  .g-stat { min-height: 110px; }
+
+  .g-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+
+  .g-social {
+    grid-template-columns: 1fr;
+    padding: 45px 22px;
+    gap: 35px;
+  }
+
+  .g-social-info { max-width: 100%; }
+
+  .g-career {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .g-footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
-@media(max-width:650px) {
-  .edu-gallery-wrapper {padding:10px 12px 40px}
-  .gallery-grid {grid-template-columns:1fr;gap:16px}
-  .gallery-item {height:285px}
-  .gallery-scroll-progress {display:none}
-  .edu-lightbox {padding:55px 12px}
-  .lightbox-nav {width:38px;height:45px}
-  .lightbox-prev {left:5px}
-  .lightbox-next {right:5px}
-  .ec-stat-card {width:95px;height:115px}
+@media(max-width:560px) {
+  .g-logo { width: 155px; }
+
+  .g-stats {
+    grid-template-columns: repeat(2,minmax(100px,125px));
+  }
+
+  .g-gallery-section { padding: 30px 13px 45px; }
+
+  .g-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .g-card { height: 285px; }
+
+  .g-filter-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .g-lightbox { padding: 55px 12px; }
+
+  .g-lightbox img { max-height: 75vh; }
+
+  .g-lb-prev { left: 4px; }
+  .g-lb-next { right: 4px; }
+
+  .g-career-buttons { flex-direction: column; }
+
+  .g-career-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .g-footer-inner { grid-template-columns: 1fr; gap: 25px; }
 }
 
-@keyframes ecPopUp {
-  from {opacity:0;transform:translateY(20px)}
-  to {opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce) {
+  .g-phone-slide { animation: none; }
+  .g-phone-slide:first-child { opacity: 1; }
 }
 </style>
+</head>
+
+<body style="margin:0;">
+
+<div class="g-page">
+
+<!-- HEADER -->
+<header class="g-nav">
+  <div class="g-nav-inner">
+
+    <a href="index.html#home">
+      <img class="g-logo"
+        src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-"
+        alt="EduChroma Analyticals">
+    </a>
+
+    <button class="g-menu-btn" onclick="gToggleMenu()" aria-label="Toggle navigation">☰</button>
+
+    <nav class="g-nav-links" id="gNavLinks">
+      <a href="index.html#home">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="training.html">TRAINING</a>
+      <a href="testing.html">TESTING SERVICES</a>
+      <a href="research.html">RESEARCH</a>
+      <a class="g-active" href="gallery.html">GALLERY</a>
+      <a href="index.html#contact">CONTACT US</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="g-hero">
+
+  <div class="g-hero-content">
+    <h1>Our Gallery</h1>
+    <h3>Moments of Learning, Innovation & Excellence</h3>
+    <p>
+      Explore glimpses of our laboratory, training programs,
+      events, workshops, and student achievements.
+    </p>
+  </div>
+
+  <div class="g-stats">
+    <div class="g-stat">
+      <div class="g-stat-icon">🖼️</div>
+      <h2>50+</h2>
+      <p>Events & Workshops</p>
+    </div>
+
+    <div class="g-stat">
+      <div class="g-stat-icon">👥</div>
+      <h2>500+</h2>
+      <p>Students Trained</p>
+    </div>
+
+    <div class="g-stat">
+      <div class="g-stat-icon">🧪</div>
+      <h2>20+</h2>
+      <p>Collaborations</p>
+    </div>
+
+    <div class="g-stat">
+      <div class="g-stat-icon">🏆</div>
+      <h2>100+</h2>
+      <p>Achievements</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="g-gallery-section">
+
+  <div class="g-heading">
+    <div class="g-topline">EDUCHROMA ANALYTICALS • GALLERY</div>
+    <h2>Our <span>Gallery</span></h2>
+    <p>Explore our laboratory, training activities, workshops and student experiences.</p>
+  </div>
+
+  <div class="g-filters">
+    <button class="g-filter-btn g-selected" data-filter="lab">Laboratory</button>
+    <button class="g-filter-btn" data-filter="training">Training</button>
+    <button class="g-filter-btn" data-filter="workshop">Workshops</button>
+    <button class="g-filter-btn" data-filter="student">Students</button>
+  </div>
+
+  <div class="g-grid" id="gGalleryGrid">
+    <div class="g-empty">Loading gallery photos...</div>
+  </div>
+
+</section>
+
+<!-- LIGHTBOX -->
+<div class="g-lightbox" id="gLightbox">
+  <button class="g-lb-button g-lb-close" id="gLbClose" aria-label="Close">&times;</button>
+  <button class="g-lb-button g-lb-prev" id="gLbPrev" aria-label="Previous">&#10094;</button>
+  <img id="gLightboxImage" src="" alt="EduChroma Gallery Photo">
+  <button class="g-lb-button g-lb-next" id="gLbNext" aria-label="Next">&#10095;</button>
+</div>
+
+<!-- SOCIAL MEDIA -->
+<section class="g-social">
+
+  <div class="g-social-info">
+    <span class="g-small-heading">CONNECT WITH US</span>
+
+    <h2>Stay Connected With EduChroma</h2>
+
+    <p class="g-social-description">
+      Follow EduChroma Analyticals for updates on HPLC training,
+      analytical services, practical learning and career opportunities.
+    </p>
+
+    <a class="g-social-item"
+       href="https://www.instagram.com/educhroma_analyticals/"
+       target="_blank" rel="noopener">
+      <span class="g-social-icon g-insta">◎</span>
+      <span class="g-social-label">
+        <strong>Instagram</strong>
+        <small>@educhroma_analyticals</small>
+      </span>
+      <span class="g-social-arrow">↗</span>
+    </a>
+
+    <a class="g-social-item"
+       href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/"
+       target="_blank" rel="noopener">
+      <span class="g-social-icon g-linkedin">in</span>
+      <span class="g-social-label">
+        <strong>LinkedIn</strong>
+        <small>EduChroma Analyticals</small>
+      </span>
+      <span class="g-social-arrow">↗</span>
+    </a>
+
+    <a class="g-social-item"
+       href="https://www.youtube.com/@educhroma_analyticals"
+       target="_blank" rel="noopener">
+      <span class="g-social-icon g-youtube">▶</span>
+      <span class="g-social-label">
+        <strong>YouTube</strong>
+        <small>EduChroma Analyticals</small>
+      </span>
+      <span class="g-social-arrow">↗</span>
+    </a>
+
+    <p style="color:#8491a1;font-size:12px;margin-top:20px;">
+      Discover • Learn • Connect
+    </p>
+  </div>
+
+  <div class="g-phone-area">
+
+    <div class="g-phone">
+      <div class="g-phone-screen">
+
+        <div class="g-phone-slide">
+          <div class="g-phone-circle">EC</div>
+          <strong>EDUCHROMA</strong>
+          <p>Unlock Skills, Analyse Success</p>
+          <a href="https://www.instagram.com/educhroma_analyticals/"
+             target="_blank" rel="noopener">Follow Instagram</a>
+        </div>
+
+        <div class="g-phone-slide">
+          <div class="g-phone-circle">in</div>
+          <strong>LinkedIn</strong>
+          <p>Analytical Training & Service Centre</p>
+          <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/"
+             target="_blank" rel="noopener">View Profile</a>
+        </div>
+
+        <div class="g-phone-slide">
+          <div class="g-phone-circle">▶</div>
+          <strong>YouTube</strong>
+          <p>HPLC Training • Laboratory • Practical Learning</p>
+          <a href="https://www.youtube.com/@educhroma_analyticals"
+             target="_blank" rel="noopener">Subscribe</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="g-phone-caption">DISCOVER • LEARN • CONNECT</div>
+
+  </div>
+
+</section>
+
+<!-- CAREER BANNER -->
+<section class="g-career">
+
+  <div class="g-career-image">
+    <img
+      src="https://drive.google.com/thumbnail?id=1vgK22ggF7if6FZVZQxT_VMJlns7ykxJg&sz=w1600"
+      alt="EduChroma Student Practical Training"
+      loading="lazy">
+  </div>
+
+  <div class="g-career-content">
+
+    <span class="g-career-tag">YOUR FUTURE STARTS HERE</span>
+
+    <h2>Ready to Build Your Scientific Career?</h2>
+
+    <p>
+      Develop practical laboratory skills, gain hands-on industrial
+      experience and prepare yourself for opportunities in the
+      pharmaceutical, biotechnology and analytical industries.
+    </p>
+
+    <div class="g-career-buttons">
+      <a href="https://wa.me/918141108657"
+         target="_blank" rel="noopener"
+         class="g-career-btn g-whatsapp">Enroll Now</a>
+
+      <a href="tel:8141108657"
+         class="g-career-btn g-contact">Contact Us</a>
+
+      <a href="YOUR-BROCHURE-PDF-LINK"
+         target="_blank" rel="noopener"
+         class="g-career-btn g-brochure">Download Brochure</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="g-footer">
+
+  <div class="g-footer-inner">
+
+    <div>
+      <h3>EduChroma Analyticals</h3>
+      <p>
+        Analytical Training and Service Centre
+      </p>
+      <p>
+        Empowering science students through practical laboratory
+        training, analytical services and career guidance.
+      </p>
+      <p><strong>Unlock Skills, Analyse Success.</strong></p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <div class="g-footer-links">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="training.html">Training Programmes</a>
+        <a href="testing.html">Testing Services</a>
+        <a href="research.html">Research</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Contact Us</h3>
+      <p>Vadodara, Gujarat, India</p>
+      <p>
+        Phone / WhatsApp:
+        <a href="https://wa.me/918141108657" style="color:#16c4b5;">
+          81411 08657
+        </a>
+      </p>
+      <p>
+        Connect with us:
+      </p>
+      <div class="g-footer-links">
+        <a href="https://www.instagram.com/educhroma_analyticals/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.youtube.com/@educhroma_analyticals" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="g-footer-bottom">
+    © 2026 EduChroma Analyticals. All Rights Reserved.
+  </div>
+
+</footer>
+
+</div>
+
+<script>
+/* =====================================
+   EDUCHROMA GALLERY JAVASCRIPT
+===================================== */
+
+function gToggleMenu() {
+  document.getElementById("gNavLinks").classList.toggle("g-show");
+}
+
+(function () {
+
+  const photos = [
+
+    /* LABORATORY */
+    ["1KVb-kc5pII70MDVifIgl3YayxtrhLd67","lab"],
+    ["1XqvKSONwermVEO7YVTYlQmmTUdURp7mM","lab"],
+    ["1utzfEJguN4roFGE9GoICackFAeG12Cxn","lab"],
+    ["1La0VZvJhtg0DnnYnwcXiP6YGCMiciRVb","lab"],
+    ["1arBCNuUtYxaaqpGt5cttAcaS5k28aRXC","lab"],
+    ["1xCAlb10wSY1ONrvP6Evydrr2KK1wpiBw","lab"],
+    ["17c10ee_YImSpdni7GPEDdpDYBgYDxZei","lab"],
+    ["1xxt5gqy06wm0dwnYACsDIfip4QYZFqwm","lab"],
+    ["1Ft_kgYAAwFTidDsSoPSdmqpzcvSEReBZ","lab"],
+    ["14uTmOiPVJpi3HBeVH9dUzFqDFTz4PgkF","lab"],
+    ["1q4qqUGq49fU8WUgLpQdIFmxd1Td48qZb","lab"],
+    ["1KK4HPL52_bbYDStFDDYffK3UDznJVMtx","lab"],
+
+    /* TRAINING */
+    ["17tsK9WVA19EIdhgpqCmBZsjYtIF9odi3","training"],
+    ["1WbQo4fLcECwn6JkVj2EHxFB91mw1rwqw","training"],
+    ["1W_mOuInaa5kVplUzPSZSY8B2cEym04H1","training"],
+    ["1SIry7zLTgxD6O0jw038bBdarJOX1rtcv","training"],
+    ["13-m0vb9i8HGRObnN94AiIxL6sHBTEHRJ","training"],
+    ["1mY6S4Ac6tvlZNdyRIRbrJXB7Dg125cBW","training"],
+    ["1VHtl4igxbACZRbRaz1z4Be4oWO_-g6Nh","training"],
+    ["1rOnP-Hy2UG_O80tLNUTBOK9c5U1jY2FZ","training"],
+    ["1tn9hjcwQZIY_LRD3MWZQmFBo2Vp6hj9R","training"],
+
+    /* WORKSHOPS */
+    ["1tg7wsI6pg4uYhl0i5_U9wrhKJtFCrLSQ","workshop"],
+    ["1j5d_sRfWfMlCuhCsXnjctxBfV3mP6QlR","workshop"],
+    ["1lIPYQuHgorHJa3J8uNj48Pan-GWimrUg","workshop"],
+    ["13hEHc4WUUdbAn3fT6i3PZfB2YTT2H7BV","workshop"],
+    ["19QOogYFK4FBbSTKw7d3mqQbeMYPpliqV","workshop"],
+    ["1QC-2u2G2ail43tfj-_pxtVTEUEjrHGfh","workshop"],
+    ["1fPytpFQmTDU5D7Q_t-MrKIjWQygooz78","workshop"],
+    ["1ZttD8els9SYN7rxK_HOocLslGZ8qEE6w","workshop"],
+    ["1b43nsVsgRXbimGvqphAuXTy_HQPkt6AO","workshop"],
+    ["1CPnP0nH2StpNZsqtkgqf7F0FWZyAXKYL","workshop"],
+
+    /* STUDENTS */
+    ["1Tf_GVVsrGbMB1WME764lS1ryuxCDL2k8","student"],
+    ["1HQagwa5Kl4CJ57P41so91QH0DEtsifXY","student"],
+    ["11M7CgL4RtHcgTuFnm_Mgpzfn-d3oGi5y","student"],
+    ["1KtXJVdhIthOWZZFMWmcp1x3VjrzBpg0H","student"],
+    ["1UH1JXv2qunhbFHCPurDU6rO70nz34sgv","student"],
+    ["1bkQiy42mGS9yx8deySZMDV2Ojm_fCX9P","student"],
+    ["1vfUBR2fj8qCtLRnwHvvNKlHd4JAk78K8","student"],
+    ["1kAv4V9npC45NMAv0ohH1k8JXELaOkw7H","student"],
+    ["12GDBDL1CFW7JoxfxpXNpkWR4AvDgYIDN","student"],
+    ["1P1BsaNoVucF_c5-b6zkycaVIkIQA1sXw","student"],
+    ["1WzSc4fnolnJWdavcMofQ0F_nPLYTFUZI","student"],
+    ["1YY39zMX7jrDw33Q5EMMWP7E6xEgU6ejo","student"],
+    ["1NZcxSC28URznQzZmgma9KCdBDYdv9Lo7","student"],
+    ["14JjjOpLd4s5LCmO_X-ExJx8KlaqEaIDw","student"],
+    ["13MeIkTXUdf7KiavYX0D9ZXqM2c7hD0Ag","student"]
+
+  ];
+
+  const grid = document.getElementById("gGalleryGrid");
+  const lightbox = document.getElementById("gLightbox");
+  const lightboxImage = document.getElementById("gLightboxImage");
+
+  let currentPhotos = [];
+  let currentIndex = 0;
+
+  function getImageUrl(id) {
+    return "https://drive.google.com/thumbnail?id=" +
+      encodeURIComponent(id) + "&sz=w1200";
+  }
+
+  function renderGallery(category) {
+
+    currentPhotos = photos.filter(photo => photo[1] === category);
+    grid.innerHTML = "";
+
+    if (!currentPhotos.length) {
+      grid.innerHTML = '<div class="g-empty">No photos found in this category.</div>';
+      return;
+    }
+
+    currentPhotos.forEach((photo,index) => {
+
+      const card = document.createElement("div");
+      card.className = "g-card";
+
+      const img = document.createElement("img");
+      img.src = getImageUrl(photo[0]);
+      img.alt = "EduChroma " + category + " photo";
+      img.loading = index < 6 ? "eager" : "lazy";
+
+      /* Fallback if Google Drive thumbnail fails */
+      img.onerror = function () {
+        if (!this.dataset.fallback) {
+          this.dataset.fallback = "yes";
+          this.src = "https://drive.google.com/uc?export=view&id=" +
+            encodeURIComponent(photo[0]);
+        } else {
+          this.style.display = "none";
+          card.style.background = "#dce8ed";
+          card.innerHTML +=
+            '<div style="padding:25px;text-align:center;color:#345;">Photo unavailable<br><small>Check Google Drive sharing permission</small></div>';
+        }
+      };
+
+      const label = document.createElement("div");
+      label.className = "g-card-label";
+      label.textContent =
+        category === "lab" ? "Laboratory" :
+        category === "training" ? "Training Programme" :
+        category === "workshop" ? "Workshop" : "Student Activities";
+
+      card.appendChild(img);
+      card.appendChild(label);
+
+      card.addEventListener("click", function () {
+        openLightbox(index);
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  function openLightbox(index) {
+    currentIndex = index;
+    showLightboxPhoto();
+    lightbox.classList.add("g-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function showLightboxPhoto() {
+    const photo = currentPhotos[currentIndex];
+    if (photo) {
+      lightboxImage.src = getImageUrl(photo[0]);
+    }
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("g-open");
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  function nextPhoto() {
+    if (!currentPhotos.length) return;
+    currentIndex = (currentIndex + 1) % currentPhotos.length;
+    showLightboxPhoto();
+  }
+
+  function previousPhoto() {
+    if (!currentPhotos.length) return;
+    currentIndex =
+      (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
+    showLightboxPhoto();
+  }
+
+  document.querySelectorAll(".g-filter-btn").forEach(button => {
+    button.addEventListener("click", function () {
+
+      document.querySelectorAll(".g-filter-btn").forEach(btn => {
+        btn.classList.remove("g-selected");
+      });
+
+      this.classList.add("g-selected");
+      renderGallery(this.dataset.filter);
+
+    });
+  });
+
+  document.getElementById("gLbClose").addEventListener("click", closeLightbox);
+  document.getElementById("gLbNext").addEventListener("click", nextPhoto);
+  document.getElementById("gLbPrev").addEventListener("click", previousPhoto);
+
+  lightbox.addEventListener("click", function(event) {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function(event) {
+    if (!lightbox.classList.contains("g-open")) return;
+
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowRight") nextPhoto();
+    if (event.key === "ArrowLeft") previousPhoto();
+  });
+
+  /* Initial gallery */
+  renderGallery("lab");
+
+})();
+</script>
+
+</body>
+</html>
