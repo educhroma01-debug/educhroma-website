@@ -1,1166 +1,353 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | EduChroma Analyticals</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- =========================================
+     EDUCHROMA GALLERY - PART 1
+     HERO + FILTERS + PHOTO GRID + LIGHTBOX
+========================================= -->
 
-<style>
-:root{--navy:#092b50;--blue:#0876c9;--teal:#00a99d;--light:#edf7ff}
-*{box-sizing:border-box}
-body{margin:0;background:#f7fbff;color:#102b49;font-family:'Plus Jakarta Sans','Segoe UI',sans-serif}
-a{text-decoration:none}
-
-/* HEADER */
-.ec-nav{background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 4px 20px rgba(9,43,80,.09)}
-.ec-nav-inner{max-width:1320px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.ec-logo{width:190px;max-height:65px;object-fit:contain}
-.ec-nav-links{display:flex;align-items:center;gap:23px}
-.ec-nav-links a{font-size:12px;font-weight:800;color:#173957;letter-spacing:.3px;white-space:nowrap}
-.ec-nav-links a:hover,.ec-nav-links a.active{color:#0784d5}
-.ec-menu-btn{display:none;border:0;background:#eaf5ff;color:var(--navy);font-size:25px;padding:7px 12px;border-radius:8px;cursor:pointer}
-@media(max-width:1050px){.ec-nav-links{gap:13px}.ec-nav-links a{font-size:10px}}
-@media(max-width:800px){
-.ec-menu-btn{display:block}.ec-nav-inner{flex-wrap:wrap}
-.ec-nav-links{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:0;padding:10px 0}
-.ec-nav-links.show{display:flex}
-.ec-nav-links a{width:100%;padding:13px 8px;border-top:1px solid #edf2f7;font-size:12px}
-}
-@media(max-width:560px){.ec-logo{width:155px}}
-
-/* GALLERY HERO */
-.ec-gallery-hero{width:100%;min-height:240px;padding:30px 4%;display:flex;align-items:center;justify-content:space-between;gap:30px;background:linear-gradient(90deg,rgba(6,26,56,.94),rgba(6,26,56,.75)),url('https://drive.google.com/thumbnail?id=1Ff0lI3Q3ZyUQFJ3YN10MS4tWJw57VQ2R&sz=w1600') center/cover no-repeat;border-top:5px solid #16c4b5;border-bottom:5px solid #16c4b5;color:white;position:relative;overflow:hidden}
-.ec-hero-content{max-width:550px;z-index:2;animation:ecSlideInLeft .8s ease-out}
-.ec-hero-content h1{font-size:clamp(32px,4vw,48px);font-weight:800;margin:0 0 8px;letter-spacing:-.5px;color:#fff}
-.ec-subtitle{font-size:clamp(15px,1.8vw,20px);font-weight:600;color:#16c4b5;margin:0 0 12px}
-.ec-hero-content p{font-size:13.5px;line-height:1.5;color:#dce8f4;margin:0}
-.ec-hero-stats{display:flex;gap:12px;z-index:2}
-.ec-stat-card{background:#fff;color:#061a38;width:110px;height:130px;border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 6px 20px #0004;opacity:0;animation:ecPopUp .6s ease forwards;transition:transform .3s,box-shadow .3s}
-.ec-stat-card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 10px 25px #16c4b566}
-.ec-anim-1{animation-delay:.2s}.ec-anim-2{animation-delay:.35s}.ec-anim-3{animation-delay:.5s}.ec-anim-4{animation-delay:.65s}
-.ec-stat-icon{font-size:22px;margin-bottom:4px}
-.ec-stat-card h2{font-size:18px;font-weight:800;color:#061a38;margin:0 0 2px}
-.ec-stat-card p{font-size:10px;font-weight:600;color:#4a5568;margin:0;line-height:1.2}
-@keyframes ecSlideInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
-@keyframes ecPopUp{from{opacity:0;transform:translateY(30px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
-@media(max-width:1000px){.ec-gallery-hero{flex-direction:column;text-align:center;padding:30px 20px}.ec-hero-content{max-width:100%}.ec-hero-content p br{display:none}.ec-hero-stats{justify-content:center;flex-wrap:wrap;width:100%}}
-@media(max-width:480px){.ec-stat-card{width:95px;height:115px}.ec-stat-card h2{font-size:16px}.ec-stat-card p{font-size:9px}}
-
-/* GALLERY GRID */
-.edu-gallery-wrapper{width:100%;max-width:1450px;margin:auto;padding:12px 25px 55px;color:#17364c}
-.gallery-hero{padding:18px 15px 12px;text-align:center}
-.hero-topline{display:flex;justify-content:center;gap:20px;padding-bottom:12px;border-bottom:1px solid #e5ecef;color:#078b91;font-size:10px;font-weight:800;letter-spacing:2px}
-.hero-topline span:last-child{color:#9aa9b3}
-.gallery-hero h2{font-size:clamp(42px,6vw,68px);line-height:1;letter-spacing:-3px;margin:22px 0 15px;font-weight:900;color:#142f46}
-.gallery-hero h2 span{color:#078b91}
-.gallery-filter-area{margin:15px 0 25px}
-.gallery-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
-.filter-btn{border:1px solid #e0e8ed;background:#fff;color:#28475d;padding:11px 21px;border-radius:30px;font-size:13px;font-weight:700;cursor:pointer;transition:all .3s}
-.filter-btn:hover,.filter-btn.active{background:#087f8c;border-color:#087f8c;color:white;transform:translateY(-2px);box-shadow:0 7px 18px #087f8c33}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.gallery-item{position:relative;height:340px;overflow:hidden;border-radius:15px;background:#eaf0f4;cursor:pointer;box-shadow:0 7px 22px #142d410f;opacity:0;transform:translateY(25px);transition:opacity .6s,transform .6s,box-shadow .3s}
-.gallery-item.visible{opacity:1;transform:translateY(0)}
-.gallery-item img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .7s}
-.gallery-item:hover{box-shadow:0 16px 35px #142d412e}
-.gallery-item:hover img{transform:scale(1.07)}
-.gallery-scroll-progress{position:fixed;right:16px;top:40%;z-index:1000;pointer-events:none}
-.progress-track{width:3px;height:100px;background:#dce6e9;border-radius:5px;overflow:hidden}
-.progress-fill{width:100%;height:0;background:#078b91;transition:height .12s}
-@media(max-width:950px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-item{height:300px}.gallery-scroll-progress{right:7px}}
-@media(max-width:650px){.edu-gallery-wrapper{padding:10px 12px 40px}.gallery-hero{padding:15px 5px 10px}.hero-topline{font-size:8px;letter-spacing:1.5px;gap:14px}.gallery-hero h2{font-size:46px;letter-spacing:-2px;margin:19px 0 12px}.gallery-grid{grid-template-columns:1fr;gap:16px}.gallery-item{height:285px;border-radius:12px}.filter-btn{padding:10px 14px;font-size:12px}.gallery-scroll-progress{display:none}}
-
-/* LIGHTBOX */
-.edu-lightbox{display:none;position:fixed;inset:0;z-index:999999;background:rgba(3,12,22,.97);align-items:center;justify-content:center;padding:55px 65px}
-.edu-lightbox.open{display:flex}
-.edu-lightbox img{max-width:100%;max-height:85vh;object-fit:contain;border-radius:8px}
-.lightbox-close,.lightbox-nav{position:absolute;border:0;color:white;background:#ffffff26;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.lightbox-close:hover,.lightbox-nav:hover{background:#ffffff59}
-.lightbox-close{top:18px;right:25px;width:44px;height:44px;border-radius:50%;font-size:32px}
-.lightbox-nav{top:50%;transform:translateY(-50%);width:48px;height:58px;border-radius:8px;font-size:25px}
-.lightbox-prev{left:15px}.lightbox-next{right:15px}
-@media(max-width:650px){.edu-lightbox{padding:55px 12px}.edu-lightbox img{max-height:75vh}.lightbox-nav{width:38px;height:45px;font-size:20px}.lightbox-prev{left:5px}.lightbox-next{right:5px}}
-
-/* SOCIAL MEDIA SECTION */
-.ec-social-section,.ec-social-section *{box-sizing:border-box}
-.ec-social-section{width:100%;padding:65px 7%;display:grid;grid-template-columns:1fr .85fr;gap:50px;align-items:center;background:#f7f9fc;color:#17253b}
-.ec-social-info{max-width:560px}
-.ec-small-heading{color:#087e9c;font-size:12px;font-weight:800;letter-spacing:2px}
-.ec-social-info h2{font-size:clamp(30px,4vw,45px);line-height:1.15;margin:15px 0;color:#17253b}
-.ec-description{color:#657287;font-size:15px;line-height:1.7;margin-bottom:25px}
-.ec-social-item{display:flex;align-items:center;gap:15px;padding:15px;margin:13px 0;border:1px solid #e5eaf0;border-radius:13px;text-decoration:none;color:#17253b;background:#fff;transition:transform .25s,box-shadow .25s}
-.ec-social-item:hover{transform:translateY(-3px);box-shadow:0 8px 25px #17253b12}
-.ec-social-icon{width:43px;height:43px;border-radius:11px;display:grid;place-items:center;font-size:23px;font-weight:bold;color:white}
-.ec-instagram-icon{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)}
-.ec-linkedin-icon{background:#0a66c2}.ec-youtube-icon{background:#e62117;font-size:18px}
-.ec-social-label strong,.ec-social-label small{display:block}
-.ec-social-label strong{font-size:15px}.ec-social-label small{margin-top:4px;color:#7b8797;font-size:12px}
-.ec-social-arrow{margin-left:auto;font-size:20px}.ec-social-note{margin-top:22px;font-size:12px;color:#8491a1}
-
-/* ANIMATED PHONE */
-.ec-phone-area{display:flex;flex-direction:column;align-items:center}
-.ec-smartphone{width:285px;height:555px;padding:10px;border:7px solid #17202d;border-radius:38px;background:#111b28;box-shadow:0 25px 55px #14253a30;position:relative}
-.ec-phone-camera{position:absolute;z-index:5;top:9px;left:50%;transform:translateX(-50%);width:90px;height:17px;border-radius:0 0 12px 12px;background:#111b28}
-.ec-phone-screen{height:100%;width:100%;border-radius:25px;overflow:hidden;background:#fff}
-.ec-screen-track{height:400%;animation:ecPhoneSlide 24s infinite}
-.ec-smartphone:hover .ec-screen-track{animation-play-state:paused}
-.ec-app-screen{height:25%;width:100%;overflow:hidden;position:relative;font-family:Arial,sans-serif}
-@keyframes ecPhoneSlide{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-25%)}50%,70%{transform:translateY(-50%)}75%,95%{transform:translateY(-75%)}100%{transform:translateY(0)}}
-.ec-app-header{height:39px;padding:12px 10px;display:flex;justify-content:space-between;align-items:center;font-size:12px;border-bottom:1px solid #303237;background:#101114;color:white}
-.ec-instagram-screen{background:#101114;color:#fff}
-.ec-instagram-profile{display:flex;align-items:center;gap:10px;padding:12px 9px 7px}
-.ec-profile-picture{width:77px;height:77px;flex-shrink:0;border-radius:50%;border:2px solid #17aebc;background:radial-gradient(circle,#fff 35%,#d9f6f8 75%,#fff);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#087e89;box-shadow:0 0 0 2px #d5edf1}
-.ec-logo-symbol{font-size:27px;font-weight:900;line-height:1}
-.ec-logo-name{font-size:10px;color:#111;font-weight:900;margin-top:3px}
-.ec-logo-tagline{font-size:5px;color:#087e89;font-weight:bold;margin-top:3px}
-.ec-profile-stats{display:flex;flex:1;justify-content:space-around;text-align:center}
-.ec-profile-stats strong,.ec-profile-stats small{display:block}
-.ec-profile-stats strong{font-size:13px}.ec-profile-stats small{font-size:9px;color:#ddd;margin-top:4px}
-.ec-instagram-bio{padding:3px 10px;font-size:9px;line-height:1.4}
-.ec-instagram-bio strong{display:block;font-size:10px}.ec-instagram-bio p{margin:3px 0}
-.ec-instagram-bio .ec-category{color:#aaa;margin:3px 0 5px}
-.ec-instagram-bio a{display:block;color:#9bbefb;text-decoration:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:3px 0}
-.ec-follow-button{display:block;margin:8px 10px;padding:8px;border-radius:7px;background:#292b30;color:white;text-decoration:none;text-align:center;font-size:11px;font-weight:bold}
-.ec-highlights{display:flex;justify-content:space-around;gap:3px;padding:9px 3px 7px}
-.ec-highlight{width:20%;min-width:0;text-align:center}
-.ec-highlight-circle{width:43px;height:43px;margin:0 auto 5px;border-radius:50%;border:3px solid #414348;background:#25272b;display:grid;place-items:center;font-size:18px}
-.ec-highlight small{display:block;color:#eee;font-size:7px;white-space:nowrap}
-.ec-highlight-feedback{background:#39444c}.ec-highlight-2k26{background:#354f73}.ec-highlight-mou{background:#37554e}.ec-highlight-navratri{background:#76523e}.ec-highlight-success{background:#7e4036}
-.ec-instagram-tabs{display:flex;justify-content:space-around;padding:8px;border-top:1px solid #34363a;color:white;font-size:14px}
-.ec-instagram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.ec-post-tile{height:75px;display:grid;place-items:center;text-align:center;color:white;font-size:9px;font-weight:800;line-height:1.4}
-.ec-post-1{background:linear-gradient(135deg,#075b77,#19a1b1)}.ec-post-2{background:linear-gradient(135deg,#172c58,#557eb7)}.ec-post-3{background:linear-gradient(135deg,#284c46,#70a28c)}.ec-post-4{background:linear-gradient(135deg,#a45c27,#e7a34c)}.ec-post-5{background:linear-gradient(135deg,#3c477c,#8996cb)}.ec-post-6{background:linear-gradient(135deg,#17253b,#087e9c)}
-.ec-linkedin-screen,.ec-youtube-screen{background:white;color:#17253b}
-.ec-linkedin-screen .ec-app-header,.ec-youtube-screen .ec-app-header{background:white;color:#17253b;border-bottom:1px solid #eee}
-.ec-linkedin-cover{height:95px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:linear-gradient(120deg,#12324b,#087e9c);color:white;font-weight:900;font-size:16px}
-.ec-linkedin-cover small,.ec-youtube-cover small{font-size:9px;font-weight:normal}
-.ec-linkedin-profile,.ec-youtube-profile{padding:12px}
-.ec-linkedin-logo,.ec-youtube-logo{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#087e9c,#172c58);display:grid;place-items:center;color:white;font-size:22px;font-weight:900}
-.ec-linkedin-profile h3,.ec-youtube-profile h3{font-size:14px;margin:8px 0}
-.ec-linkedin-profile p,.ec-youtube-profile p{font-size:10px;color:#697586;margin:4px 0}
-.ec-linkedin-post{padding:12px;border-top:7px solid #f1f3f5;font-size:11px}
-.ec-linkedin-post p{line-height:1.5;color:#657287}
-.ec-linkedin-post-art{height:115px;display:grid;place-items:center;text-align:center;padding:10px;background:#eaf3f5;color:#087e9c;font-weight:bold;font-size:13px}
-.ec-youtube-cover{height:85px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(120deg,#12324b,#087e9c);color:white;font-size:15px;font-weight:900;gap:6px}
-.ec-subscribe-button{display:block;text-align:center;background:#d92323;color:white;text-decoration:none;border-radius:5px;padding:8px;margin-top:10px;font-size:11px;font-weight:bold}
-.ec-video-item{display:flex;align-items:center;gap:10px;padding:9px;border-bottom:1px solid #eee;font-size:10px}
-.ec-video-item small{display:block;color:#777;margin-top:5px}
-.ec-video-thumbnail{width:95px;height:58px;flex-shrink:0;border-radius:5px;display:grid;place-items:center;background:linear-gradient(135deg,#163b57,#087e9c);color:white;font-size:22px}
-.ec-phone-caption{margin-top:18px;color:#64758b;font-size:12px;letter-spacing:2px;text-align:center}
-@media(max-width:760px){.ec-social-section{grid-template-columns:1fr;padding:45px 22px;gap:35px}.ec-social-info{width:100%;margin:auto}.ec-social-info h2{font-size:32px}.ec-smartphone{width:270px;height:530px}}
-@media(prefers-reduced-motion:reduce){.ec-screen-track{animation:none}}
-
-/* CAREER BANNER */
-.ec-career,.ec-career *{box-sizing:border-box}
-.ec-career{width:100%;padding:65px 5%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px;background:linear-gradient(120deg,#102b43,#087e9c);color:white}
-.ec-career-image{width:100%;min-width:0;display:flex;justify-content:center;align-items:center;overflow:hidden;border-radius:18px;background:#fff;padding:8px;box-shadow:0 15px 35px #001c2b50}
-.ec-career-image img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;border-radius:12px}
-.ec-career-content{max-width:650px;width:100%}
-.ec-career-tag{display:block;font-size:16px;letter-spacing:2px;font-weight:800;color:#9de8ed;margin-bottom:16px}
-.ec-career-content h2{font-size:clamp(36px,4vw,52px);line-height:1.2;font-weight:800;margin:14px 0 22px;color:white}
-.ec-career-content p{font-size:19px;line-height:1.8;color:#e1edf2;margin-bottom:28px}
-.ec-career-buttons{display:flex;flex-wrap:wrap;gap:12px}
-.ec-career-btn{display:inline-block;padding:16px 22px;border-radius:8px;text-decoration:none;font-size:16px;font-weight:800;transition:transform .2s,box-shadow .2s}
-.ec-career-btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px #001c2b40}
-.ec-whatsapp-btn{background:#25d366;color:#073c20}.ec-contact-btn{background:white;color:#12324b}.ec-brochure-btn{background:#f3b94c;color:#17253b}
-@media(max-width:760px){.ec-career{grid-template-columns:1fr;padding:35px 18px;gap:28px}.ec-career-image{width:100%;padding:6px}.ec-career-content{width:100%}.ec-career-tag{font-size:14px}.ec-career-content h2{font-size:36px;line-height:1.25}.ec-career-content p{font-size:18px;line-height:1.8}.ec-career-buttons{flex-direction:column}.ec-career-btn{width:100%;text-align:center;font-size:17px;padding:16px 20px}}
-
-/* FOOTER */
-.ec-footer{background:#071d35;color:#dce8f4;padding:55px 5% 20px}
-.ec-footer-inner{max-width:1320px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px}
-.ec-footer-logo{width:185px;max-height:65px;object-fit:contain;background:#fff;border-radius:6px;padding:5px}
-.ec-footer h3{color:#fff;font-size:16px;margin:0 0 18px}
-.ec-footer p,.ec-footer a{font-size:13px;line-height:1.9;color:#c4d2df}
-.ec-footer a{display:block}
-.ec-footer a:hover{color:#16c4b5}
-.ec-footer-bottom{max-width:1320px;margin:30px auto 0;padding-top:18px;border-top:1px solid #ffffff25;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:12px;color:#aebdca}
-@media(max-width:850px){.ec-footer-inner{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.ec-footer-inner{grid-template-columns:1fr}.ec-footer{padding:40px 22px 18px}}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header class="ec-nav">
-  <div class="ec-nav-inner">
-    <a href="index.html#home">
-      <img class="ec-logo" src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals">
-    </a>
-    <button class="ec-menu-btn" onclick="toggleEcMenu()" aria-label="Toggle navigation">☰</button>
-    <nav class="ec-nav-links" id="ecNavLinks">
-      <a href="index.html#home">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="training.html">TRAINING</a>
-      <a href="testing.html">TESTING SERVICES</a>
-      <a href="research.html">RESEARCH</a>
-      <a class="active" href="gallery.html">GALLERY</a>
-      <a href="index.html#contact">CONTACT US</a>
-    </nav>
-  </div>
-</header>
-
-<!-- GALLERY HERO -->
 <section class="ec-gallery-hero">
   <div class="ec-hero-content">
     <h1>Our Gallery</h1>
-    <h3 class="ec-subtitle">Moments of Learning, Innovation &amp; Excellence</h3>
-    <p>Explore glimpses of our laboratory, training programs,<br>events, workshops, and student achievements.</p>
+    <h3 class="ec-subtitle">Moments of Learning, Innovation & Excellence</h3>
+    <p>Explore glimpses of our laboratory, training programs, events, workshops, and student achievements.</p>
   </div>
 
   <div class="ec-hero-stats">
-    <div class="ec-stat-card ec-anim-1"><div class="ec-stat-icon">🖼️</div><h2>50+</h2><p>Events &amp; Workshops</p></div>
-    <div class="ec-stat-card ec-anim-2"><div class="ec-stat-icon">👥</div><h2>500+</h2><p>Students Trained</p></div>
-    <div class="ec-stat-card ec-anim-3"><div class="ec-stat-icon">🧪</div><h2>20+</h2><p>Collaborations</p></div>
-    <div class="ec-stat-card ec-anim-4"><div class="ec-stat-icon">🏆</div><h2>100+</h2><p>Achievements</p></div>
+    <div class="ec-stat-card"><span>🖼️</span><h2>50+</h2><p>Events & Workshops</p></div>
+    <div class="ec-stat-card"><span>👥</span><h2>500+</h2><p>Students Trained</p></div>
+    <div class="ec-stat-card"><span>🧪</span><h2>20+</h2><p>Collaborations</p></div>
+    <div class="ec-stat-card"><span>🏆</span><h2>100+</h2><p>Achievements</p></div>
   </div>
 </section>
 
-<!-- PHOTO GALLERY -->
 <div class="edu-gallery-wrapper">
   <section class="gallery-hero">
-    <div class="hero-topline"><span>EDUCHROMA ANALYTICALS</span><span>GALLERY</span></div>
+    <div class="hero-topline">
+      <span>EDUCHROMA ANALYTICALS</span>
+      <span>GALLERY</span>
+    </div>
     <h2>Our <span>Gallery</span></h2>
   </section>
 
-  <div class="gallery-filter-area">
-    <div class="gallery-filters">
-      <button class="filter-btn active" data-filter="lab">Laboratory</button>
-      <button class="filter-btn" data-filter="training">Training</button>
-      <button class="filter-btn" data-filter="workshop">Workshops</button>
-      <button class="filter-btn" data-filter="student">Students</button>
-    </div>
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="lab">Laboratory</button>
+    <button class="filter-btn" data-filter="training">Training</button>
+    <button class="filter-btn" data-filter="workshop">Workshops</button>
+    <button class="filter-btn" data-filter="student">Students</button>
   </div>
 
-  <div class="gallery-grid" id="eduGalleryGrid"></div>
+  <div class="gallery-grid" id="eduGalleryGrid">
+    <p class="gallery-loading">Loading EduChroma Gallery...</p>
+  </div>
 </div>
 
 <div class="gallery-scroll-progress">
-  <div class="progress-track"><div class="progress-fill" id="galleryProgressFill"></div></div>
+  <div class="progress-track">
+    <div class="progress-fill" id="galleryProgressFill"></div>
+  </div>
 </div>
 
-<!-- PHOTO LIGHTBOX -->
 <div class="edu-lightbox" id="eduLightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#10094;</button>
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
   <img id="lightboxImage" src="" alt="EduChroma Gallery Photo">
-  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#10095;</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
 </div>
-
-<!-- SOCIAL MEDIA SECTION -->
-<section class="ec-social-section">
-  <div class="ec-social-info">
-    <span class="ec-small-heading">CONNECT WITH US</span>
-    <h2>Stay Connected With EduChroma</h2>
-    <p class="ec-description">Follow EduChroma Analyticals for updates on HPLC training, analytical services, practical learning and career opportunities.</p>
-
-    <a class="ec-social-item" href="https://www.instagram.com/educhroma_analyticals/" target="_blank" rel="noopener">
-      <span class="ec-social-icon ec-instagram-icon">◎</span>
-      <span class="ec-social-label"><strong>Instagram</strong><small>@educhroma_analyticals</small></span>
-      <span class="ec-social-arrow">↗</span>
-    </a>
-
-    <a class="ec-social-item" href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" rel="noopener">
-      <span class="ec-social-icon ec-linkedin-icon">in</span>
-      <span class="ec-social-label"><strong>LinkedIn</strong><small>EduChroma Analyticals</small></span>
-      <span class="ec-social-arrow">↗</span>
-    </a>
-
-    <a class="ec-social-item" href="https://www.youtube.com/@educhroma_analyticals" target="_blank" rel="noopener">
-      <span class="ec-social-icon ec-youtube-icon">▶</span>
-      <span class="ec-social-label"><strong>YouTube</strong><small>EduChroma Analyticals</small></span>
-      <span class="ec-social-arrow">↗</span>
-    </a>
-    <p class="ec-social-note">Automatically switching between our platforms</p>
-  </div>
-
-  <div class="ec-phone-area">
-    <div class="ec-smartphone">
-      <div class="ec-phone-camera"></div>
-      <div class="ec-phone-screen">
-        <div class="ec-screen-track">
-
-          <!-- INSTAGRAM PREVIEW -->
-          <div class="ec-app-screen ec-instagram-screen">
-            <div class="ec-app-header"><strong>educhroma_analyticals</strong><span>＋　☰</span></div>
-            <div class="ec-instagram-profile">
-              <div class="ec-profile-picture">
-                <div class="ec-logo-symbol">EC</div>
-                <div class="ec-logo-name">EDUCHROMA</div>
-                <div class="ec-logo-tagline">UNLOCK SKILLS, ANALYSE SUCCESS</div>
-              </div>
-              <div class="ec-profile-stats">
-                <div><strong>300</strong><small>posts</small></div>
-                <div><strong>699</strong><small>followers</small></div>
-                <div><strong>1</strong><small>following</small></div>
-              </div>
-            </div>
-            <div class="ec-instagram-bio">
-              <strong>educhroma_analyticals</strong>
-              <span class="ec-category">Education</span>
-              <p>Empowering Future Scientists Through Practical Learning 🧬</p>
-              <p>🔬 HPLC • QA/QC • Analytical Testing</p>
-              <p>🎓 Industrial Training • Research</p>
-              <a href="https://www.indiamart.com/educhroma-analytical-training-and-service-centre/" target="_blank" rel="noopener">🔗 www.indiamart.com/educhroma...</a>
-              <p>◎ educhroma_analyticals</p>
-            </div>
-            <a class="ec-follow-button" href="https://www.instagram.com/educhroma_analyticals/" target="_blank" rel="noopener">Follow</a>
-            <div class="ec-highlights">
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-feedback">💬</div><small>Feedback</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-2k26">🎓</div><small>2k26</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-mou">🤝</div><small>MOU 24-2025</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-navratri">🪔</div><small>Navaratri 2025</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-success">🏆</div><small>success 2024</small></div>
-            </div>
-            <div class="ec-instagram-tabs"><span>▦</span><span>▤</span><span>♡</span></div>
-            <div class="ec-instagram-grid">
-              <div class="ec-post-tile ec-post-1">HPLC<br>TRAINING</div>
-              <div class="ec-post-tile ec-post-2">PRACTICAL<br>LEARNING</div>
-              <div class="ec-post-tile ec-post-3">ANALYTICAL<br>SERVICES</div>
-              <div class="ec-post-tile ec-post-4">STUDENT<br>CAREER</div>
-              <div class="ec-post-tile ec-post-5">LAB<br>EXPERIENCE</div>
-              <div class="ec-post-tile ec-post-6">EDUCHROMA<br>ANALYTICALS</div>
-            </div>
-          </div>
-
-          <!-- LINKEDIN PREVIEW -->
-          <div class="ec-app-screen ec-linkedin-screen">
-            <div class="ec-app-header"><strong>LinkedIn</strong><span>⌕　✉</span></div>
-            <div class="ec-linkedin-cover">EDUCHROMA ANALYTICALS<small>Analytical Training &amp; Service Centre</small></div>
-            <div class="ec-linkedin-profile">
-              <div class="ec-linkedin-logo">EC</div>
-              <h3>EduChroma Analyticals</h3>
-              <p>Analytical Training &amp; Service Centre</p>
-              <p>Vadodara, Gujarat, India</p>
-              <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" rel="noopener" class="ec-follow-button">View Profile</a>
-            </div>
-            <div class="ec-linkedin-post">
-              <strong>Practical Learning. Professional Skills.</strong>
-              <p>Building industry-ready skills through hands-on analytical training and laboratory experience.</p>
-              <div class="ec-linkedin-post-art">HPLC | QA/QC | ANALYTICAL TRAINING</div>
-            </div>
-          </div>
-
-          <!-- YOUTUBE PREVIEW -->
-          <div class="ec-app-screen ec-youtube-screen">
-            <div class="ec-app-header"><strong>YouTube</strong><span>⌕　♧</span></div>
-            <div class="ec-youtube-cover">EDUCHROMA ANALYTICALS<small>Unlock Skills, Analyse Success</small></div>
-            <div class="ec-youtube-profile">
-              <div class="ec-youtube-logo">EC</div>
-              <h3>EduChroma Analyticals</h3>
-              <p>HPLC Training • Analytical Services</p>
-              <a href="https://www.youtube.com/@educhroma_analyticals" target="_blank" rel="noopener" class="ec-subscribe-button">Subscribe</a>
-            </div>
-            <div class="ec-video-item"><div class="ec-video-thumbnail">▶</div><div><strong>HPLC Practical Training</strong><small>EduChroma Analyticals</small></div></div>
-            <div class="ec-video-item"><div class="ec-video-thumbnail">▶</div><div><strong>Analytical Laboratory</strong><small>EduChroma Analyticals</small></div></div>
-            <div class="ec-video-item"><div class="ec-video-thumbnail">▶</div><div><strong>Learn HPLC Techniques</strong><small>EduChroma Analyticals</small></div></div>
-          </div>
-
-          <!-- INSTAGRAM LOOP -->
-          <div class="ec-app-screen ec-instagram-screen">
-            <div class="ec-app-header"><strong>educhroma_analyticals</strong><span>＋　☰</span></div>
-            <div class="ec-instagram-profile">
-              <div class="ec-profile-picture">
-                <div class="ec-logo-symbol">EC</div>
-                <div class="ec-logo-name">EDUCHROMA</div>
-                <div class="ec-logo-tagline">UNLOCK SKILLS, ANALYSE SUCCESS</div>
-              </div>
-              <div class="ec-profile-stats">
-                <div><strong>300</strong><small>posts</small></div>
-                <div><strong>699</strong><small>followers</small></div>
-                <div><strong>1</strong><small>following</small></div>
-              </div>
-            </div>
-            <div class="ec-instagram-bio">
-              <strong>educhroma_analyticals</strong>
-              <span class="ec-category">Education</span>
-              <p>Empowering Future Scientists Through Practical Learning 🧬</p>
-              <p>🔬 HPLC • QA/QC • Analytical Testing</p>
-              <p>🎓 Industrial Training • Research</p>
-              <a href="https://www.indiamart.com/educhroma-analytical-training-and-service-centre/" target="_blank" rel="noopener">🔗 www.indiamart.com/educhroma...</a>
-              <p>◎ educhroma_analyticals</p>
-            </div>
-            <a class="ec-follow-button" href="https://www.instagram.com/educhroma_analyticals/" target="_blank" rel="noopener">Follow</a>
-            <div class="ec-highlights">
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-feedback">💬</div><small>Feedback</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-2k26">🎓</div><small>2k26</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-mou">🤝</div><small>MOU 24-2025</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-navratri">🪔</div><small>Navaratri 2025</small></div>
-              <div class="ec-highlight"><div class="ec-highlight-circle ec-highlight-success">🏆</div><small>success 2024</small></div>
-            </div>
-            <div class="ec-instagram-tabs"><span>▦</span><span>▤</span><span>♡</span></div>
-            <div class="ec-instagram-grid">
-              <div class="ec-post-tile ec-post-1">HPLC<br>TRAINING</div>
-              <div class="ec-post-tile ec-post-2">PRACTICAL<br>LEARNING</div>
-              <div class="ec-post-tile ec-post-3">ANALYTICAL<br>SERVICES</div>
-              <div class="ec-post-tile ec-post-4">STUDENT<br>CAREER</div>
-              <div class="ec-post-tile ec-post-5">LAB<br>EXPERIENCE</div>
-              <div class="ec-post-tile ec-post-6">EDUCHROMA</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div class="ec-phone-caption">DISCOVER • LEARN • CONNECT</div>
-  </div>
-</section>
-
-<!-- CAREER BANNER -->
-<section class="ec-career">
-  <div class="ec-career-image">
-    <img src="https://drive.google.com/thumbnail?id=1vgK22ggF7if6FZVZQxT_VMJlns7ykxJg&sz=w1600" alt="EduChroma Student Practical Training" loading="lazy">
-  </div>
-  <div class="ec-career-content">
-    <span class="ec-career-tag">YOUR FUTURE STARTS HERE</span>
-    <h2>Ready to Build Your Scientific Career?</h2>
-    <p>Develop practical laboratory skills, gain hands-on industrial experience and prepare yourself for opportunities in the pharmaceutical, biotechnology and analytical industries.</p>
-    <div class="ec-career-buttons">
-      <a href="https://wa.me/918141108657" target="_blank" rel="noopener" class="ec-career-btn ec-whatsapp-btn">Enroll Now</a>
-      <a href="tel:8141108657" class="ec-career-btn ec-contact-btn">Contact Us</a>
-      <a href="YOUR-BROCHURE-PDF-LINK" target="_blank" rel="noopener" class="ec-career-btn ec-brochure-btn">Download Brochure</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="ec-footer">
-  <div class="ec-footer-inner">
-    <div>
-      <a href="index.html#home"><img class="ec-footer-logo" src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals"></a>
-      <p>Unlock Skills, Analyse Success.</p>
-      <p>EduChroma Analyticals provides practical analytical training, laboratory testing and research support.</p>
-      <p>Vadodara, Gujarat, India</p>
-    </div>
-
-    <div>
-      <h3>Quick Links</h3>
-      <a href="index.html#home">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="training.html">Training</a>
-      <a href="testing.html">Testing Services</a>
-      <a href="research.html">Research</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="index.html#contact">Contact Us</a>
-    </div>
-
-    <div>
-      <h3>Our Services</h3>
-      <a href="training.html">HPLC Training</a>
-      <a href="training.html">Industrial Training</a>
-      <a href="testing.html">HPLC Sample Testing</a>
-      <a href="testing.html">Analytical Services</a>
-      <a href="research.html">Method Development</a>
-      <a href="research.html">Method Validation</a>
-      <a href="research.html">Research Support</a>
-    </div>
-
-    <div>
-      <h3>Contact Information</h3>
-      <p>TF-12,13, Sun Meelan, Behind Waghodia Check Post, NH-48, Waghodia Road, Vadodara, Gujarat - 390019</p>
-      <p>Phone: <a href="tel:+918141108657">+91 81411 08657</a></p>
-      <p>Email: <a href="mailto:educhroma01@gmail.com">educhroma01@gmail.com</a></p>
-      <p>Working Hours: Mon-Sat, 9:30 AM-6:30 PM</p>
-      <a href="https://wa.me/918141108657" target="_blank" rel="noopener">WhatsApp Us</a>
-      <a href="https://www.instagram.com/educhroma_analyticals/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.youtube.com/@educhroma_analyticals" target="_blank" rel="noopener">YouTube</a>
-    </div>
-  </div>
-
-  <div class="ec-footer-bottom">
-    <span>© 2026 EduChroma Analyticals. All Rights Reserved.</span>
-    <span>Unlock Skills, Analyse Success.</span>
-  </div>
-</footer>
-
-<script>
-function toggleEcMenu(){
-  document.getElementById("ecNavLinks").classList.toggle("show");
-}
-
-/* GALLERY PHOTO DATA AND FUNCTIONALITY */
-(function(){
-  function initEduGallery(){
-    const grid=document.getElementById("eduGalleryGrid");
-    const lightbox=document.getElementById("eduLightbox");
-    if(!grid||!lightbox||grid.dataset.initialized==="true")return;
-    grid.dataset.initialized="true";
-
-    const photos=[
-      ["1KVb-kc5pII70MDVifIgl3YayxtrhLd67","lab"],
-      ["1XqvKSONwermVEO7YVTYlQmmTUdURp7mM","lab"],
-      ["1utzfEJguN4roFGE9GoICackFAeG12Cxn","lab"],
-      ["1La0VZvJhtg0DnnYnwcXiP6YGCMiciRVb","lab"],
-      ["1arBCNuUtYxaaqpGt5cttAcaS5k28aRXC","lab"],
-      ["1xCAlb10wSY1ONrvP6Evydrr2KK1wpiBw","lab"],
-      ["17c10ee_YImSpdni7GPEDdpDYBgYDxZei","lab"],
-      ["1xxt5gqy06wm0dwnYACsDIfip4QYZFqwm","lab"],
-      ["1Ft_kgYAAwFTidDsSoPSdmqpzcvSEReBZ","lab"],
-      ["14uTmOiPVJpi3HBeVH9dUzFqDFTz4PgkF","lab"],
-      ["1q4qqUGq49fU8WUgLpQdIFmxd1Td48qZb","lab"],
-      ["1KK4HPL52_bbYDStFDDYffK3UDznJVMtx","lab"],
-
-      ["17tsK9WVA19EIdhgpqCmBZsjYtIF9odi3","training"],
-      ["1WbQo4fLcECwn6JkVj2EHxFB91mw1rwqw","training"],
-      ["1W_mOuInaa5kVplUzPSZSY8B2cEym04H1","training"],
-      ["1SIry7zLTgxD6O0jw038bBdarJOX1rtcv","training"],
-      ["13-m0vb9i8HGRObnN94AiIxL6sHBTEHRJ","training"],
-      ["1mY6S4Ac6tvlZNdyRIRbrJXB7Dg125cBW","training"],
-      ["1VHtl4igxbACZRbRaz1z4Be4oWO_-g6Nh","training"],
-      ["1rOnP-Hy2UG_O80tLNUTBOK9c5U1jY2FZ","training"],
-      ["1tn9hjcwQZIY_LRD3MWZQmFBo2Vp6hj9R","training"],
-
-      ["1tg7wsI6pg4uYhl0i5_U9wrhKJtFCrLSQ","workshop"],
-      ["1j5d_sRfWfMlCuhCsXnjctxBfV3mP6QlR","workshop"],
-      ["1lIPYQuHgorHJa3J8uNj48Pan-GWimrUg","workshop"],
-      ["13hEHc4WUUdbAn3fT6i3PZfB2YTT2H7BV","workshop"],
-      ["19QOogYFK4FBbSTKw7d3mqQbeMYPpliqV","workshop"],
-      ["1QC-2u2G2ail43tfj-_pxtVTEUEjrHGfh","workshop"],
-      ["1fPytpFQmTDU5D7Q_t-MrKIjWQygooz78","workshop"],
-      ["1ZttD8els9SYN7rxK_HOocLslGZ8qEE6w","workshop"],
-      ["1b43nsVsgRXbimGvqphAuXTy_HQPkt6AO","workshop"],
-      ["1CPnP0nH2StpNZsqtkgqf7F0FWZyAXKYL","workshop"],
-
-      ["1Tf_GVVsrGbMB1WME764lS1ryuxCDL2k8","student"],
-      ["1HQagwa5Kl4CJ57P41so91QH0DEtsifXY","student"],
-      ["11M7CgL4RtHcgTuFnm_Mgpzfn-d3oGi5y","student"],
-      ["1KtXJVdhIthOWZZFMWmcp1x3VjrzBpg0H","student"],
-      ["1UH1JXv2qunhbFHCPurDU6rO70nz34sgv","student"],
-      ["1bkQiy42mGS9yx8deySZMDV2Ojm_fCX9P","student"],
-      ["1vfUBR2fj8qCtLRnwHvvNKlHd4JAk78K8","student"],
-      ["1kAv4V9npC45NMAv0ohH1k8JXELaOkw7H","student"],
-      ["12GDBDL1CFW7JoxfxpXNpkWR4AvDgYIDN","student"],
-      ["1P1BsaNoVucF_c5-b6zkycaVIkIQA1sXw","student"],
-      ["1WzSc4fnolnJWdavcMofQ0F_nPLYTFUZI","student"],
-      ["1YY39zMX7jrDw33Q5EMMWP7E6xEgU6ejo","student"],
-      ["1NZcxSC28URznQzZmgma9KCdBDYdv9Lo7","student"],
-      ["14JjjOpLd4s5LCmO_X-ExJx8KlaqEaIDw","student"],
-      ["13MeIkTXUdf7KiavYX0D9ZXqM2c7hD0Ag","student"]
-    ];
-
-    let visiblePhotos=[];
-    let currentIndex=0;
-    let touchStartX=0;
-    let revealObserver=null;
-
-    function imageUrl(id){
-      return "https://drive.google.com/thumbnail?id="+encodeURIComponent(id)+"&sz=w1200";
-    }
-
-    function observeCards(){
-      const cards=grid.querySelectorAll(".gallery-item");
-      if(!("IntersectionObserver" in window)){
-        cards.forEach(card=>card.classList.add("visible"));
-        return;
-      }
-      if(revealObserver)revealObserver.disconnect();
-      revealObserver=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },{threshold:.08});
-      cards.forEach(card=>revealObserver.observe(card));
-    }
-
-    function renderGallery(filter){
-      visiblePhotos=photos.filter(photo=>photo[1]===filter);
-      grid.innerHTML="";
-      visiblePhotos.forEach((photo,index)=>{
-        const card=document.createElement("div");
-        card.className="gallery-item";
-        const img=document.createElement("img");
-        img.src=imageUrl(photo[0]);
-        img.alt="EduChroma Gallery Photo";
-        img.loading="lazy";
-        card.appendChild(img);
-        card.addEventListener("click",()=>openLightbox(index));
-        grid.appendChild(card);
-      });
-      observeCards();
-    }
-
-    document.querySelectorAll(".gallery-filters .filter-btn").forEach(button=>{
-      button.addEventListener("click",()=>{
-        document.querySelectorAll(".gallery-filters .filter-btn").forEach(btn=>btn.classList.remove("active"));
-        button.classList.add("active");
-        renderGallery(button.dataset.filter);
-      });
-    });
-
-    const lightboxImage=document.getElementById("lightboxImage");
-
-    function openLightbox(index){
-      currentIndex=index;
-      showPhoto();
-      lightbox.classList.add("open");
-      document.body.style.overflow="hidden";
-    }
-    function showPhoto(){
-      const photo=visiblePhotos[currentIndex];
-      if(photo)lightboxImage.src=imageUrl(photo[0]);
-    }
-    function closeLightbox(){
-      lightbox.classList.remove("open");
-      document.body.style.overflow="";
-      lightboxImage.src="";
-    }
-    function nextPhoto(){
-      if(!visiblePhotos.length)return;
-      currentIndex=(currentIndex+1)%visiblePhotos.length;
-      showPhoto();
-    }
-    function previousPhoto(){
-      if(!visiblePhotos.length)return;
-      currentIndex=(currentIndex-1+visiblePhotos.length)%visiblePhotos.length;
-      showPhoto();
-    }
-
-    document.getElementById("lightboxClose").addEventListener("click",closeLightbox);
-    document.getElementById("lightboxNext").addEventListener("click",nextPhoto);
-    document.getElementById("lightboxPrev").addEventListener("click",previousPhoto);
-    lightbox.addEventListener("click",event=>{
-      if(event.target===lightbox)closeLightbox();
-    });
-    document.addEventListener("keydown",event=>{
-      if(!lightbox.classList.contains("open"))return;
-      if(event.key==="Escape")closeLightbox();
-      if(event.key==="ArrowRight")nextPhoto();
-      if(event.key==="ArrowLeft")previousPhoto();
-    });
-    lightbox.addEventListener("touchstart",event=>{
-      touchStartX=event.changedTouches[0].screenX;
-    },{passive:true});
-    lightbox.addEventListener("touchend",event=>{
-      const difference=event.changedTouches[0].screenX-touchStartX;
-      if(Math.abs(difference)>50){
-        if(difference<0)nextPhoto();
-        else previousPhoto();
-      }
-    },{passive:true});
-
-    function updateScrollProgress(){
-      const scrollable=document.documentElement.scrollHeight-window.innerHeight;
-      const progress=scrollable>0?(window.scrollY/scrollable)*100:0;
-      const fill=document.getElementById("galleryProgressFill");
-      if(fill)fill.style.height=progress+"%";
-    }
-    window.addEventListener("scroll",updateScrollProgress,{passive:true});
-    window.addEventListener("resize",updateScrollProgress);
-    updateScrollProgress();
-    renderGallery("lab");
-  }
-
-  if(document.readyState==="loading"){
-    document.addEventListener("DOMContentLoaded",initEduGallery);
-  }else{
-    initEduGallery();
-  }
-})();
-</script>
-  <!-- =========================================
-     EDUCHROMA ANALYTICALS – PREMIUM FOOTER
-========================================= -->
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
-.ec-footer,
-.ec-footer * {
-  box-sizing: border-box;
+.ec-gallery-hero,
+.ec-gallery-hero * {
+  box-sizing:border-box;
 }
 
-.ec-footer {
-  --navy: #071b35;
-  --navy2: #0d2c4d;
-  --teal: #12b8ad;
-  --muted: #b9c9da;
-
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding: 65px 6% 22px;
-  color: #fff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+.ec-gallery-hero {
+  width:100%;
+  min-height:240px;
+  padding:30px 4%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
   background:
-    radial-gradient(circle at 12% 15%, rgba(18,184,173,.16), transparent 28%),
-    radial-gradient(circle at 90% 80%, rgba(35,111,174,.20), transparent 30%),
-    linear-gradient(135deg, #06172c, #0b2949 55%, #06172c);
+    linear-gradient(90deg,rgba(6,26,56,.93),rgba(6,26,56,.75)),
+    url('https://drive.google.com/thumbnail?id=1Ff0lI3Q3ZyUQFJ3YN10MS4tWJw57VQ2R&sz=w1600') center/cover no-repeat;
+  border-top:5px solid #16c4b5;
+  border-bottom:5px solid #16c4b5;
+  font-family:Arial,sans-serif;
+  color:white;
 }
 
-.ec-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #12b8ad, #65e3d8, transparent);
+.ec-hero-content {
+  max-width:550px;
+  animation:ecSlideIn .8s ease;
 }
 
-.ec-footer-container {
-  max-width: 1400px;
-  margin: auto;
-  position: relative;
-  z-index: 1;
+.ec-hero-content h1 {
+  font-size:clamp(32px,4vw,48px);
+  font-weight:800;
+  margin:0 0 8px;
 }
 
-.ec-footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1.15fr 1fr 1.35fr;
-  gap: 38px;
+.ec-subtitle {
+  font-size:clamp(15px,1.8vw,20px);
+  color:#16c4b5;
+  margin:0 0 12px;
 }
 
-.ec-footer-brand img {
-  width: 175px;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  background: #fff;
-  padding: 7px;
-  border-radius: 10px;
-  margin-bottom: 17px;
+.ec-hero-content p {
+  font-size:13.5px;
+  line-height:1.6;
+  color:#dce8f4;
+  margin:0;
 }
 
-.ec-footer-tagline {
-  color: #62e0d5;
-  font-weight: 800;
-  font-size: 14px;
-  margin: 0 0 12px;
-  letter-spacing: .3px;
+.ec-hero-stats {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
-.ec-footer-description {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
-  margin: 0 0 20px;
+.ec-stat-card {
+  background:white;
+  color:#061a38;
+  width:110px;
+  height:130px;
+  border-radius:10px;
+  padding:12px 8px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-shadow:0 6px 20px #0004;
+  animation:ecPopUp .6s ease both;
 }
 
-.ec-footer-heading {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 800;
-  margin: 5px 0 22px;
-  position: relative;
-  padding-bottom: 12px;
+.ec-stat-card span {font-size:22px}
+.ec-stat-card h2 {font-size:18px;margin:5px 0 2px}
+.ec-stat-card p {font-size:10px;margin:0;color:#4a5568}
+
+.edu-gallery-wrapper {
+  max-width:1450px;
+  margin:auto;
+  padding:12px 25px 55px;
+  font-family:Arial,sans-serif;
+  color:#17364c;
 }
 
-.ec-footer-heading::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 35px;
-  height: 3px;
-  border-radius: 5px;
-  background: var(--teal);
+.gallery-hero {
+  padding:18px 15px 12px;
+  text-align:center;
 }
 
-.ec-footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.hero-topline {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding-bottom:12px;
+  border-bottom:1px solid #e5ecef;
+  color:#078b91;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
 }
 
-.ec-footer-links li {
-  margin: 0 0 13px;
+.hero-topline span:last-child {color:#9aa9b3}
+
+.gallery-hero h2 {
+  font-size:clamp(42px,6vw,68px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin:22px 0 15px;
+  font-weight:900;
+  color:#142f46;
 }
 
-.ec-footer-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 12.5px;
-  transition: .25s ease;
+.gallery-hero h2 span {color:#078b91}
+
+.gallery-filters {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px 0 28px;
 }
 
-.ec-footer-links a:hover {
-  color: #62e0d5;
-  padding-left: 5px;
+.filter-btn {
+  border:1px solid #e0e8ed;
+  background:white;
+  color:#28475d;
+  padding:11px 21px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
 }
 
-.ec-footer-contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 16px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
+.filter-btn:hover,
+.filter-btn.active {
+  background:#087f8c;
+  border-color:#087f8c;
+  color:white;
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px #087f8c33;
 }
 
-.ec-footer-contact-item .ec-contact-icon {
-  color: #55ded2;
-  font-size: 17px;
-  min-width: 20px;
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
 }
 
-.ec-footer-contact-item a {
-  color: var(--muted);
-  text-decoration: none;
-  overflow-wrap: anywhere;
+.gallery-item {
+  height:340px;
+  overflow:hidden;
+  border-radius:15px;
+  background:#eaf0f4;
+  cursor:pointer;
+  box-shadow:0 7px 22px #142d4117;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .5s,transform .5s;
 }
 
-.ec-footer-contact-item a:hover {
-  color: #62e0d5;
+.gallery-item.visible {
+  opacity:1;
+  transform:translateY(0);
 }
 
-.ec-footer-socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+.gallery-item img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .6s;
 }
 
-.ec-footer-socials a {
-  width: 37px;
-  height: 37px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 50%;
-  color: #fff;
-  background: rgba(255,255,255,.07);
-  text-decoration: none;
-  transition: .3s ease;
+.gallery-item:hover img {transform:scale(1.06)}
+
+.gallery-loading {
+  grid-column:1/-1;
+  text-align:center;
+  padding:35px;
+  color:#087f8c;
 }
 
-.ec-footer-socials a:hover {
-  background: var(--teal);
-  border-color: var(--teal);
-  color: #06243a;
-  transform: translateY(-5px);
+.gallery-error {
+  grid-column:1/-1;
+  text-align:center;
+  padding:35px;
+  color:#b42318;
 }
 
-.ec-footer-socials svg {
-  width: 17px;
-  height: 17px;
-  fill: currentColor;
+.gallery-scroll-progress {
+  position:fixed;
+  right:16px;
+  top:40%;
+  z-index:1000;
+  pointer-events:none;
 }
 
-.ec-footer-cta {
-  margin-top: 45px;
-  padding: 23px 27px;
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 15px;
-  background: linear-gradient(110deg, rgba(18,184,173,.15), rgba(255,255,255,.045));
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+.progress-track {
+  width:3px;
+  height:100px;
+  background:#dce6e9;
+  border-radius:5px;
+  overflow:hidden;
 }
 
-.ec-footer-cta h3 {
-  margin: 0 0 6px;
-  font-size: 18px;
-  font-weight: 800;
+.progress-fill {
+  width:100%;
+  height:0;
+  background:#078b91;
 }
 
-.ec-footer-cta p {
-  color: var(--muted);
-  font-size: 12px;
-  margin: 0;
-  line-height: 1.7;
+.edu-lightbox {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  background:rgba(3,12,22,.97);
+  align-items:center;
+  justify-content:center;
+  padding:55px 65px;
 }
 
-.ec-footer-cta a {
-  display: inline-block;
-  background: var(--teal);
-  color: #06243a;
-  padding: 12px 22px;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 12px;
-  white-space: nowrap;
-  transition: .3s;
+.edu-lightbox.open {display:flex}
+
+.edu-lightbox img {
+  max-width:100%;
+  max-height:85vh;
+  object-fit:contain;
+  border-radius:8px;
 }
 
-.ec-footer-cta a:hover {
-  background: #65e3d8;
-  transform: translateY(-2px);
+.lightbox-close,
+.lightbox-nav {
+  position:absolute;
+  border:0;
+  color:white;
+  background:#ffffff26;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.ec-footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.13);
-  margin-top: 35px;
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+.lightbox-close {
+  top:18px;
+  right:25px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  font-size:32px;
 }
 
-.ec-footer-bottom p {
-  color: #9eb2c8;
-  font-size: 11px;
-  margin: 0;
+.lightbox-nav {
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:58px;
+  border-radius:8px;
+  font-size:25px;
 }
 
-.ec-footer-bottom-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
+.lightbox-prev {left:15px}
+.lightbox-next {right:15px}
+
+@keyframes ecSlideIn {
+  from {opacity:0;transform:translateX(-35px)}
+  to {opacity:1;transform:translateX(0)}
 }
 
-.ec-footer-bottom-links a {
-  color: #9eb2c8;
-  font-size: 11px;
-  text-decoration: none;
+@keyframes ecPopUp {
+  from {opacity:0;transform:translateY(20px)}
+  to {opacity:1;transform:translateY(0)}
 }
 
-.ec-footer-bottom-links a:hover {
-  color: #62e0d5;
-}
-
-@media(max-width:1100px) {
-  .ec-footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px 25px;
+@media(max-width:1000px) {
+  .ec-gallery-hero {
+    flex-direction:column;
+    text-align:center;
   }
+  .gallery-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
-@media(max-width:700px) {
-  .ec-footer {
-    padding: 45px 22px 20px;
-  }
-
-  .ec-footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 20px;
-  }
-
-  .ec-footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .ec-footer-contact {
-    grid-column: 1 / -1;
-  }
-
-  .ec-footer-cta {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  .ec-footer-cta a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .ec-footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .ec-footer-bottom-links {
-    justify-content: center;
-  }
+@media(max-width:650px) {
+  .edu-gallery-wrapper {padding:10px 12px 40px}
+  .gallery-grid {grid-template-columns:1fr;gap:16px}
+  .gallery-item {height:285px}
+  .gallery-scroll-progress {display:none}
+  .edu-lightbox {padding:55px 12px}
+  .lightbox-nav {width:38px;height:45px}
+  .lightbox-prev {left:5px}
+  .lightbox-next {right:5px}
+  .ec-stat-card {width:95px;height:115px}
 }
 
-@media(max-width:380px) {
-  .ec-footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ec-footer-brand,
-  .ec-footer-contact {
-    grid-column: auto;
-  }
+@keyframes ecPopUp {
+  from {opacity:0;transform:translateY(20px)}
+  to {opacity:1;transform:translateY(0)}
 }
 </style>
-
-<footer class="ec-footer">
-  <div class="ec-footer-container">
-
-    <div class="ec-footer-grid">
-
-      <!-- BRAND -->
-      <div class="ec-footer-brand">
-        <a href="index.html">
-          <img
-            src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-"
-            alt="EduChroma Analyticals Logo">
-        </a>
-
-        <p class="ec-footer-tagline">
-          Unlock Skills, Analyse Success.
-        </p>
-
-        <p class="ec-footer-description">
-          EduChroma Analyticals is dedicated to analytical
-          training, laboratory services, research support
-          and industry-oriented skill development for
-          science and life science students.
-        </p>
-
-        <div class="ec-footer-socials">
-
-          <!-- LINKEDIN -->
-          <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/"
-             target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24">
-              <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8 18H5V9h3v9ZM6.5 7.73a1.73 1.73 0 1 1 0-3.46 1.73 1.73 0 0 1 0 3.46ZM19 18h-3v-4.37c0-1.04-.02-2.38-1.45-2.38-1.45 0-1.67 1.13-1.67 2.3V18h-3V9h2.88v1.23h.04c.4-.7 1.38-1.45 2.84-1.45 3.03 0 3.36 1.99 3.36 4.58V18Z"/>
-            </svg>
-          </a>
-
-          <!-- INSTAGRAM -->
-          <a href="https://www.instagram.com/educhroma_analyticals/"
-             target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg viewBox="0 0 24 24">
-              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3Zm11 1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
-            </svg>
-          </a>
-
-          <!-- YOUTUBE -->
-          <a href="https://www.youtube.com/@educhroma_analyticals"
-             target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <svg viewBox="0 0 24 24">
-              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
-            </svg>
-          </a>
-
-          <!-- FACEBOOK -->
-          <a href="https://www.facebook.com/share/1EArM2Vrqc/"
-             target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg viewBox="0 0 24 24">
-              <path d="M13.5 22v-9h3l.45-3.5H13.5V7.27c0-1.01.28-1.7 1.73-1.7H17V2.44C16.69 2.4 15.63 2.3 14.4 2.3c-2.58 0-4.35 1.58-4.35 4.48V9.5H7V13h3.05v9h3.45Z"/>
-            </svg>
-          </a>
-
-          <!-- WHATSAPP -->
-          <a href="https://wa.me/918141108657"
-             target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24">
-              <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.5ZM12 21.9c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 1 1 8.4 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.2 3.2c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"/>
-            </svg>
-          </a>
-
-        </div>
-      </div>
-
-      <!-- QUICK LINKS -->
-      <div>
-        <h3 class="ec-footer-heading">Quick Links</h3>
-        <ul class="ec-footer-links">
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="training.html">Training Programmes</a></li>
-          <li><a href="index.html#testing">Testing Services</a></li>
-          <li><a href="index.html#research">Research</a></li>
-          <li><a href="index.html#gallery">Gallery</a></li>
-          <li><a href="index.html#contact">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <!-- SERVICES -->
-      <div>
-        <h3 class="ec-footer-heading">Our Services</h3>
-        <ul class="ec-footer-links">
-          <li><a href="index.html#training">HPLC Training</a></li>
-          <li><a href="index.html#training">Industrial Training</a></li>
-          <li><a href="index.html#testing">HPLC Sample Testing</a></li>
-          <li><a href="index.html#testing">Analytical Services</a></li>
-          <li><a href="index.html#research">Method Development</a></li>
-          <li><a href="index.html#research">Method Validation</a></li>
-        </ul>
-      </div>
-
-      <!-- RESEARCH -->
-      <div>
-        <h3 class="ec-footer-heading">Research Support</h3>
-        <ul class="ec-footer-links">
-          <li><a href="index.html#research">Project Guidance</a></li>
-          <li><a href="index.html#research">Thesis Support</a></li>
-          <li><a href="index.html#research">HPLC Analysis</a></li>
-          <li><a href="index.html#research">Research Training</a></li>
-          <li><a href="index.html#research">Analytical Consultation</a></li>
-        </ul>
-      </div>
-
-      <!-- CONTACT -->
-      <div class="ec-footer-contact">
-        <h3 class="ec-footer-heading">Contact Us</h3>
-
-        <div class="ec-footer-contact-item">
-          <span class="ec-contact-icon">📍</span>
-          <span>
-            TF-12,13, Sun Meelan,<br>
-            Behind Waghodia Check Post,<br>
-            NH-48, Waghodia Road,<br>
-            Vadodara, Gujarat - 390019
-          </span>
-        </div>
-
-        <div class="ec-footer-contact-item">
-          <span class="ec-contact-icon">☎</span>
-          <a href="tel:+918141108657">+91 81411 08657</a>
-        </div>
-
-        <div class="ec-footer-contact-item">
-          <span class="ec-contact-icon">✉</span>
-          <a href="mailto:educhroma01@gmail.com">
-            educhroma01@gmail.com
-          </a>
-        </div>
-
-        <div class="ec-footer-contact-item">
-          <span class="ec-contact-icon">🌐</span>
-          <a href="https://www.educhroma.com" target="_blank"
-             rel="noopener noreferrer">www.educhroma.com</a>
-        </div>
-
-        <div class="ec-footer-contact-item">
-          <span class="ec-contact-icon">◷</span>
-          <span>
-            Monday – Saturday<br>
-            9:30 AM – 6:30 PM<br>
-            Sunday: Closed
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CONTACT CTA -->
-    <div class="ec-footer-cta">
-      <div>
-        <h3>Let's Build Your Analytical Skills!</h3>
-        <p>
-          Connect with EduChroma Analyticals for training,
-          testing services and research support.
-        </p>
-      </div>
-
-      <a href="https://wa.me/918141108657"
-         target="_blank" rel="noopener noreferrer">
-        CONNECT ON WHATSAPP →
-      </a>
-    </div>
-
-    <!-- COPYRIGHT -->
-    <div class="ec-footer-bottom">
-      <p>
-        © 2026 EduChroma Analyticals. All Rights Reserved.
-      </p>
-
-      <div class="ec-footer-bottom-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-</body>
-</html>
