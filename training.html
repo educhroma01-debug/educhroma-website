@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HPLC Training Programmes | EduChroma Analyticals</title>
+<meta name="description" content="Professional HPLC hands-on training, analytical chemistry, quality assurance and pharma training programmes at EduChroma Analyticals, Vadodara.">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;color:#102b49;background:#f7fbff}
+a{text-decoration:none}
+img{max-width:100%;display:block}
+:root{--navy:#092b50;--blue:#0876c9;--teal:#00a99d;--light:#edf7ff}
+
+/* NAVIGATION */
+.ec-nav{background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 4px 20px rgba(9,43,80,.09)}
+.ec-nav-inner{max-width:1320px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ec-logo{width:190px;max-height:65px;object-fit:contain}
+.ec-nav-links{display:flex;align-items:center;gap:23px}
+.ec-nav-links a{font-size:12px;font-weight:800;color:#173957;letter-spacing:.3px;white-space:nowrap}
+.ec-nav-links a:hover,.ec-nav-links a.active{color:#0784d5}
+.ec-menu-btn{display:none;border:0;background:#eaf5ff;color:var(--navy);font-size:25px;padding:7px 12px;border-radius:8px;cursor:pointer}
+
+/* HERO */
+.ec-training-hero{padding:65px 20px;background:linear-gradient(120deg,#eaf6ff,#f8fcff 55%,#e6f8f6)}
+.ec-hero-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px}
+.ec-hero-tag{display:inline-block;background:#d9f4f0;color:#008d80;padding:9px 16px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1px;margin-bottom:18px}
+.ec-hero-copy h1{font-size:clamp(34px,4.5vw,55px);line-height:1.15;color:var(--navy);font-weight:800;margin-bottom:20px}
+.ec-hero-copy h1 span{color:#0785cf}
+.ec-hero-copy p{font-size:15px;line-height:1.9;color:#536b81;margin-bottom:25px}
+.ec-hero-points{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.ec-hero-points span{background:#fff;border:1px solid #dceaf5;padding:9px 13px;border-radius:30px;font-size:12px;font-weight:700;color:#234967}
+.ec-primary-btn{display:inline-block;background:linear-gradient(100deg,#0876c9,#00a99d);color:#fff;padding:14px 24px;border-radius:9px;font-size:13px;font-weight:800;box-shadow:0 8px 20px #0876c933}
+.ec-hero-image img{width:100%;height:390px;object-fit:cover;border-radius:100px 18px 18px 18px;box-shadow:0 20px 45px #123b5b24}
+
+/* SECTION COMMON */
+.ec-section{padding:70px 20px}
+.ec-container{max-width:1250px;margin:auto}
+.ec-section-heading{text-align:center;margin-bottom:38px}
+.ec-section-heading span{color:#009e98;font-size:12px;font-weight:800;letter-spacing:2px}
+.ec-section-heading h2{font-size:clamp(27px,3vw,38px);color:var(--navy);font-weight:800;margin:10px 0}
+.ec-section-heading p{color:#65798c;font-size:14px;line-height:1.7}
+
+/* PROGRAMMES */
+.ec-programmes{background:#fff}
+.ec-programme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ec-programme-card{background:#fff;border:1px solid #e1edf5;border-radius:17px;padding:25px;box-shadow:0 8px 25px rgba(13,55,88,.06);transition:.25s;display:flex;flex-direction:column}
+.ec-programme-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #0b41651a;border-color:#a7d7ee}
+.ec-programme-number{font-size:12px;font-weight:800;color:#009e98;letter-spacing:1px;margin-bottom:15px}
+.ec-programme-card h3{font-size:18px;color:var(--navy);line-height:1.45;margin-bottom:12px}
+.ec-programme-card p{font-size:13px;line-height:1.7;color:#687d90;margin-bottom:18px;flex:1}
+.ec-programme-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #edf1f5;padding-top:17px}
+.ec-programme-price{font-size:18px;font-weight:800;color:#0785c9}
+.ec-programme-link{background:#eaf6ff;color:#0876c9;padding:10px 13px;border-radius:8px;font-size:11px;font-weight:800}
+
+/* BATCH TABLE */
+.ec-batch-section{background:#f0f7fc}
+.ec-table-wrap{overflow-x:auto;background:#fff;border-radius:15px;box-shadow:0 8px 25px #0d375812}
+.ec-batch-table{width:100%;border-collapse:collapse;min-width:750px}
+.ec-batch-table th{background:#0b345a;color:white;padding:17px 15px;text-align:left;font-size:12px;letter-spacing:.4px}
+.ec-batch-table td{padding:17px 15px;border-bottom:1px solid #eaf0f5;font-size:13px;color:#526b80}
+.ec-batch-table td:first-child{font-weight:700;color:#173957}
+.ec-register{display:inline-block;background:#e4f6f3;color:#008d80;padding:8px 12px;border-radius:7px;font-size:11px;font-weight:800;white-space:nowrap}
+
+/* CTA */
+.ec-career-cta{padding:55px 20px;background:linear-gradient(110deg,#082d52,#0879b9,#00a99d)}
+.ec-career-inner{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.ec-career-inner h2{font-size:clamp(25px,3vw,36px);color:white;margin-bottom:10px}
+.ec-career-inner p{font-size:14px;color:#e0f4ff;line-height:1.7}
+.ec-cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.ec-cta-actions a{padding:13px 18px;border-radius:8px;font-size:12px;font-weight:800;white-space:nowrap}
+.ec-cta-whatsapp{background:white;color:#0876c9}
+.ec-cta-brochure{border:1px solid #ffffff99;color:white}
+
+/* FOOTER */
+.ec-footer{background:#061d35;color:#d7e6f2;padding:55px 20px 20px}
+.ec-footer-container{max-width:1250px;margin:auto}
+.ec-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.2fr;gap:30px}
+.ec-footer-logo{width:175px;background:white;padding:8px;border-radius:8px;margin-bottom:18px}
+.ec-footer-about p{font-size:12px;line-height:1.9;color:#b8cbdc}
+.ec-footer h3{font-size:14px;color:#fff;margin-bottom:20px}
+.ec-footer-links{list-style:none}
+.ec-footer-links li{margin-bottom:12px}
+.ec-footer-links a,.ec-footer-contact p{font-size:12px;line-height:1.7;color:#b8cbdc}
+.ec-footer-links a:hover{color:#35d5c2}
+.ec-footer-contact p{margin-bottom:12px}
+.ec-footer-social{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap}
+.ec-footer-social a{width:34px;height:34px;border-radius:50%;background:#153c5d;color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.ec-footer-social a:hover{background:#009e98}
+.ec-footer-bottom{border-top:1px solid #24435d;margin-top:38px;padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.ec-footer-bottom p{font-size:11px;color:#9fb4c7}
+.ec-footer-bottom a{color:#36c9bd}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+.ec-nav-links{gap:13px}
+.ec-nav-links a{font-size:10px}
+.ec-footer-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:800px){
+.ec-menu-btn{display:block}
+.ec-nav-inner{flex-wrap:wrap}
+.ec-nav-links{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:0;padding:10px 0}
+.ec-nav-links.show{display:flex}
+.ec-nav-links a{width:100%;padding:13px 8px;border-top:1px solid #edf2f7;font-size:12px}
+.ec-hero-inner{grid-template-columns:1fr}
+.ec-hero-image img{height:300px;border-radius:55px 14px 14px 14px}
+.ec-programme-grid{grid-template-columns:repeat(2,1fr)}
+.ec-career-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+.ec-logo{width:155px}
+.ec-training-hero{padding:45px 17px}
+.ec-section{padding:50px 15px}
+.ec-programme-grid{grid-template-columns:1fr}
+.ec-footer-grid{grid-template-columns:1fr 1fr;gap:25px}
+.ec-footer-about{grid-column:1/-1}
+.ec-footer-contact{grid-column:1/-1}
+.ec-footer-bottom{flex-direction:column}
+.ec-cta-actions{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="ec-nav">
+  <div class="ec-nav-inner">
+    <a href="index.html#home">
+      <img class="ec-logo" src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals">
+    </a>
+    <button class="ec-menu-btn" onclick="toggleEcMenu()" aria-label="Toggle navigation">☰</button>
+    <nav class="ec-nav-links" id="ecNavLinks">
+      <a href="index.html#home">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a class="active" href="training.html">TRAINING</a>
+      <a href="index.html#testing">TESTING SERVICES</a>
+      <a href="index.html#research">RESEARCH</a>
+      <a href="index.html#gallery">GALLERY</a>
+      <a href="index.html#contact">CONTACT US</a>
+    </nav>
+  </div>
+</header>
+
+<!-- TRAINING HERO -->
+<section class="ec-training-hero">
+  <div class="ec-hero-inner">
+    <div class="ec-hero-copy">
+      <span class="ec-hero-tag">EDUCHROMA ANALYTICAL TRAINING CENTRE</span>
+      <h1>Build Your Career in <span>Analytical Science</span></h1>
+      <p>Gain practical laboratory exposure and industry-oriented knowledge through professional HPLC, pharmaceutical quality assurance and analytical science training programmes.</p>
+      <div class="ec-hero-points">
+        <span>✓ Hands-on Learning</span>
+        <span>✓ Industry-Oriented Training</span>
+        <span>✓ Practical Lab Exposure</span>
+      </div>
+      <a class="ec-primary-btn" href="https://wa.me/918141108657?text=Hello%20EduChroma%2C%20I%20want%20to%20know%20about%20training%20programmes." target="_blank">Enquire on WhatsApp →</a>
+    </div>
+    <div class="ec-hero-image">
+      <img src="https://lh3.googleusercontent.com/d/10g7iF4jJpNHoRP_Wss5HDW4Qqoa-FGpC" alt="EduChroma HPLC laboratory training">
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING PROGRAMMES -->
+<section class="ec-section ec-programmes" id="edu-training">
+  <div class="ec-container">
+    <div class="ec-section-heading">
+      <span>LEARN • PRACTISE • GROW</span>
+      <h2>Our Training Programmes</h2>
+      <p>Choose a practical training programme designed to strengthen your laboratory and professional skills.</p>
+    </div>
+
+    <div class="ec-programme-grid">
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 01</div>
+        <h3>HPLC One Day Hands-On Workshop</h3>
+        <p>Introduction to HPLC, instrument components, basic operation and practical demonstration.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">₹499/-</span><a class="ec-programme-link" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">REGISTER →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 02</div>
+        <h3>One Day Food Industry Awareness Workshop</h3>
+        <p>Learn about food industry operations, quality practices and analytical testing awareness.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">₹599/-</span><a class="ec-programme-link" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">REGISTER →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 03</div>
+        <h3>One Week HPLC Hands-On Training Programme</h3>
+        <p>Practical exposure to HPLC instrumentation, sample preparation, analysis and chromatograms.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">₹1,499/-</span><a class="ec-programme-link" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">REGISTER →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 04</div>
+        <h3>15 Days Quality Hands-On Training Programme</h3>
+        <p>Introduction to quality assurance, quality control, documentation and laboratory practices.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">₹3,999/-</span><a class="ec-programme-link" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">REGISTER →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 05</div>
+        <h3>One Month HPLC Hands-On Training Programme</h3>
+        <p>Structured practical training in HPLC operation, analysis, troubleshooting and data interpretation.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">₹6,999/-</span><a class="ec-programme-link" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">REGISTER →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 06</div>
+        <h3>One Month HPLC Training: Method Development & Validation</h3>
+        <p>Learn analytical method development, optimization and essential validation parameters.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">₹11,999/-</span><a class="ec-programme-link" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">REGISTER →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 07</div>
+        <h3>Two Month HPLC Training with Method Development & Validation</h3>
+        <p>Extended practical programme covering HPLC operation, method development, validation and analytical applications.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">₹14,999/-</span><a class="ec-programme-link" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">REGISTER →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 08</div>
+        <h3>EduChroma Faculty Development Programme</h3>
+        <p>Professional development and practical laboratory training support for faculty members.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">Contact Us</span><a class="ec-programme-link" href="https://wa.me/918141108657" target="_blank">ENQUIRE →</a></div>
+      </article>
+
+      <article class="ec-programme-card">
+        <div class="ec-programme-number">PROGRAMME 09</div>
+        <h3>Employee Training Programme</h3>
+        <p>Customized employee training programmes for analytical laboratories and industry teams.</p>
+        <div class="ec-programme-bottom"><span class="ec-programme-price">Contact Us</span><a class="ec-programme-link" href="https://wa.me/918141108657" target="_blank">ENQUIRE →</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING BATCHES -->
+<section class="ec-section ec-batch-section" id="edu-batch-table">
+  <div class="ec-container">
+    <div class="ec-section-heading">
+      <span>JOIN OUR NEXT BATCH</span>
+      <h2>Upcoming Batch Programmes</h2>
+      <p>Explore our available training formats and register your interest for upcoming batches.</p>
+    </div>
+
+    <div class="ec-table-wrap">
+      <table class="ec-batch-table">
+        <thead>
+          <tr>
+            <th>TRAINING PROGRAMME</th>
+            <th>DURATION</th>
+            <th>MODE</th>
+            <th>FEES</th>
+            <th>BATCH DATE</th>
+            <th>REGISTRATION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>One Week HPLC Hands-On Training</td>
+            <td>7 Days</td>
+            <td>Offline</td>
+            <td>₹3,000</td>
+            <td>To Be Announced</td>
+            <td><a class="ec-register" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">Register</a></td>
+          </tr>
+          <tr>
+            <td>15 Days QA & QC Training</td>
+            <td>15 Days</td>
+            <td>Offline</td>
+            <td>₹5,000</td>
+            <td>To Be Announced</td>
+            <td><a class="ec-register" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">Register</a></td>
+          </tr>
+          <tr>
+            <td>One Month HPLC Hands-On Training</td>
+            <td>30 Days</td>
+            <td>Offline</td>
+            <td>₹6,000</td>
+            <td>To Be Announced</td>
+            <td><a class="ec-register" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">Register</a></td>
+          </tr>
+          <tr>
+            <td>HPLC Method Development & Validation</td>
+            <td>30 Days</td>
+            <td>Offline</td>
+            <td>₹7,000</td>
+            <td>To Be Announced</td>
+            <td><a class="ec-register" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">Register</a></td>
+          </tr>
+          <tr>
+            <td>Two Month HPLC Training</td>
+            <td>60 Days</td>
+            <td>Offline</td>
+            <td>₹10,000</td>
+            <td>To Be Announced</td>
+            <td><a class="ec-register" href="https://forms.gle/D34XKQcFTHA4UEgM6" target="_blank">Register</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER ENQUIRY BANNER -->
+<section class="ec-career-cta" id="enquire">
+  <div class="ec-career-inner">
+    <div>
+      <h2>Ready to Build Your Career in Analytical Science?</h2>
+      <p>Connect with EduChroma Analyticals and take your next step towards practical laboratory learning.</p>
+    </div>
+    <div class="ec-cta-actions">
+      <a class="ec-cta-whatsapp" href="https://wa.me/918141108657?text=Hello%20EduChroma%2C%20I%20want%20training%20information." target="_blank">ENQUIRE NOW ↗</a>
+      <a class="ec-cta-brochure" href="https://wa.me/918141108657?text=Please%20share%20the%20training%20brochure." target="_blank">REQUEST BROCHURE</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM FOOTER -->
+<footer class="ec-footer">
+  <div class="ec-footer-container">
+    <div class="ec-footer-grid">
+
+      <div class="ec-footer-about">
+        <img class="ec-footer-logo" src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals Logo">
+        <p>EduChroma Analyticals is dedicated to analytical training, laboratory services, research support and industry-oriented skill development.</p>
+        <div class="ec-footer-social">
+          <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/educhroma_analyticals/" target="_blank" aria-label="Instagram">ig</a>
+          <a href="https://www.youtube.com/@educhroma_analyticals" target="_blank" aria-label="YouTube">▶</a>
+          <a href="https://www.facebook.com/share/1EArM2Vrqc/" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://wa.me/918141108657" target="_blank" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="training.html">Training Programmes</a></li>
+          <li><a href="index.html#testing">Testing Services</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Our Services</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#training">HPLC Training</a></li>
+          <li><a href="index.html#testing">Sample Testing</a></li>
+          <li><a href="index.html#research">Research Support</a></li>
+          <li><a href="index.html#training">Employee Training</a></li>
+          <li><a href="index.html#training">Faculty Development</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Research Support</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#research">M.Pharm Projects</a></li>
+          <li><a href="index.html#research">HPLC Method Development</a></li>
+          <li><a href="index.html#research">Method Validation</a></li>
+          <li><a href="index.html#research">Analytical Guidance</a></li>
+        </ul>
+      </div>
+
+      <div class="ec-footer-contact">
+        <h3>Contact Us</h3>
+        <p>📍 TF-12,13, Sun Meelan, Behind Waghodia Check Post, NH-48, Waghodia Road, Vadodara, Gujarat - 390019</p>
+        <p>☎ <a href="tel:+918141108657">+91 81411 08657</a></p>
+        <p>✉ <a href="mailto:educhroma01@gmail.com">educhroma01@gmail.com</a></p>
+        <p>🌐 <a href="https://www.educhroma.com" target="_blank">www.educhroma.com</a></p>
+        <p>Mon–Sat: 9:30 AM – 6:30 PM<br>Sunday: Closed</p>
+      </div>
+
+    </div>
+
+    <div class="ec-footer-bottom">
+      <p>© 2026 EduChroma Analyticals. All Rights Reserved.</p>
+      <p>Designed for <a href="index.html">EduChroma Analyticals</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleEcMenu(){
+  document.getElementById('ecNavLinks').classList.toggle('show');
+}
+document.querySelectorAll('#ecNavLinks a').forEach(function(link){
+  link.addEventListener('click',function(){
+    document.getElementById('ecNavLinks').classList.remove('show');
+  });
+});
+</script>
+
+</body>
+</html>
