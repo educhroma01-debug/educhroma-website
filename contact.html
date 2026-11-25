@@ -2,957 +2,1503 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | EduChroma Analyticals</title>
-<meta name="description" content="Contact EduChroma Analyticals, Vadodara for HPLC training, analytical testing, internships and research support.">
-
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #102b4e;
-  background: #f5f8fc;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.ec-contact {
-  width: 100%;
-  overflow: hidden;
-}
-
-.ec-container {
-  width: min(1180px, 92%);
-  margin: auto;
-}
-
-/* HEADER */
-
-.ec-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e8eef5;
-  position: relative;
-  z-index: 5;
-}
-
-.ec-header-inner {
-  min-height: 78px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.ec-brand {
-  font-size: 23px;
-  font-weight: 800;
-  color: #0c315b;
-}
-
-.ec-brand span {
-  color: #1599d2;
-}
-
-.ec-nav {
-  display: flex;
-  gap: 23px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.ec-nav a {
-  font-size: 13px;
-  font-weight: 700;
-  color: #405773;
-  transition: .25s;
-}
-
-.ec-nav a:hover,
-.ec-nav a.active {
-  color: #078dcc;
-}
-
-/* HERO */
-
-.ec-hero {
-  background: linear-gradient(120deg, #08284c, #104b7e);
-  color: #ffffff;
-  padding: 75px 0;
-  position: relative;
-}
-
-.ec-hero::after {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 50%;
-  right: -100px;
-  top: -120px;
-}
-
-.ec-hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 760px;
-}
-
-.ec-eyebrow {
-  color: #62d0ff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-}
-
-.ec-hero h1 {
-  font-size: clamp(34px, 5vw, 55px);
-  line-height: 1.15;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-
-.ec-hero h1 span {
-  color: #55c9f6;
-}
-
-.ec-hero p {
-  max-width: 650px;
-  color: #d5e5f5;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-/* SECTION COMMON */
-
-.ec-section {
-  padding: 75px 0;
-}
-
-.ec-section-heading {
-  text-align: center;
-  margin-bottom: 42px;
-}
-
-.ec-section-heading small {
-  color: #078dcc;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.ec-section-heading h2 {
-  color: #102f54;
-  font-size: clamp(27px, 4vw, 36px);
-  margin-top: 12px;
-  font-weight: 800;
-}
-
-.ec-section-heading p {
-  color: #718197;
-  font-size: 14px;
-  line-height: 1.8;
-  margin-top: 12px;
-}
-
-/* CONTACT DETAILS + FORM */
-
-.ec-contact-grid {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 30px;
-  align-items: stretch;
-}
-
-.ec-info-panel {
-  background: #0c315b;
-  color: #fff;
-  border-radius: 18px;
-  padding: 35px;
-}
-
-.ec-info-panel h3 {
-  font-size: 23px;
-  margin-bottom: 12px;
-}
-
-.ec-info-panel > p {
-  color: #c7d8e9;
-  font-size: 13px;
-  line-height: 1.8;
-  margin-bottom: 28px;
-}
-
-.ec-info-item {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 24px;
-  align-items: flex-start;
-}
-
-.ec-info-icon {
-  width: 43px;
-  height: 43px;
-  min-width: 43px;
-  border-radius: 12px;
-  background: rgba(255,255,255,.12);
-  display: grid;
-  place-items: center;
-  font-size: 19px;
-}
-
-.ec-info-item h4 {
-  font-size: 13px;
-  margin-bottom: 6px;
-  color: #8ddcff;
-}
-
-.ec-info-item p,
-.ec-info-item a {
-  color: #fff;
-  font-size: 13px;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
-}
-
-.ec-info-item a:hover {
-  color: #65d4ff;
-}
-
-.ec-social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.ec-social-links a {
-  background: #ffffff;
-  color: #0c315b;
-  border-radius: 8px;
-  padding: 11px 15px;
-  font-size: 12px;
-  font-weight: 800;
-  transition: .25s;
-}
-
-.ec-social-links a:hover {
-  background: #59cdf7;
-}
-
-/* FORM */
-
-.ec-form-panel {
-  background: #fff;
-  border: 1px solid #e7edf4;
-  border-radius: 18px;
-  padding: 35px;
-  box-shadow: 0 12px 35px rgba(16,45,78,.05);
-}
-
-.ec-form-panel h3 {
-  font-size: 23px;
-  color: #102f54;
-  margin-bottom: 9px;
-}
-
-.ec-form-panel > p {
-  color: #78889b;
-  font-size: 13px;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-
-.ec-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.ec-form-group {
-  margin-bottom: 17px;
-}
-
-.ec-form-group label {
-  display: block;
-  font-size: 12px;
-  color: #334d6a;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.ec-form-group input,
-.ec-form-group select,
-.ec-form-group textarea {
-  width: 100%;
-  padding: 13px 14px;
-  border: 1px solid #dce5ef;
-  border-radius: 9px;
-  background: #fbfdff;
-  font-family: inherit;
-  font-size: 13px;
-  outline: none;
-  color: #183653;
-  transition: .2s;
-}
-
-.ec-form-group input:focus,
-.ec-form-group select:focus,
-.ec-form-group textarea:focus {
-  border-color: #159bd5;
-  box-shadow: 0 0 0 3px rgba(21,155,213,.10);
-}
-
-.ec-form-group textarea {
-  min-height: 115px;
-  resize: vertical;
-}
-
-.ec-privacy {
-  display: flex;
-  gap: 9px;
-  align-items: flex-start;
-  font-size: 11px;
-  line-height: 1.6;
-  color: #718197;
-  margin: 5px 0 18px;
-}
-
-.ec-privacy input {
-  margin-top: 3px;
-}
-
-.ec-submit {
-  width: 100%;
-  border: 0;
-  border-radius: 9px;
-  padding: 15px;
-  background: #078dcc;
-  color: white;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: .25s;
-}
-
-.ec-submit:hover {
-  background: #076ca3;
-  transform: translateY(-2px);
-}
-
-.ec-form-status {
-  font-size: 13px;
-  margin-top: 14px;
-  line-height: 1.6;
-}
-
-/* LOCATION */
-
-.ec-location-section {
-  background: #ffffff;
-}
-
-.ec-location-grid {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 28px;
-}
-
-.ec-location-card {
-  background: #f4f8fc;
-  border: 1px solid #e5edf5;
-  border-radius: 16px;
-  padding: 28px;
-}
-
-.ec-location-card h3 {
-  font-size: 20px;
-  margin-bottom: 17px;
-}
-
-.ec-location-card p {
-  font-size: 13px;
-  color: #63758b;
-  line-height: 1.9;
-}
-
-.ec-location-card strong {
-  color: #183b60;
-}
-
-.ec-map {
-  width: 100%;
-  min-height: 330px;
-  border: 0;
-  border-radius: 16px;
-  display: block;
-}
-
-.ec-directions {
-  display: inline-block;
-  margin-top: 20px;
-  background: #078dcc;
-  color: #fff;
-  padding: 12px 19px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-/* FAQ */
-
-.ec-faq-list {
-  max-width: 850px;
-  margin: auto;
-}
-
-.ec-faq-item {
-  background: #fff;
-  border: 1px solid #e6edf5;
-  border-radius: 12px;
-  margin-bottom: 13px;
-  overflow: hidden;
-}
-
-.ec-faq-question {
-  width: 100%;
-  background: none;
-  border: 0;
-  padding: 20px 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  text-align: left;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 800;
-  color: #173b60;
-  cursor: pointer;
-}
-
-.ec-faq-question span:last-child {
-  font-size: 20px;
-  color: #078dcc;
-}
-
-.ec-faq-answer {
-  display: none;
-  padding: 0 22px 20px;
-  color: #718197;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.ec-faq-item.open .ec-faq-answer {
-  display: block;
-}
-
-/* CTA */
-
-.ec-cta {
-  background: linear-gradient(120deg, #0b3158, #087fb9);
-  padding: 55px 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.ec-cta h2 {
-  font-size: clamp(25px, 4vw, 34px);
-  margin-bottom: 12px;
-}
-
-.ec-cta p {
-  font-size: 14px;
-  color: #d8eafa;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-
-.ec-cta a {
-  display: inline-block;
-  background: #fff;
-  color: #0b4775;
-  padding: 14px 23px;
-  border-radius: 9px;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-/* FOOTER */
-
-.ec-footer {
-  background: #071f3b;
-  color: #c6d5e5;
-  padding: 25px 0;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.ec-footer strong {
-  color: #fff;
-}
-
-/* RESPONSIVE */
-
-@media(max-width: 850px) {
-  .ec-header-inner {
-    padding: 18px 0;
-    flex-direction: column;
-  }
-
-  .ec-nav {
-    justify-content: center;
-    gap: 13px 18px;
-  }
-
-  .ec-contact-grid,
-  .ec-location-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media(max-width: 560px) {
-  .ec-hero {
-    padding: 55px 0;
-  }
-
-  .ec-section {
-    padding: 55px 0;
-  }
-
-  .ec-form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .ec-info-panel,
-  .ec-form-panel {
-    padding: 25px 20px;
-  }
-
-  .ec-nav a {
-    font-size: 11px;
-  }
-
-  .ec-map {
-    min-height: 260px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | EduChroma Analyticals</title>
+  <meta name="description" content="Contact EduChroma Analyticals, Vadodara for HPLC training, analytical testing, internships and research support.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 100%;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0b2545;
+      background: linear-gradient(135deg,#eff6ff,#ffffff 55%,#ecfeff);
+    }
+
+    /* =========================
+       NAVIGATION - SAME AS ABOUT
+    ========================= */
+    .ec-navbar {
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #e8eef4;
+      box-shadow: 0 4px 15px rgba(11,37,69,.06);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .ec-nav-container {
+      width: 100%;
+      max-width: 1320px;
+      min-height: 86px;
+      margin: auto;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      position: relative;
+    }
+
+    .ec-nav-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .ec-nav-logo img {
+      display: block;
+      width: auto;
+      max-width: 205px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .ec-nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 25px;
+    }
+
+    .ec-nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: #263b55;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: color .25s ease;
+    }
+
+    .ec-nav-links a:not(.ec-nav-contact)::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: #079f98;
+      border-radius: 5px;
+      transition: width .25s ease;
+    }
+
+    .ec-nav-links a:hover { color: #079f98; }
+    .ec-nav-links a:hover::after { width: 100%; }
+
+    .ec-nav-links .ec-nav-contact {
+      padding: 12px 18px;
+      color: #fff;
+      background: linear-gradient(135deg,#0b2545,#079f98);
+      border-radius: 8px;
+      box-shadow: 0 5px 13px rgba(7,159,152,.18);
+    }
+
+    .ec-nav-links .ec-nav-contact:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .ec-nav-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 1px solid #e2eaf0;
+      border-radius: 9px;
+      background: #f5f9fb;
+      color: #0b2545;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ec-nav-toggle svg { width: 23px; height: 23px; }
+
+    @media(max-width:1050px) {
+      .ec-nav-container { min-height: 74px; padding: 9px 20px; }
+      .ec-nav-logo img { max-width: 175px; height: 52px; }
+      .ec-nav-toggle { display: flex; flex-shrink: 0; }
+
+      .ec-nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 15px 22px 22px;
+        background: #fff;
+        border-top: 1px solid #edf2f7;
+        box-shadow: 0 14px 22px rgba(11,37,69,.09);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .ec-nav-links.ec-nav-open { display: flex; }
+      .ec-nav-links a { padding: 14px 8px; border-bottom: 1px solid #edf2f7; font-size: 13px; }
+      .ec-nav-links a:not(.ec-nav-contact)::after { display: none; }
+      .ec-nav-links .ec-nav-contact { margin-top: 13px; text-align: center; }
+    }
+
+    @media(max-width:480px) {
+      .ec-nav-container { padding: 8px 15px; min-height: 68px; }
+      .ec-nav-logo img { max-width: 155px; height: 46px; }
+    }
+
+    /* =========================
+       CONTACT PAGE
+    ========================= */
+    .ecx-contact,
+    .ecx-contact * { box-sizing: border-box; }
+
+    .ecx-contact {
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0b2545;
+    }
+
+    .ecx-wrap {
+      max-width: 1320px;
+      margin: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .ecx-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 0 85px;
+      background:
+        radial-gradient(circle at 85% 15%,rgba(18,184,173,.28),transparent 28%),
+        radial-gradient(circle at 10% 90%,rgba(48,119,190,.24),transparent 32%),
+        linear-gradient(130deg,#071b35,#0b3154 58%,#075b68);
+    }
+
+    .ecx-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .13;
+      background-image: linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),
+                        linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);
+      background-size: 42px 42px;
+      pointer-events: none;
+    }
+
+    .ecx-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr  .9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .ecx-breadcrumb {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      color: #b9d4e5;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .ecx-breadcrumb a { color: #70e0d6; text-decoration: none; }
+
+    .ecx-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 15px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 30px;
+      color: #8ef0e5;
+      background: rgba(255,255,255,.08);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .ecx-kicker span {
+      width: 7px;
+      height: 7px;
+      background: #39d8c9;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #39d8c9;
+    }
+
+    .ecx-hero h1 {
+      margin: 22px 0 18px;
+      color: #fff;
+      font-size: clamp(36px,5vw,62px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      font-weight: 800;
+    }
+
+    .ecx-hero h1 span { color: #45d7ca; }
+
+    .ecx-hero-copy {
+      max-width: 570px;
+      color: #c5d7e7;
+      font-size: 15px;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .ecx-hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin-top: 28px;
+    }
+
+    .ecx-hero-points span {
+      color: #e2f4f5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .ecx-hero-points span::before {
+      content: "✓";
+      color: #54e2d4;
+      margin-right: 7px;
+      font-weight: 900;
+    }
+
+    .ecx-form-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 25px 65px rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.6);
+    }
+
+    .ecx-form-card h2 {
+      color: #0b2545;
+      font-size: 23px;
+      line-height: 1.3;
+      font-weight: 800;
+      margin: 0 0 8px;
+    }
+
+    .ecx-form-card > p {
+      color: #718096;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 22px;
+    }
+
+    .ecx-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .ecx-field { min-width: 0; }
+    .ecx-field.full { grid-column: 1 / -1; }
+
+    .ecx-field label {
+      display: block;
+      color: #34465d;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .ecx-field input,
+    .ecx-field select,
+    .ecx-field textarea {
+      width: 100%;
+      border: 1px solid #dce6ef;
+      border-radius: 8px;
+      padding: 12px 13px;
+      background: #f8fbfd;
+      color: #243b53;
+      font-family: inherit;
+      font-size: 12px;
+      outline: none;
+      transition: .2s;
+    }
+
+    .ecx-field input:focus,
+    .ecx-field select:focus,
+    .ecx-field textarea:focus {
+      border-color: #0ba99f;
+      box-shadow: 0 0 0 3px rgba(11,169,159,.1);
+      background: #fff;
+    }
+
+    .ecx-field textarea { min-height: 105px; resize: vertical; }
+
+    .ecx-submit {
+      width: 100%;
+      border: 0;
+      border-radius: 9px;
+      padding: 15px 18px;
+      margin-top: 16px;
+      color: #fff;
+      background: linear-gradient(110deg,#0b2545,#079f98);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(7,159,152,.2);
+      transition: .25s;
+    }
+
+    .ecx-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 22px rgba(7,159,152,.25); }
+    .ecx-submit:disabled { opacity: .65; cursor: wait; }
+
+    .ecx-form-note {
+      text-align: center;
+      color: #8a9aab;
+      font-size: 10px;
+      margin: 12px 0 0;
+    }
+
+    .ecx-status {
+      display: none;
+      padding: 11px 13px;
+      border-radius: 8px;
+      margin-top: 13px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .ecx-status.success { display: block; background: #e8faf3; color: #087443; }
+    .ecx-status.error { display: block; background: #fff0f0; color: #a12c2c; }
+
+    /* QUICK CONTACT */
+    .ecx-quick {
+      padding: 38px 0;
+      background: #fff;
+      border-bottom: 1px solid #e6eef5;
+    }
+
+    .ecx-quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .ecx-quick-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      border: 1px solid #e5edf4;
+      border-radius: 13px;
+      background: linear-gradient(135deg,#fff,#f5fbfd);
+      text-decoration: none;
+      transition: .25s;
+    }
+
+    .ecx-quick-card:hover {
+      transform: translateY(-4px);
+      border-color: #9edbd6;
+      box-shadow: 0 12px 25px rgba(11,37,69,.07);
+    }
+
+    .ecx-quick-icon {
+      width: 47px;
+      height: 47px;
+      flex-shrink: 0;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: #078f8b;
+      background: #e8f9f7;
+      font-size: 22px;
+    }
+
+    .ecx-quick-card strong {
+      display: block;
+      color: #0b2545;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .ecx-quick-card small {
+      display: block;
+      color: #718096;
+      font-size: 11px;
+      overflow-wrap: anywhere;
+    }
+
+    /* GENERAL SECTION */
+    .ecx-section { padding: 75px 0; }
+
+    .ecx-section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 42px;
+    }
+
+    .ecx-section-heading span {
+      display: inline-block;
+      color: #078f8b;
+      background: #e2f8f5;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .ecx-section-heading h2 {
+      color: #0b2545;
+      font-size: clamp(27px,3.5vw,39px);
+      line-height: 1.2;
+      font-weight: 800;
+      margin: 15px 0 12px;
+    }
+
+    .ecx-section-heading p {
+      color: #6b7d90;
+      font-size: 13px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* FAQ */
+    .ecx-faq-section {
+      background: linear-gradient(180deg,#f3f8fc,#fff);
+    }
+
+    .ecx-faq-list {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .ecx-faq-item {
+      border: 1px solid #e2ebf2;
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(11,37,69,.035);
+    }
+
+    .ecx-faq-question {
+      width: 100%;
+      border: 0;
+      padding: 19px 21px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      text-align: left;
+      background: #fff;
+      color: #163653;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .ecx-faq-question span:last-child {
+      color: #079f98;
+      font-size: 22px;
+      transition: transform .2s;
+    }
+
+    .ecx-faq-answer {
+      display: none;
+      padding: 0 21px 19px;
+      color: #687c90;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .ecx-faq-item.active .ecx-faq-answer { display: block; }
+    .ecx-faq-item.active .ecx-faq-question span:last-child { transform: rotate(45deg); }
+
+    /* LOCATION */
+    .ecx-location {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .ecx-location-info {
+      padding: 32px;
+      border-radius: 18px;
+      background: linear-gradient(145deg,#071b35,#0c3b5b);
+      color: #fff;
+      box-shadow: 0 18px 35px rgba(11,37,69,.14);
+    }
+
+    .ecx-location-info h3 {
+      font-size: 25px;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    .ecx-location-info > p {
+      color: #c1d3e2;
+      font-size: 12px;
+      line-height: 1.8;
+      margin: 0 0 25px;
+    }
+
+    .ecx-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 20px 0;
+    }
+
+    .ecx-detail-icon {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(45,211,196,.13);
+      color: #62e5d9;
+      font-size: 17px;
+    }
+
+    .ecx-detail strong {
+      display: block;
+      color: #fff;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .ecx-detail span,
+    .ecx-detail a {
+      color: #c1d3e2;
+      font-size: 11px;
+      line-height: 1.8;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .ecx-detail a:hover { color: #62e5d9; }
+
+    .ecx-directions {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 13px 19px;
+      border-radius: 8px;
+      color: #06243a;
+      background: #48d6ca;
+      font-size: 11px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .ecx-directions:hover { background: #8af0e7; transform: translateY(-2px); }
+
+    .ecx-map {
+      min-height: 460px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #dce8ef;
+      box-shadow: 0 12px 30px rgba(11,37,69,.09);
+      background: #e8f1f5;
+    }
+
+    .ecx-map iframe { width: 100%; height: 100%; min-height: 460px; border: 0; display: block; }
+
+    /* FINAL CTA */
+    .ecx-final-cta {
+      padding: 48px 25px;
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+      background:
+        radial-gradient(circle at 90% 20%,rgba(255,255,255,.13),transparent 25%),
+        linear-gradient(110deg,#0b2545,#087f82);
+      box-shadow: 0 18px 35px rgba(11,37,69,.12);
+    }
+
+    .ecx-final-cta h2 {
+      margin: 0 0 10px;
+      font-size: clamp(24px,3vw,34px);
+      font-weight: 800;
+    }
+
+    .ecx-final-cta p {
+      color: #d0e8eb;
+      font-size: 13px;
+      line-height: 1.8;
+      margin: 0 auto 22px;
+      max-width: 650px;
+    }
+
+    .ecx-final-cta a {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      color: #06243a;
+      background: #53ded2;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       FOOTER - SAME THEME AS ABOUT
+    ========================= */
+    .ec-footer,
+    .ec-footer * { box-sizing: border-box; }
+
+    .ec-footer {
+      --navy: #071b35;
+      --muted: #b9c9da;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 65px 6% 22px;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans',sans-serif;
+      background:
+        radial-gradient(circle at 12% 15%,rgba(18,184,173,.16),transparent 28%),
+        radial-gradient(circle at 90% 80%,rgba(35,111,174,.20),transparent 30%),
+        linear-gradient(135deg,#06172c,#0b2949 55%,#06172c);
+    }
+
+    .ec-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg,transparent,#12b8ad,#65e3d8,transparent);
+    }
+
+    .ec-footer-container { max-width: 1400px; margin: auto; position: relative; z-index: 1; }
+
+    .ec-footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1.15fr 1fr 1.35fr;
+      gap: 38px;
+    }
+
+    .ec-footer-brand img {
+      width: 175px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+      padding: 7px;
+      border-radius: 10px;
+      margin-bottom: 17px;
+    }
+
+    .ec-footer-tagline {
+      color: #62e0d5;
+      font-weight: 800;
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+
+    .ec-footer-description {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      margin: 0 0 20px;
+    }
+
+    .ec-footer-heading {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      margin: 5px 0 22px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    .ec-footer-heading::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 3px;
+      border-radius: 5px;
+      background: #12b8ad;
+    }
+
+    .ec-footer-links { list-style: none; padding: 0; margin: 0; }
+    .ec-footer-links li { margin: 0 0 13px; }
+
+    .ec-footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12.5px;
+      transition: .25s;
+    }
+
+    .ec-footer-links a:hover { color: #62e0d5; padding-left: 5px; }
+
+    .ec-footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .ec-footer-contact-item .ec-contact-icon {
+      color: #55ded2;
+      font-size: 17px;
+      min-width: 20px;
+    }
+
+    .ec-footer-contact-item a {
+      color: var(--muted);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .ec-footer-contact-item a:hover { color: #62e0d5; }
+
+    .ec-footer-socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+    .ec-footer-socials a {
+      width: 37px;
+      height: 37px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(255,255,255,.07);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .3s;
+    }
+
+    .ec-footer-socials a:hover {
+      background: #12b8ad;
+      border-color: #12b8ad;
+      color: #06243a;
+      transform: translateY(-5px);
+    }
+
+    .ec-footer-cta {
+      margin-top: 45px;
+      padding: 23px 27px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 15px;
+      background: linear-gradient(110deg,rgba(18,184,173,.15),rgba(255,255,255,.045));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .ec-footer-cta h3 { margin: 0 0 6px; font-size: 18px; font-weight: 800; }
+    .ec-footer-cta p { color: var(--muted); font-size: 12px; margin: 0; line-height: 1.7; }
+
+    .ec-footer-cta a {
+      display: inline-block;
+      background: #12b8ad;
+      color: #06243a;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 12px;
+      white-space: nowrap;
+      transition: .3s;
+    }
+
+    .ec-footer-cta a:hover { background: #65e3d8; transform: translateY(-2px); }
+
+    .ec-footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.13);
+      margin-top: 35px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .ec-footer-bottom p { color: #9eb2c8; font-size: 11px; margin: 0; }
+    .ec-footer-bottom-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .ec-footer-bottom-links a { color: #9eb2c8; font-size: 11px; text-decoration: none; }
+    .ec-footer-bottom-links a:hover { color: #62e0d5; }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .ec-whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: #20bd67;
+      box-shadow: 0 7px 22px rgba(0,0,0,.2);
+      text-decoration: none;
+      font-size: 27px;
+      transition: .25s;
+    }
+
+    .ec-whatsapp-float:hover { transform: translateY(-4px) scale(1.04); }
+
+    /* RESPONSIVE */
+    @media(max-width:1100px) {
+      .ec-footer-grid { grid-template-columns: repeat(3,1fr); gap: 35px 25px; }
+    }
+
+    @media(max-width:900px) {
+      .ecx-hero-inner { grid-template-columns: 1fr; gap: 35px; }
+      .ecx-hero { padding: 55px 0 65px; }
+      .ecx-form-card { max-width: 650px; }
+      .ecx-location { grid-template-columns: 1fr; }
+      .ecx-map, .ecx-map iframe { min-height: 380px; }
+    }
+
+    @media(max-width:700px) {
+      .ecx-wrap { padding-left: 17px; padding-right: 17px; }
+      .ecx-hero { padding: 42px 0 50px; }
+      .ecx-hero h1 { letter-spacing: -1px; }
+      .ecx-form-card { padding: 22px 18px; }
+      .ecx-quick-grid { grid-template-columns: 1fr; gap: 11px; }
+      .ecx-section { padding: 55px 0; }
+      .ecx-location-info { padding: 25px 21px; }
+      .ecx-map, .ecx-map iframe { min-height: 330px; }
+
+      .ec-footer { padding: 45px 22px 20px; }
+      .ec-footer-grid { grid-template-columns: repeat(2,1fr); gap: 30px 20px; }
+      .ec-footer-brand, .ec-footer-contact { grid-column: 1 / -1; }
+      .ec-footer-cta { flex-direction: column; align-items: flex-start; padding: 20px; }
+      .ec-footer-cta a { width: 100%; text-align: center; }
+      .ec-footer-bottom { flex-direction: column; text-align: center; }
+      .ec-footer-bottom-links { justify-content: center; }
+    }
+
+    @media(max-width:480px) {
+      .ecx-form-grid { grid-template-columns: 1fr; }
+      .ecx-field.full { grid-column: auto; }
+      .ecx-hero-points { flex-direction: column; gap: 10px; }
+      .ecx-faq-question { padding: 16px; font-size: 12px; }
+      .ec-footer-grid { grid-template-columns: 1fr; }
+      .ec-footer-brand, .ec-footer-contact { grid-column: auto; }
+      .ec-whatsapp-float { right: 15px; bottom: 15px; width: 50px; height: 50px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="ec-contact">
+  <!-- =================================
+       EDUCHROMA HEADER & NAVIGATION
+  ================================== -->
+  <header class="ec-navbar">
+    <div class="ec-nav-container">
 
-<!-- HEADER -->
-<header class="ec-header">
-  <div class="ec-container ec-header-inner">
-    <a href="index.html" class="ec-brand">Edu<span>Chroma</span></a>
+      <a href="index.html#home" class="ec-nav-logo">
+        <img src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals">
+      </a>
 
-    <nav class="ec-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="training.html">Training</a>
-      <a href="testing.html">Testing</a>
-      <a href="research.html">Research</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="active">Contact Us</a>
-    </nav>
-  </div>
-</header>
+      <button class="ec-nav-toggle" type="button"
+        aria-label="Open navigation menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
 
-<!-- HERO -->
-<section class="ec-hero">
-  <div class="ec-container">
-    <div class="ec-hero-content">
-      <div class="ec-eyebrow">WE ARE HERE TO HELP</div>
-      <h1>Let's Start a <span>Conversation.</span></h1>
-      <p>
-        Have questions about HPLC training, analytical testing,
-        internships or research support? Connect with EduChroma
-        Analyticals. Our team will be happy to assist you.
-      </p>
+      <nav class="ec-nav-links">
+        <a href="index.html#home">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#training">TRAINING</a>
+        <a href="index.html#testing">TESTING SERVICES</a>
+        <a href="index.html#research">RESEARCH</a>
+        <a href="index.html#gallery">GALLERY</a>
+        <a href="contact.html" class="ec-nav-contact">CONTACT US</a>
+      </nav>
+
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- CONTACT SECTION -->
-<section class="ec-section">
-  <div class="ec-container">
 
-    <div class="ec-section-heading">
-      <small>GET IN TOUCH</small>
-      <h2>We'd Love to Hear From You</h2>
-      <p>Reach out to us through your preferred communication channel.</p>
-    </div>
+  <!-- =================================
+       CONTACT PAGE MAIN CONTENT
+  ================================== -->
+  <main class="ecx-contact">
 
-    <div class="ec-contact-grid">
+    <!-- HERO + ENQUIRY FORM -->
+    <section class="ecx-hero">
+      <div class="ecx-wrap ecx-hero-inner">
 
-      <!-- CONTACT INFORMATION -->
-      <div class="ec-info-panel">
-        <h3>Contact Information</h3>
-        <p>
-          Connect with EduChroma Analytical Training and Service Centre
-          for professional guidance and support.
-        </p>
+        <div class="ecx-hero-content">
+          <div class="ecx-breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Contact Us</span>
+          </div>
 
-        <div class="ec-info-item">
-          <div class="ec-info-icon">📍</div>
-          <div>
-            <h4>Our Location</h4>
-            <p>TF-12, Samarth Complex, Vaghodia Cross,
-            Vadodara, Gujarat - 390019, India</p>
+          <div class="ecx-kicker"><span></span> GET IN TOUCH</div>
+
+          <h1>Let's Start a<br><span>Conversation.</span></h1>
+
+          <p class="ecx-hero-copy">
+            Have questions about HPLC training, analytical testing,
+            internships or research support? Connect with EduChroma
+            Analyticals. Our team will be happy to assist you.
+          </p>
+
+          <div class="ecx-hero-points">
+            <span>Industry-oriented HPLC training</span>
+            <span>Analytical testing support</span>
+            <span>Academic research guidance</span>
           </div>
         </div>
 
-        <div class="ec-info-item">
-          <div class="ec-info-icon">📞</div>
-          <div>
-            <h4>Call Us</h4>
-            <a href="tel:+918141108657">+91 81411 08657</a>
-          </div>
+        <!-- ENQUIRY FORM -->
+        <div class="ecx-form-card">
+          <h2>Send Us an Enquiry</h2>
+          <p>Fill in the details below and our team will get back to you.</p>
+
+          <form id="ecxContactForm">
+            <input type="hidden" name="access_key" value="257b2f92-f171-4d14-b447-0c8681189455">
+            <input type="hidden" name="subject" value="New Website Enquiry - EduChroma Analyticals">
+            <input type="hidden" name="from_name" value="EduChroma Website">
+
+            <div class="ecx-form-grid">
+
+              <div class="ecx-field">
+                <label for="ecx-name">Full Name *</label>
+                <input id="ecx-name" type="text" name="name" placeholder="Your full name" required>
+              </div>
+
+              <div class="ecx-field">
+                <label for="ecx-email">Email Address *</label>
+                <input id="ecx-email" type="email" name="email" placeholder="name@example.com" required>
+              </div>
+
+              <div class="ecx-field">
+                <label for="ecx-phone">Mobile Number *</label>
+                <input id="ecx-phone" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+
+              <div class="ecx-field">
+                <label for="ecx-category">Enquiry For *</label>
+                <select id="ecx-category" name="enquiry_type" required>
+                  <option value="">Select an option</option>
+                  <option>HPLC Training</option>
+                  <option>Industrial / Employee Training</option>
+                  <option>Internship Programme</option>
+                  <option>HPLC Sample Testing</option>
+                  <option>Research / Thesis Support</option>
+                  <option>Method Development & Validation</option>
+                  <option>College Collaboration</option>
+                  <option>Other Enquiry</option>
+                </select>
+              </div>
+
+              <div class="ecx-field full">
+                <label for="ecx-message">Your Message *</label>
+                <textarea id="ecx-message" name="message" placeholder="Write your enquiry or requirements..." required></textarea>
+              </div>
+
+            </div>
+
+            <button class="ecx-submit" id="ecxSubmitBtn" type="submit">
+              SEND ENQUIRY →
+            </button>
+
+            <div class="ecx-status" id="ecxFormStatus" role="status"></div>
+            <p class="ecx-form-note">Your information will be used only to respond to your enquiry.</p>
+          </form>
         </div>
 
-        <div class="ec-info-item">
-          <div class="ec-info-icon">✉️</div>
-          <div>
-            <h4>Email Us</h4>
-            <a href="mailto:educhroma@gmail.com">educhroma@gmail.com</a>
-          </div>
+      </div>
+    </section>
+
+
+    <!-- QUICK CONTACT CARDS -->
+    <section class="ecx-quick">
+      <div class="ecx-wrap">
+        <div class="ecx-quick-grid">
+
+          <a class="ecx-quick-card" href="tel:+918141108657">
+            <div class="ecx-quick-icon">☎</div>
+            <div>
+              <strong>Call Us</strong>
+              <small>+91 81411 08657</small>
+            </div>
+          </a>
+
+          <a class="ecx-quick-card" href="https://wa.me/918141108657" target="_blank" rel="noopener noreferrer">
+            <div class="ecx-quick-icon">◉</div>
+            <div>
+              <strong>WhatsApp Us</strong>
+              <small>Chat with our team</small>
+            </div>
+          </a>
+
+          <a class="ecx-quick-card" href="mailto:educhroma01@gmail.com">
+            <div class="ecx-quick-icon">✉</div>
+            <div>
+              <strong>Email Us</strong>
+              <small>educhroma01@gmail.com</small>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FAQ SECTION -->
+    <section class="ecx-section ecx-faq-section">
+      <div class="ecx-wrap">
+
+        <div class="ecx-section-heading">
+          <span>HELP & INFORMATION</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Find answers to common questions about our training programmes, laboratory services and research support.</p>
         </div>
 
-        <div class="ec-info-item">
-          <div class="ec-info-icon">🌐</div>
-          <div>
-            <h4>Website</h4>
-            <a href="https://www.educhroma.com" target="_blank" rel="noopener">
-              www.educhroma.com
+        <div class="ecx-faq-list">
+
+          <div class="ecx-faq-item">
+            <button class="ecx-faq-question" type="button" aria-expanded="false">
+              <span>What types of HPLC training programmes do you offer?</span>
+              <span>+</span>
+            </button>
+            <div class="ecx-faq-answer">
+              EduChroma offers one-day workshops, one-week programmes,
+              one-month hands-on training, advanced HPLC training and
+              method development and validation programmes. Contact us
+              for current batch schedules and details.
+            </div>
+          </div>
+
+          <div class="ecx-faq-item">
+            <button class="ecx-faq-question" type="button" aria-expanded="false">
+              <span>Can students get hands-on experience with HPLC instruments?</span>
+              <span>+</span>
+            </button>
+            <div class="ecx-faq-answer">
+              Yes. Our practical training focuses on instrument handling,
+              chromatographic principles, sample preparation, operation,
+              data interpretation and relevant laboratory practices.
+            </div>
+          </div>
+
+          <div class="ecx-faq-item">
+            <button class="ecx-faq-question" type="button" aria-expanded="false">
+              <span>Do you provide internships for science students?</span>
+              <span>+</span>
+            </button>
+            <div class="ecx-faq-answer">
+              We offer practical training and internship opportunities
+              for eligible students from pharmacy, biotechnology,
+              microbiology, chemistry and related science disciplines.
+              Contact us to discuss availability.
+            </div>
+          </div>
+
+          <div class="ecx-faq-item">
+            <button class="ecx-faq-question" type="button" aria-expanded="false">
+              <span>Do you provide HPLC sample testing services?</span>
+              <span>+</span>
+            </button>
+            <div class="ecx-faq-answer">
+              Yes. We provide analytical testing support, including
+              HPLC-based analysis, subject to sample suitability,
+              method requirements and instrument availability.
+              Share your sample and testing requirements for a quotation.
+            </div>
+          </div>
+
+          <div class="ecx-faq-item">
+            <button class="ecx-faq-question" type="button" aria-expanded="false">
+              <span>Can you support M.Pharm and M.Sc. research projects?</span>
+              <span>+</span>
+            </button>
+            <div class="ecx-faq-answer">
+              We provide research-oriented analytical guidance, practical
+              training and laboratory support for eligible academic
+              projects. The scope is discussed according to the project
+              requirements and institutional guidelines.
+            </div>
+          </div>
+
+          <div class="ecx-faq-item">
+            <button class="ecx-faq-question" type="button" aria-expanded="false">
+              <span>Do you conduct employee training for industries?</span>
+              <span>+</span>
+            </button>
+            <div class="ecx-faq-answer">
+              Yes. We can discuss customised employee training programmes
+              for laboratory teams, academic institutions and industry
+              professionals according to their training needs.
+            </div>
+          </div>
+
+          <div class="ecx-faq-item">
+            <button class="ecx-faq-question" type="button" aria-expanded="false">
+              <span>How can I register for a programme?</span>
+              <span>+</span>
+            </button>
+            <div class="ecx-faq-answer">
+              Call or WhatsApp us, or submit the enquiry form on this page.
+              Our team can share programme details, eligibility,
+              availability and registration information.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- LOCATION AND CONTACT DETAILS -->
+    <section class="ecx-section">
+      <div class="ecx-wrap">
+
+        <div class="ecx-section-heading">
+          <span>VISIT OUR CENTRE</span>
+          <h2>Get in Touch with EduChroma</h2>
+          <p>Connect with us or visit our analytical training and service centre in Vadodara, Gujarat.</p>
+        </div>
+
+        <div class="ecx-location">
+
+          <div class="ecx-location-info">
+            <h3>Contact Information</h3>
+            <p>We welcome students, researchers, institutions and industry professionals to connect with our team.</p>
+
+            <div class="ecx-detail">
+              <div class="ecx-detail-icon">📍</div>
+              <div>
+                <strong>Our Location</strong>
+                <span>
+                  TF-12,13, Sun Meelan,<br>
+                  Behind Waghodia Check Post,<br>
+                  NH-48, Waghodia Road,<br>
+                  Vadodara, Gujarat - 390019, India
+                </span>
+              </div>
+            </div>
+
+            <div class="ecx-detail">
+              <div class="ecx-detail-icon">☎</div>
+              <div>
+                <strong>Phone / WhatsApp</strong>
+                <a href="tel:+918141108657">+91 81411 08657</a>
+              </div>
+            </div>
+
+            <div class="ecx-detail">
+              <div class="ecx-detail-icon">✉</div>
+              <div>
+                <strong>Email Address</strong>
+                <a href="mailto:educhroma01@gmail.com">educhroma01@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="ecx-detail">
+              <div class="ecx-detail-icon">◷</div>
+              <div>
+                <strong>Working Hours</strong>
+                <span>Monday – Saturday: 9:30 AM – 6:30 PM<br>Sunday: Closed</span>
+              </div>
+            </div>
+
+            <a class="ecx-directions"
+              href="https://www.google.com/maps/place/Educhroma+Analytical+Training+and+Service+Centre/@22.2967251,73.2498296,17z/"
+              target="_blank" rel="noopener noreferrer">
+              GET DIRECTIONS →
             </a>
           </div>
-        </div>
 
-        <div class="ec-info-item">
-          <div class="ec-info-icon">🕒</div>
-          <div>
-            <h4>Working Hours</h4>
-            <p>Monday – Saturday: 9:30 AM – 6:30 PM<br>
-            Sunday: Closed</p>
+          <div class="ecx-map">
+            <iframe
+              src="https://www.google.com/maps?q=Educhroma+Analytical+Training+and+Service+Centre,+Vadodara&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="EduChroma Analyticals location map"
+              allowfullscreen>
+            </iframe>
           </div>
-        </div>
 
-        <div class="ec-social-links">
-          <a href="https://wa.me/918141108657" target="_blank" rel="noopener">WhatsApp Us</a>
-          <a href="tel:+918141108657">Call Now</a>
-          <a href="mailto:educhroma@gmail.com">Send Email</a>
         </div>
       </div>
+    </section>
 
-      <!-- ENQUIRY FORM -->
-      <div class="ec-form-panel">
-        <h3>Send Us an Enquiry</h3>
-        <p>Fill in the details below and our team will get in touch with you.</p>
 
-        <form id="ecContactForm">
-
-          <input type="hidden" name="access_key"
-          value="257b2f92-f171-4d14-b447-0c8681189455">
-
-          <input type="hidden" name="subject"
-          value="New Enquiry - EduChroma Website">
-
-          <input type="checkbox" name="botcheck"
-          style="display:none" tabindex="-1" autocomplete="off">
-
-          <div class="ec-form-row">
-            <div class="ec-form-group">
-              <label for="ecName">Full Name *</label>
-              <input type="text" id="ecName" name="name"
-              placeholder="Enter your name" required>
-            </div>
-
-            <div class="ec-form-group">
-              <label for="ecEmail">Email Address *</label>
-              <input type="email" id="ecEmail" name="email"
-              placeholder="Enter your email" required>
-            </div>
-          </div>
-
-          <div class="ec-form-row">
-            <div class="ec-form-group">
-              <label for="ecPhone">Mobile Number *</label>
-              <input type="tel" id="ecPhone" name="phone"
-              placeholder="Enter mobile number" required>
-            </div>
-
-            <div class="ec-form-group">
-              <label for="ecEnquiry">Enquiry Regarding *</label>
-              <select id="ecEnquiry" name="enquiry" required>
-                <option value="">Select an option</option>
-                <option>HPLC Training</option>
-                <option>Internship Programme</option>
-                <option>Analytical Testing</option>
-                <option>Research & Thesis Support</option>
-                <option>Employee Training Programme</option>
-                <option>Faculty Development Programme</option>
-                <option>Other Enquiry</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="ec-form-group">
-            <label for="ecMessage">Your Message *</label>
-            <textarea id="ecMessage" name="message"
-            placeholder="Write your enquiry here..." required></textarea>
-          </div>
-
-          <label class="ec-privacy">
-            <input type="checkbox" required>
-            <span>I agree to be contacted by EduChroma regarding my enquiry.</span>
-          </label>
-
-          <button type="submit" class="ec-submit" id="ecSubmit">
-            Send Enquiry →
-          </button>
-
-          <div class="ec-form-status" id="ecFormStatus" aria-live="polite"></div>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- LOCATION AND MAP -->
-<section class="ec-section ec-location-section">
-  <div class="ec-container">
-
-    <div class="ec-section-heading">
-      <small>FIND US</small>
-      <h2>Visit EduChroma Analyticals</h2>
-      <p>We welcome students, researchers and industry professionals.</p>
-    </div>
-
-    <div class="ec-location-grid">
-
-      <div class="ec-location-card">
-        <h3>Our Centre</h3>
+    <!-- FINAL CONTACT CTA -->
+    <section class="ecx-wrap" style="padding-bottom:75px;">
+      <div class="ecx-final-cta">
+        <h2>Let's Build Your Analytical Skills!</h2>
         <p>
-          <strong>EduChroma Analytical Training and Service Centre</strong>
-          <br><br>
-          TF-12, Samarth Complex,<br>
-          Vaghodia Cross,<br>
-          Vadodara, Gujarat - 390019,<br>
-          India.
-          <br><br>
-          <strong>Phone:</strong> +91 81411 08657<br>
-          <strong>Email:</strong> educhroma@gmail.com
+          Connect with EduChroma Analyticals for HPLC training,
+          laboratory testing, internships and research support.
+          We look forward to hearing from you.
         </p>
+        <a href="https://wa.me/918141108657" target="_blank" rel="noopener noreferrer">
+          CONNECT ON WHATSAPP →
+        </a>
+      </div>
+    </section>
 
-        <a class="ec-directions"
-        href="https://www.google.com/maps/place/Educhroma+Analytical+Training+and+Service+Centre/@22.2967251,73.2498296,17z/"
-        target="_blank" rel="noopener">
-          Get Directions →
+  </main>
+
+
+  <!-- =================================
+       EDUCHROMA PREMIUM FOOTER
+  ================================== -->
+  <footer class="ec-footer">
+    <div class="ec-footer-container">
+
+      <div class="ec-footer-grid">
+
+        <!-- BRAND -->
+        <div class="ec-footer-brand">
+          <a href="index.html">
+            <img src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals Logo">
+          </a>
+
+          <p class="ec-footer-tagline">Unlock Skills, Analyse Success.</p>
+
+          <p class="ec-footer-description">
+            EduChroma Analyticals is dedicated to analytical training,
+            laboratory services, research support and industry-oriented
+            skill development for science and life science students.
+          </p>
+
+          <div class="ec-footer-socials">
+            <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+            <a href="https://www.instagram.com/educhroma_analyticals/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
+            <a href="https://www.youtube.com/@educhroma_analyticals" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
+            <a href="https://www.facebook.com/share/1EArM2Vrqc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+            <a href="https://wa.me/918141108657" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">◉</a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+          <h3 class="ec-footer-heading">Quick Links</h3>
+          <ul class="ec-footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#training">Training Programmes</a></li>
+            <li><a href="index.html#testing">Testing Services</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- SERVICES -->
+        <div>
+          <h3 class="ec-footer-heading">Our Services</h3>
+          <ul class="ec-footer-links">
+            <li><a href="index.html#training">HPLC Training</a></li>
+            <li><a href="index.html#training">Industrial Training</a></li>
+            <li><a href="index.html#testing">HPLC Sample Testing</a></li>
+            <li><a href="index.html#testing">Analytical Services</a></li>
+            <li><a href="index.html#research">Method Development</a></li>
+            <li><a href="index.html#research">Method Validation</a></li>
+          </ul>
+        </div>
+
+        <!-- RESEARCH -->
+        <div>
+          <h3 class="ec-footer-heading">Research Support</h3>
+          <ul class="ec-footer-links">
+            <li><a href="index.html#research">Project Guidance</a></li>
+            <li><a href="index.html#research">Thesis Support</a></li>
+            <li><a href="index.html#research">HPLC Analysis</a></li>
+            <li><a href="index.html#research">Research Training</a></li>
+            <li><a href="index.html#research">Analytical Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="ec-footer-contact">
+          <h3 class="ec-footer-heading">Contact Us</h3>
+
+          <div class="ec-footer-contact-item">
+            <span class="ec-contact-icon">📍</span>
+            <span>
+              TF-12,13, Sun Meelan,<br>
+              Behind Waghodia Check Post,<br>
+              NH-48, Waghodia Road,<br>
+              Vadodara, Gujarat - 390019
+            </span>
+          </div>
+
+          <div class="ec-footer-contact-item">
+            <span class="ec-contact-icon">☎</span>
+            <a href="tel:+918141108657">+91 81411 08657</a>
+          </div>
+
+          <div class="ec-footer-contact-item">
+            <span class="ec-contact-icon">✉</span>
+            <a href="mailto:educhroma01@gmail.com">educhroma01@gmail.com</a>
+          </div>
+
+          <div class="ec-footer-contact-item">
+            <span class="ec-contact-icon">🌐</span>
+            <a href="https://www.educhroma.com" target="_blank" rel="noopener noreferrer">www.educhroma.com</a>
+          </div>
+
+          <div class="ec-footer-contact-item">
+            <span class="ec-contact-icon">◷</span>
+            <span>Monday – Saturday<br>9:30 AM – 6:30 PM<br>Sunday: Closed</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER CTA -->
+      <div class="ec-footer-cta">
+        <div>
+          <h3>Let's Build Your Analytical Skills!</h3>
+          <p>Connect with EduChroma Analyticals for training, testing services and research support.</p>
+        </div>
+        <a href="https://wa.me/918141108657" target="_blank" rel="noopener noreferrer">
+          CONNECT ON WHATSAPP →
         </a>
       </div>
 
-      <iframe
-        class="ec-map"
-        src="https://maps.google.com/maps?q=Educhroma%20Analytical%20Training%20and%20Service%20Centre%2C%20Vadodara%2C%20Gujarat&t=&z=17&ie=UTF8&iwloc=&output=embed"
-        title="EduChroma Analyticals location map"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="ec-section">
-  <div class="ec-container">
-
-    <div class="ec-section-heading">
-      <small>HELP & SUPPORT</small>
-      <h2>Frequently Asked Questions</h2>
-      <p>Some useful information before you contact us.</p>
-    </div>
-
-    <div class="ec-faq-list">
-
-      <div class="ec-faq-item">
-        <button class="ec-faq-question" type="button" aria-expanded="false">
-          <span>How can I enquire about HPLC training?</span>
-          <span>+</span>
-        </button>
-        <div class="ec-faq-answer">
-          You can submit the enquiry form, contact us by WhatsApp
-          or call our team directly at +91 81411 08657.
-        </div>
-      </div>
-
-      <div class="ec-faq-item">
-        <button class="ec-faq-question" type="button" aria-expanded="false">
-          <span>Does EduChroma provide internship programmes?</span>
-          <span>+</span>
-        </button>
-        <div class="ec-faq-answer">
-          Yes. Contact our team for information about available
-          internship programmes and training schedules.
-        </div>
-      </div>
-
-      <div class="ec-faq-item">
-        <button class="ec-faq-question" type="button" aria-expanded="false">
-          <span>Can I contact EduChroma for sample testing?</span>
-          <span>+</span>
-        </button>
-        <div class="ec-faq-answer">
-          Yes. You can contact us with your sample details,
-          analytical requirements and testing objectives.
-        </div>
-      </div>
-
-      <div class="ec-faq-item">
-        <button class="ec-faq-question" type="button" aria-expanded="false">
-          <span>How can I get information about training fees?</span>
-          <span>+</span>
-        </button>
-        <div class="ec-faq-answer">
-          Please contact us directly on WhatsApp or by phone
-          for programme-specific fee information.
-        </div>
-      </div>
-
-      <div class="ec-faq-item">
-        <button class="ec-faq-question" type="button" aria-expanded="false">
-          <span>Where is EduChroma located?</span>
-          <span>+</span>
-        </button>
-        <div class="ec-faq-answer">
-          We are located at TF-12, Samarth Complex,
-          Vaghodia Cross, Vadodara, Gujarat - 390019, India.
-        </div>
-      </div>
-
-      <div class="ec-faq-item">
-        <button class="ec-faq-question" type="button" aria-expanded="false">
-          <span>What are your working hours?</span>
-          <span>+</span>
-        </button>
-        <div class="ec-faq-answer">
-          Our working hours are Monday to Saturday,
-          9:30 AM to 6:30 PM. Sunday is closed.
+      <!-- COPYRIGHT -->
+      <div class="ec-footer-bottom">
+        <p>© 2026 EduChroma Analyticals. All Rights Reserved.</p>
+        <div class="ec-footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- CTA -->
-<section class="ec-cta">
-  <div class="ec-container">
-    <h2>Let's Connect and Grow Together</h2>
-    <p>
-      Learn. Analyse. Grow.<br>
-      Connect with EduChroma Analyticals for your next step.
-    </p>
-    <a href="https://wa.me/918141108657" target="_blank" rel="noopener">
-      Chat with Us on WhatsApp →
-    </a>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="ec-footer">
-  <div class="ec-container">
-    <strong>EduChroma Analyticals</strong><br>
-    Unlock Skills, Analyse Success.<br>
-    © 2026 EduChroma Analytical Training and Service Centre. All Rights Reserved.
-  </div>
-</footer>
+  <!-- FLOATING WHATSAPP -->
+  <a class="ec-whatsapp-float"
+    href="https://wa.me/918141108657"
+    target="_blank" rel="noopener noreferrer"
+    aria-label="Chat with EduChroma on WhatsApp">◉</a>
 
-</div>
 
-<script>
-/* CONTACT FORM */
+  <!-- =================================
+       JAVASCRIPT
+  ================================== -->
+  <script>
+    // MOBILE NAVIGATION
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.ec-nav-toggle');
+      const nav = document.querySelector('.ec-nav-links');
 
-const ecForm = document.getElementById("ecContactForm");
-const ecStatus = document.getElementById("ecFormStatus");
-const ecSubmit = document.getElementById("ecSubmit");
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          const isOpen = nav.classList.toggle('ec-nav-open');
+          toggle.setAttribute('aria-expanded', isOpen);
+          toggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation menu' : 'Open navigation menu'
+          );
+        });
 
-ecForm.addEventListener("submit", async function(event) {
-  event.preventDefault();
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            nav.classList.remove('ec-nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Open navigation menu');
+          });
+        });
+      }
 
-  ecSubmit.disabled = true;
-  ecSubmit.textContent = "Sending...";
-  ecStatus.textContent = "";
+      // FAQ ACCORDION
+      document.querySelectorAll('.ecx-faq-question').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const item = button.closest('.ecx-faq-item');
+          const isActive = item.classList.contains('active');
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: new FormData(ecForm)
+          document.querySelectorAll('.ecx-faq-item').forEach(function (faq) {
+            faq.classList.remove('active');
+            faq.querySelector('.ecx-faq-question').setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isActive) {
+            item.classList.add('active');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // WEB3FORMS SUBMISSION
+      const form = document.getElementById('ecxContactForm');
+      const submitBtn = document.getElementById('ecxSubmitBtn');
+      const statusBox = document.getElementById('ecxFormStatus');
+
+      if (form) {
+        form.addEventListener('submit', async function (event) {
+          event.preventDefault();
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'SENDING...';
+          statusBox.className = 'ecx-status';
+          statusBox.textContent = '';
+
+          try {
+            const formData = new FormData(form);
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              statusBox.textContent = 'Thank you! Your enquiry has been submitted successfully. Our team will contact you.';
+              statusBox.className = 'ecx-status success';
+              form.reset();
+            } else {
+              throw new Error(result.message || 'Unable to submit your enquiry.');
+            }
+          } catch (error) {
+            statusBox.textContent = 'Sorry, your enquiry could not be submitted. Please contact us directly by phone or WhatsApp.';
+            statusBox.className = 'ecx-status error';
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'SEND ENQUIRY →';
+          }
+        });
+      }
     });
-
-    const result = await response.json();
-
-    if (result.success) {
-      ecStatus.style.color = "#16834a";
-      ecStatus.textContent =
-        "Thank you! Your enquiry has been submitted successfully.";
-      ecForm.reset();
-    } else {
-      ecStatus.style.color = "#c0392b";
-      ecStatus.textContent =
-        result.message || "Something went wrong. Please try again.";
-    }
-  } catch (error) {
-    ecStatus.style.color = "#c0392b";
-    ecStatus.textContent =
-      "Unable to send your enquiry. Please contact us on WhatsApp.";
-  }
-
-  ecSubmit.disabled = false;
-  ecSubmit.textContent = "Send Enquiry →";
-});
-
-/* FAQ ACCORDION */
-
-document.querySelectorAll(".ec-faq-question").forEach(function(button) {
-  button.addEventListener("click", function() {
-    const item = button.closest(".ec-faq-item");
-    const isOpen = item.classList.contains("open");
-
-    document.querySelectorAll(".ec-faq-item").forEach(function(faq) {
-      faq.classList.remove("open");
-      faq.querySelector(".ec-faq-question").setAttribute("aria-expanded", "false");
-      faq.querySelector(".ec-faq-question span:last-child").textContent = "+";
-    });
-
-    if (!isOpen) {
-      item.classList.add("open");
-      button.setAttribute("aria-expanded", "true");
-      button.querySelector("span:last-child").textContent = "−";
-    }
-  });
-});
-</script>
+  </script>
 
 </body>
 </html>
