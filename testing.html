@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testing Services | EduChroma Analyticals</title>
+<meta name="description" content="Analytical testing services, pharmaceutical analysis, food testing, HPLC testing and method development by EduChroma Analyticals, Vadodara.">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Plus Jakarta Sans','Segoe UI',sans-serif;color:#0b192c}
+a{text-decoration:none}
+
+/* NAVIGATION */
+.ec-nav{background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 4px 20px rgba(9,43,80,.09)}
+.ec-nav-inner{max-width:1320px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ec-logo{width:190px;max-height:65px;object-fit:contain}
+.ec-nav-links{display:flex;align-items:center;gap:23px}
+.ec-nav-links a{font-size:12px;font-weight:800;color:#173957;letter-spacing:.3px;white-space:nowrap}
+.ec-nav-links a:hover,.ec-nav-links a.active{color:#0784d5}
+.ec-menu-btn{display:none;border:0;background:#eaf5ff;color:#092b50;font-size:25px;padding:7px 12px;border-radius:8px;cursor:pointer}
+
+/* TESTING HERO */
+.testing-hero{background:#0b192c;color:#fff;padding:40px 24px;width:100%;border-radius:0}
+.hero-container{max-width:1200px;margin:auto;display:flex;flex-direction:column;gap:32px;align-items:center}
+@media(min-width:900px){.hero-container{flex-direction:row;justify-content:space-between;align-items:center}}
+.hero-content{flex:1;max-width:600px}
+.hero-breadcrumb{font-size:13px;color:#94a3b8;margin-bottom:12px;letter-spacing:.5px}
+.hero-title{font-size:32px;font-weight:800;margin:0 0 12px;letter-spacing:1px;color:#fff;text-transform:uppercase}
+@media(min-width:768px){.hero-title{font-size:42px}}
+.hero-subtitle{font-size:18px;font-weight:600;color:#00bcd4;margin:0 0 12px}
+.hero-line{width:60px;height:3px;background:#00bcd4;margin-bottom:16px;border-radius:2px}
+.hero-description{font-size:15px;color:#cbd5e1;line-height:1.7;margin:0}
+.hero-image-container{flex:1;width:100%;max-width:550px;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.hero-image-container img{width:100%;height:330px;display:block;object-fit:cover}
+
+/* SERVICES */
+.services-section,.instr-section{font-family:'Segoe UI',Tahoma,sans-serif;background:#f8fafc;padding:45px 16px;width:100%}
+.services-header,.instr-header{text-align:center;margin-bottom:30px}
+.services-header h2,.instr-header h2{color:#0b192c;font-size:26px;font-weight:800;margin:0 0 8px;letter-spacing:1px;text-transform:uppercase}
+.icon-divider,.instr-divider{display:flex;align-items:center;justify-content:center;color:#007B82}
+.services-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:20px;max-width:1250px;margin:0 auto}
+@media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1100px){.services-grid{grid-template-columns:repeat(5,1fr)}}
+.service-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px 16px;text-align:center;box-shadow:0 4px 6px rgba(0,0,0,.02);transition:.2s;display:flex;flex-direction:column;align-items:center}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 10px 15px rgba(0,0,0,.08)}
+.service-icon-box{width:50px;height:50px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:#007B82}
+.service-card h3{font-size:16px;font-weight:700;color:#0b192c;margin:0 0 10px;min-height:44px;display:flex;align-items:center;justify-content:center}
+.service-card p{font-size:13px;color:#475569;line-height:1.6;margin:0}
+
+/* INSTRUMENTATION */
+.instr-divider{gap:10px;margin-top:8px}
+.instr-divider:before,.instr-divider:after{content:"";width:50px;height:2px;background:#007B82}
+.instr-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:16px;max-width:1250px;margin:0 auto 30px}
+@media(min-width:640px){.instr-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.instr-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1150px){.instr-grid{grid-template-columns:repeat(6,1fr)}}
+.instr-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 12px;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,.02);display:flex;flex-direction:column;align-items:center;justify-content:space-between;transition:.3s}
+.instr-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,123,130,.12)}
+.instr-img-box{width:100%;height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.instr-img-box img{max-width:100%;max-height:100%;width:100%;height:110px;object-fit:contain}
+.instr-card h3{font-size:14px;font-weight:700;color:#0b192c;margin:0 0 4px}
+.instr-card p{font-size:11px;color:#64748b;margin:0;line-height:1.4}
+
+/* QUALITY */
+.quality-box{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;max-width:1250px;margin:0 auto 30px;display:flex;flex-direction:column;gap:20px;box-shadow:0 4px 6px rgba(0,0,0,.02)}
+@media(min-width:900px){.quality-box{flex-direction:row;align-items:center;justify-content:space-between}}
+.quality-left{flex:1;max-width:320px;border-radius:8px;overflow:hidden}
+.quality-left img{width:100%;height:160px;object-fit:cover;display:block}
+.quality-middle{flex:1.5}
+.quality-middle h3{color:#007B82;font-size:20px;font-weight:700;margin:0 0 8px}
+.quality-middle p{color:#475569;font-size:13px;line-height:1.6;margin:0}
+.quality-right{flex:1.5;display:flex;flex-direction:column;gap:10px}
+.quality-feature{display:flex;align-items:center;gap:10px;font-size:13px;color:#1e293b;font-weight:600}
+.quality-feature svg{color:#007B82;flex-shrink:0}
+
+/* BOTTOM BANNER */
+.bottom-banner{background:linear-gradient(135deg,#0b192c 0%,#007B82 100%);border-radius:12px;padding:24px 32px;max-width:1250px;margin:0 auto;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:space-between;color:#fff;box-shadow:0 6px 15px rgba(0,0,0,.15)}
+@media(min-width:900px){.bottom-banner{flex-direction:row}}
+.banner-text h3{margin:0 0 4px;font-size:20px;font-weight:700}
+.banner-text p{margin:0;font-size:13px;color:#cbd5e1;line-height:1.6}
+.banner-buttons{display:flex;flex-direction:column;gap:10px;width:100%}
+@media(min-width:600px){.banner-buttons{flex-direction:row;width:auto}}
+.btn-enquire,.btn-contact{font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;text-align:center;font-size:13px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.3s}
+.btn-enquire{background:#fff;color:#0b192c}
+.btn-enquire:hover{background:#e2f5f4}
+.btn-contact{border:1px solid #fff;color:#fff}
+.btn-contact:hover{background:rgba(255,255,255,.15)}
+
+/* FOOTER */
+.ec-footer,.ec-footer *{box-sizing:border-box}
+.ec-footer{--muted:#b9c9da;position:relative;overflow:hidden;width:100%;padding:65px 6% 22px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;background:radial-gradient(circle at 12% 15%,rgba(18,184,173,.16),transparent 28%),radial-gradient(circle at 90% 80%,rgba(35,111,174,.20),transparent 30%),linear-gradient(135deg,#06172c,#0b2949 55%,#06172c)}
+.ec-footer:before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,#12b8ad,#65e3d8,transparent)}
+.ec-footer-container{max-width:1400px;margin:auto;position:relative;z-index:1}
+.ec-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1.15fr 1fr 1.35fr;gap:38px}
+.ec-footer-brand img{width:175px;max-width:100%;height:auto;object-fit:contain;background:#fff;padding:7px;border-radius:10px;margin-bottom:17px}
+.ec-footer-tagline{color:#62e0d5;font-weight:800;font-size:14px;margin:0 0 12px}
+.ec-footer-description{color:var(--muted);font-size:13px;line-height:1.9;margin:0 0 20px}
+.ec-footer-heading{color:#fff;font-size:15px;font-weight:800;margin:5px 0 22px;position:relative;padding-bottom:12px}
+.ec-footer-heading:after{content:"";position:absolute;bottom:0;left:0;width:35px;height:3px;border-radius:5px;background:#12b8ad}
+.ec-footer-links{list-style:none;padding:0;margin:0}
+.ec-footer-links li{margin:0 0 13px}
+.ec-footer-links a{color:var(--muted);text-decoration:none;font-size:12.5px;transition:.25s}
+.ec-footer-links a:hover{color:#62e0d5;padding-left:5px}
+.ec-footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;color:var(--muted);font-size:12px;line-height:1.8}
+.ec-contact-icon{color:#55ded2;font-size:17px;min-width:20px}
+.ec-footer-contact-item a{color:var(--muted);text-decoration:none;overflow-wrap:anywhere}
+.ec-footer-contact-item a:hover{color:#62e0d5}
+.ec-footer-socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ec-footer-socials a{width:37px;height:37px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.2);border-radius:50%;color:#fff;background:rgba(255,255,255,.07);text-decoration:none;transition:.3s}
+.ec-footer-socials a:hover{background:#12b8ad;border-color:#12b8ad;color:#06243a;transform:translateY(-5px)}
+.ec-footer-socials svg{width:17px;height:17px;fill:currentColor}
+.ec-footer-cta{margin-top:45px;padding:23px 27px;border:1px solid rgba(255,255,255,.14);border-radius:15px;background:linear-gradient(110deg,rgba(18,184,173,.15),rgba(255,255,255,.045));display:flex;justify-content:space-between;align-items:center;gap:20px}
+.ec-footer-cta h3{margin:0 0 6px;font-size:18px;font-weight:800}
+.ec-footer-cta p{color:var(--muted);font-size:12px;margin:0;line-height:1.7}
+.ec-footer-cta a{display:inline-block;background:#12b8ad;color:#06243a;padding:12px 22px;border-radius:7px;text-decoration:none;font-weight:800;font-size:12px;white-space:nowrap}
+.ec-footer-bottom{border-top:1px solid rgba(255,255,255,.13);margin-top:35px;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ec-footer-bottom p{color:#9eb2c8;font-size:11px;margin:0}
+.ec-footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap}
+.ec-footer-bottom-links a{color:#9eb2c8;font-size:11px;text-decoration:none}
+.ec-footer-bottom-links a:hover{color:#62e0d5}
+
+@media(max-width:1100px){.ec-nav-links{gap:13px}.ec-nav-links a{font-size:10px}.ec-footer-grid{grid-template-columns:repeat(3,1fr);gap:35px 25px}}
+@media(max-width:800px){.ec-menu-btn{display:block}.ec-nav-inner{flex-wrap:wrap}.ec-nav-links{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:0;padding:10px 0}.ec-nav-links.show{display:flex}.ec-nav-links a{width:100%;padding:13px 8px;border-top:1px solid #edf2f7;font-size:12px}.ec-footer-grid{grid-template-columns:repeat(2,1fr)}.ec-footer-brand,.ec-footer-contact{grid-column:1/-1}}
+@media(max-width:599px){.ec-logo{width:155px}.services-section,.instr-section{padding:30px 10px}.services-header h2,.instr-header h2{font-size:21px}.quality-box{padding:18px}.bottom-banner{padding:22px 18px;align-items:stretch}.banner-text{text-align:center}.ec-footer{padding:45px 22px 20px}.ec-footer-cta{flex-direction:column;align-items:flex-start;padding:20px}.ec-footer-cta a{width:100%;text-align:center}.ec-footer-bottom{flex-direction:column;text-align:center}.ec-footer-bottom-links{justify-content:center}}
+@media(max-width:380px){.ec-footer-grid{grid-template-columns:1fr}.ec-footer-brand,.ec-footer-contact{grid-column:auto}}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="ec-nav">
+  <div class="ec-nav-inner">
+    <a href="index.html#home">
+      <img class="ec-logo" src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals">
+    </a>
+    <button class="ec-menu-btn" onclick="toggleEcMenu()" aria-label="Toggle navigation">☰</button>
+    <nav class="ec-nav-links" id="ecNavLinks">
+      <a href="index.html#home">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="training.html">TRAINING</a>
+      <a class="active" href="testing.html">TESTING SERVICES</a>
+      <a href="index.html#research">RESEARCH</a>
+      <a href="index.html#gallery">GALLERY</a>
+      <a href="index.html#contact">CONTACT US</a>
+    </nav>
+  </div>
+</header>
+
+<!-- TESTING HERO -->
+<section class="testing-hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-breadcrumb"><a href="index.html#home" style="color:#94a3b8">Home</a> &gt; Testing Services</div>
+      <h1 class="hero-title">Testing Services</h1>
+      <div class="hero-subtitle">Accurate Analysis. Reliable Results.</div>
+      <div class="hero-line"></div>
+      <p class="hero-description">EduChroma Analyticals provides accurate, precise and reliable analytical testing services using advanced instrumentation and validated methods.</p>
+    </div>
+    <div class="hero-image-container">
+      <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1000&q=80" alt="Advanced HPLC Laboratory Instrumentation">
+    </div>
+  </div>
+</section>
+
+<!-- OUR TESTING SERVICES -->
+<section class="services-section">
+  <div class="services-header">
+    <h2>Our Testing Services</h2>
+    <div class="icon-divider">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    </div>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      </div>
+      <h3>Pharmaceutical Analysis</h3>
+      <p>Analysis of raw materials, intermediates and finished pharmaceutical products as per IP/USP/BP standards.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </div>
+      <h3>Food Testing</h3>
+      <p>Nutritional analysis, food safety testing, additives, preservatives, contaminants and quality evaluation.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 16.2A4.5 4.5 0 0015.5 12 4.5 4.5 0 0011 16.2M12 2.69l5.66 5.66a8 8 0 11-11.32 0L12 2.69z"/></svg>
+      </div>
+      <h3>Water Testing</h3>
+      <p>Physicochemical, chemical and microbiological testing for drinking water, process water and wastewater.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      </div>
+      <h3>Chemical Analysis</h3>
+      <p>Analysis of industrial chemicals, solvents, reagents and specialty chemicals with high accuracy.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+      </div>
+      <h3>Raw Material Testing</h3>
+      <p>Quality evaluation and specification testing of raw materials as per industry standards.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      </div>
+      <h3>Finished Product Analysis</h3>
+      <p>Comprehensive testing of finished products to ensure quality, safety and regulatory compliance.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3>Stability Studies</h3>
+      <p>Conducting stability studies as per ICH guidelines for pharmaceutical and food products.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      </div>
+      <h3>Method Development & Validation</h3>
+      <p>Development of new analytical methods and validation as per applicable ICH guidelines.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      </div>
+      <h3>Microbiological Testing</h3>
+      <p>Microbial limit tests, pathogen detection and bioburden analysis for various samples.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-box">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <h3>Specialized Analysis</h3>
+      <p>Customized analytical solutions for specific industry requirements and R&D projects.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADVANCED INSTRUMENTATION -->
+<section class="instr-section">
+  <div class="instr-header">
+    <h2>Advanced Instrumentation</h2>
+    <div class="instr-divider">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="instr-grid">
+    <div class="instr-card">
+      <div class="instr-img-box"><img src="https://drive.google.com/thumbnail?id=1BFyzB0ninopiUUWGvStpn1z46XPHJCb_&sz=w1000" alt="HPLC Instrument" loading="lazy"></div>
+      <div><h3>HPLC</h3><p>High Performance Liquid Chromatography</p></div>
+    </div>
+
+    <div class="instr-card">
+      <div class="instr-img-box"><img src="https://drive.google.com/thumbnail?id=1E42CbuzvqiZetW3JZpLNcD7TSiadnsWM&sz=w1000" alt="Gas Chromatography" loading="lazy"></div>
+      <div><h3>GC</h3><p>Gas Chromatography</p></div>
+    </div>
+
+    <div class="instr-card">
+      <div class="instr-img-box"><img src="https://drive.google.com/thumbnail?id=14Kfsd8Pj1qGmqfOzHQ9DpzBn9XwFpqTT&sz=w1000" alt="UV Vis Spectrophotometer" loading="lazy"></div>
+      <div><h3>UV-Vis</h3><p>Spectrophotometer</p></div>
+    </div>
+
+    <div class="instr-card">
+      <div class="instr-img-box"><img src="https://drive.google.com/thumbnail?id=1-fssNCKXIfzptbU13ceKGx0rRBXIeJoH&sz=w1000" alt="Karl Fischer Titrator" loading="lazy"></div>
+      <div><h3>Karl Fischer</h3><p>Titrator</p></div>
+    </div>
+
+    <div class="instr-card">
+      <div class="instr-img-box"><img src="https://drive.google.com/thumbnail?id=1Glk6uQ-58d_aSDNh8f88s99Ot64fs0aj&sz=w1000" alt="Dissolution Apparatus" loading="lazy"></div>
+      <div><h3>Dissolution</h3><p>Apparatus</p></div>
+    </div>
+
+    <div class="instr-card">
+      <div class="instr-img-box"><img src="https://drive.google.com/thumbnail?id=1-u9qSlxy1JBuu4zXblZXjGMh1MbF3JO_&sz=w1000" alt="Digital pH Meter" loading="lazy"></div>
+      <div><h3>pH Meter</h3><p>Digital pH Meter</p></div>
+    </div>
+  </div>
+
+  <!-- QUALITY SECTION -->
+  <div class="quality-box">
+    <div class="quality-left">
+      <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=600&q=80" alt="Laboratory Quality" loading="lazy">
+    </div>
+
+    <div class="quality-middle">
+      <h3>Quality You Can Trust</h3>
+      <p>We follow GLP standards and validated analytical methods to ensure precision, accuracy and reliability in every test we perform.</p>
+    </div>
+
+    <div class="quality-right">
+      <div class="quality-feature"><span>✓</span><span>Standard Operating Procedures (SOPs)</span></div>
+      <div class="quality-feature"><span>✓</span><span>Calibrated Instruments</span></div>
+      <div class="quality-feature"><span>✓</span><span>Validated Methods</span></div>
+      <div class="quality-feature"><span>✓</span><span>Quality Control Samples</span></div>
+    </div>
+  </div>
+
+  <!-- ENQUIRY BANNER -->
+  <div class="bottom-banner" id="enquire">
+    <div class="banner-text">
+      <h3>Need Reliable Testing Services?</h3>
+      <p>Get accurate results for your samples with the support of our expert team.</p>
+    </div>
+    <div class="banner-buttons">
+      <a href="https://wa.me/918141108657?text=Hello%20EduChroma%2C%20I%20want%20to%20enquire%20about%20testing%20services." class="btn-enquire" target="_blank">Enquire Now</a>
+      <a href="#contact" class="btn-contact">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM FOOTER -->
+<footer class="ec-footer" id="contact">
+  <div class="ec-footer-container">
+    <div class="ec-footer-grid">
+
+      <div class="ec-footer-brand">
+        <a href="index.html">
+          <img src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-" alt="EduChroma Analyticals Logo">
+        </a>
+        <p class="ec-footer-tagline">Unlock Skills, Analyse Success.</p>
+        <p class="ec-footer-description">EduChroma Analyticals is dedicated to analytical training, laboratory services, research support and industry-oriented skill development for science and life science students.</p>
+
+        <div class="ec-footer-socials">
+          <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/" target="_blank" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/educhroma_analyticals/" target="_blank" aria-label="Instagram">ig</a>
+          <a href="https://www.youtube.com/@educhroma_analyticals" target="_blank" aria-label="YouTube">▶</a>
+          <a href="https://www.facebook.com/share/1EArM2Vrqc/" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://wa.me/918141108657" target="_blank" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="ec-footer-heading">Quick Links</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="training.html">Training Programmes</a></li>
+          <li><a href="testing.html">Testing Services</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="ec-footer-heading">Our Services</h3>
+        <ul class="ec-footer-links">
+          <li><a href="training.html">HPLC Training</a></li>
+          <li><a href="testing.html">Pharmaceutical Analysis</a></li>
+          <li><a href="testing.html">Food Testing</a></li>
+          <li><a href="testing.html">Water Testing</a></li>
+          <li><a href="testing.html">Analytical Services</a></li>
+          <li><a href="testing.html">Method Validation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="ec-footer-heading">Research Support</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#research">Project Guidance</a></li>
+          <li><a href="index.html#research">Thesis Support</a></li>
+          <li><a href="index.html#research">HPLC Analysis</a></li>
+          <li><a href="index.html#research">Research Training</a></li>
+          <li><a href="index.html#research">Analytical Consultation</a></li>
+        </ul>
+      </div>
+
+      <div class="ec-footer-contact">
+        <h3 class="ec-footer-heading">Contact Us</h3>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">📍</span>
+          <span>TF-12,13, Sun Meelan,<br>Behind Waghodia Check Post,<br>NH-48, Waghodia Road,<br>Vadodara, Gujarat - 390019</span>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">☎</span>
+          <a href="tel:+918141108657">+91 81411 08657</a>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">✉</span>
+          <a href="mailto:educhroma01@gmail.com">educhroma01@gmail.com</a>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">🌐</span>
+          <a href="https://www.educhroma.com" target="_blank">www.educhroma.com</a>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">◷</span>
+          <span>Monday – Saturday<br>9:30 AM – 6:30 PM<br>Sunday: Closed</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ec-footer-cta">
+      <div>
+        <h3>Let's Build Your Analytical Skills!</h3>
+        <p>Connect with EduChroma Analyticals for training, testing services and research support.</p>
+      </div>
+      <a href="https://wa.me/918141108657" target="_blank">CONNECT ON WHATSAPP →</a>
+    </div>
+
+    <div class="ec-footer-bottom">
+      <p>© 2026 EduChroma Analyticals. All Rights Reserved.</p>
+      <div class="ec-footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleEcMenu(){
+  document.getElementById('ecNavLinks').classList.toggle('show');
+}
+
+document.querySelectorAll('#ecNavLinks a').forEach(function(link){
+  link.addEventListener('click',function(){
+    document.getElementById('ecNavLinks').classList.remove('show');
+  });
+});
+</script>
+
+</body>
+</html>
