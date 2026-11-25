@@ -754,6 +754,506 @@
 
         });
     </script>
+    
+<!-- =========================================
+     EDUCHROMA ANALYTICALS – PREMIUM FOOTER
+========================================= -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.ec-footer,
+.ec-footer * {
+  box-sizing: border-box;
+}
+
+.ec-footer {
+  --navy: #071b35;
+  --navy2: #0d2c4d;
+  --teal: #12b8ad;
+  --muted: #b9c9da;
+
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 65px 6% 22px;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(18,184,173,.16), transparent 28%),
+    radial-gradient(circle at 90% 80%, rgba(35,111,174,.20), transparent 30%),
+    linear-gradient(135deg, #06172c, #0b2949 55%, #06172c);
+}
+
+.ec-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #12b8ad, #65e3d8, transparent);
+}
+
+.ec-footer-container {
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ec-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.15fr 1fr 1.35fr;
+  gap: 38px;
+}
+
+.ec-footer-brand img {
+  width: 175px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  padding: 7px;
+  border-radius: 10px;
+  margin-bottom: 17px;
+}
+
+.ec-footer-tagline {
+  color: #62e0d5;
+  font-weight: 800;
+  font-size: 14px;
+  margin: 0 0 12px;
+  letter-spacing: .3px;
+}
+
+.ec-footer-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0 0 20px;
+}
+
+.ec-footer-heading {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 5px 0 22px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.ec-footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 3px;
+  border-radius: 5px;
+  background: var(--teal);
+}
+
+.ec-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ec-footer-links li {
+  margin: 0 0 13px;
+}
+
+.ec-footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12.5px;
+  transition: .25s ease;
+}
+
+.ec-footer-links a:hover {
+  color: #62e0d5;
+  padding-left: 5px;
+}
+
+.ec-footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.ec-footer-contact-item .ec-contact-icon {
+  color: #55ded2;
+  font-size: 17px;
+  min-width: 20px;
+}
+
+.ec-footer-contact-item a {
+  color: var(--muted);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ec-footer-contact-item a:hover {
+  color: #62e0d5;
+}
+
+.ec-footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ec-footer-socials a {
+  width: 37px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255,255,255,.07);
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+.ec-footer-socials a:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #06243a;
+  transform: translateY(-5px);
+}
+
+.ec-footer-socials svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+.ec-footer-cta {
+  margin-top: 45px;
+  padding: 23px 27px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 15px;
+  background: linear-gradient(110deg, rgba(18,184,173,.15), rgba(255,255,255,.045));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.ec-footer-cta h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.ec-footer-cta p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.ec-footer-cta a {
+  display: inline-block;
+  background: var(--teal);
+  color: #06243a;
+  padding: 12px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: .3s;
+}
+
+.ec-footer-cta a:hover {
+  background: #65e3d8;
+  transform: translateY(-2px);
+}
+
+.ec-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.13);
+  margin-top: 35px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ec-footer-bottom p {
+  color: #9eb2c8;
+  font-size: 11px;
+  margin: 0;
+}
+
+.ec-footer-bottom-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.ec-footer-bottom-links a {
+  color: #9eb2c8;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.ec-footer-bottom-links a:hover {
+  color: #62e0d5;
+}
+
+@media(max-width:1100px) {
+  .ec-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 25px;
+  }
+}
+
+@media(max-width:700px) {
+  .ec-footer {
+    padding: 45px 22px 20px;
+  }
+
+  .ec-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+  }
+
+  .ec-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .ec-footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .ec-footer-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .ec-footer-cta a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ec-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ec-footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+@media(max-width:380px) {
+  .ec-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ec-footer-brand,
+  .ec-footer-contact {
+    grid-column: auto;
+  }
+}
+</style>
+
+<footer class="ec-footer">
+  <div class="ec-footer-container">
+
+    <div class="ec-footer-grid">
+
+      <!-- BRAND -->
+      <div class="ec-footer-brand">
+        <a href="index.html">
+          <img
+            src="https://lh3.googleusercontent.com/d/1thN-5rWyCKQo5sAtCncxybJRNWt0dPy-"
+            alt="EduChroma Analyticals Logo">
+        </a>
+
+        <p class="ec-footer-tagline">
+          Unlock Skills, Analyse Success.
+        </p>
+
+        <p class="ec-footer-description">
+          EduChroma Analyticals is dedicated to analytical
+          training, laboratory services, research support
+          and industry-oriented skill development for
+          science and life science students.
+        </p>
+
+        <div class="ec-footer-socials">
+
+          <!-- LINKEDIN -->
+          <a href="https://www.linkedin.com/in/educhroma-analytical-training-and-service-centre-83373b303/"
+             target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8 18H5V9h3v9ZM6.5 7.73a1.73 1.73 0 1 1 0-3.46 1.73 1.73 0 0 1 0 3.46ZM19 18h-3v-4.37c0-1.04-.02-2.38-1.45-2.38-1.45 0-1.67 1.13-1.67 2.3V18h-3V9h2.88v1.23h.04c.4-.7 1.38-1.45 2.84-1.45 3.03 0 3.36 1.99 3.36 4.58V18Z"/>
+            </svg>
+          </a>
+
+          <!-- INSTAGRAM -->
+          <a href="https://www.instagram.com/educhroma_analyticals/"
+             target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3Zm11 1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
+            </svg>
+          </a>
+
+          <!-- YOUTUBE -->
+          <a href="https://www.youtube.com/@educhroma_analyticals"
+             target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+            </svg>
+          </a>
+
+          <!-- FACEBOOK -->
+          <a href="https://www.facebook.com/share/1EArM2Vrqc/"
+             target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 22v-9h3l.45-3.5H13.5V7.27c0-1.01.28-1.7 1.73-1.7H17V2.44C16.69 2.4 15.63 2.3 14.4 2.3c-2.58 0-4.35 1.58-4.35 4.48V9.5H7V13h3.05v9h3.45Z"/>
+            </svg>
+          </a>
+
+          <!-- WHATSAPP -->
+          <a href="https://wa.me/918141108657"
+             target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.5ZM12 21.9c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 1 1 8.4 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.2 3.2c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h3 class="ec-footer-heading">Quick Links</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#training">Training Programmes</a></li>
+          <li><a href="index.html#testing">Testing Services</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h3 class="ec-footer-heading">Our Services</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#training">HPLC Training</a></li>
+          <li><a href="index.html#training">Industrial Training</a></li>
+          <li><a href="index.html#testing">HPLC Sample Testing</a></li>
+          <li><a href="index.html#testing">Analytical Services</a></li>
+          <li><a href="index.html#research">Method Development</a></li>
+          <li><a href="index.html#research">Method Validation</a></li>
+        </ul>
+      </div>
+
+      <!-- RESEARCH -->
+      <div>
+        <h3 class="ec-footer-heading">Research Support</h3>
+        <ul class="ec-footer-links">
+          <li><a href="index.html#research">Project Guidance</a></li>
+          <li><a href="index.html#research">Thesis Support</a></li>
+          <li><a href="index.html#research">HPLC Analysis</a></li>
+          <li><a href="index.html#research">Research Training</a></li>
+          <li><a href="index.html#research">Analytical Consultation</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="ec-footer-contact">
+        <h3 class="ec-footer-heading">Contact Us</h3>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">📍</span>
+          <span>
+            TF-12,13, Sun Meelan,<br>
+            Behind Waghodia Check Post,<br>
+            NH-48, Waghodia Road,<br>
+            Vadodara, Gujarat - 390019
+          </span>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">☎</span>
+          <a href="tel:+918141108657">+91 81411 08657</a>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">✉</span>
+          <a href="mailto:educhroma01@gmail.com">
+            educhroma01@gmail.com
+          </a>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">🌐</span>
+          <a href="https://www.educhroma.com" target="_blank"
+             rel="noopener noreferrer">www.educhroma.com</a>
+        </div>
+
+        <div class="ec-footer-contact-item">
+          <span class="ec-contact-icon">◷</span>
+          <span>
+            Monday – Saturday<br>
+            9:30 AM – 6:30 PM<br>
+            Sunday: Closed
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTACT CTA -->
+    <div class="ec-footer-cta">
+      <div>
+        <h3>Let's Build Your Analytical Skills!</h3>
+        <p>
+          Connect with EduChroma Analyticals for training,
+          testing services and research support.
+        </p>
+      </div>
+
+      <a href="https://wa.me/918141108657"
+         target="_blank" rel="noopener noreferrer">
+        CONNECT ON WHATSAPP →
+      </a>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="ec-footer-bottom">
+      <p>
+        © 2026 EduChroma Analyticals. All Rights Reserved.
+      </p>
+
+      <div class="ec-footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
 
 </body>
 </html>
